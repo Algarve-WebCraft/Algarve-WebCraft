@@ -1,3 +1,5 @@
+'use strict'
+
 /* Navigation links and hamburger menu*/
 
 const hamburgerBtn = document.querySelector(".hamburger-btn");
