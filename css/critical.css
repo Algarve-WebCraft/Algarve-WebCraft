@@ -570,30 +570,6 @@
     }
   }
 
-  @keyframes colorPulse {
-    0% {
-      fill: #a3b3d3;
-    }
-    10% {
-      fill: #43b7ffc3;
-    }
-    20% {
-      fill: #2fa6f0;
-    }
-    50% {
-      fill: #447df0;
-    }
-    70% {
-      fill: #2fa6f0;
-    }
-    90% {
-      fill: #43b7ffc3;
-    }
-    100% {
-      fill: #a3b3d3;
-    }
-  }
-
   .main-btn--pg1 {
     background-color: var(--bg-btn-active);
   }
