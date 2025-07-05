@@ -1,0 +1,97 @@
+.glide {
+  max-width: 800px;
+  margin-inline: auto;
+  margin-top: 5rem;
+  z-index: 10;
+  margin-bottom: clamp(-9rem, -8vw, -3rem);
+  cursor: auto !important;
+
+  .glide--rtl {
+    direction: rtl;
+  }
+}
+
+.glide__track {
+  background: #fff;
+  box-shadow: -10px 10px 25px rgba(0, 0, 0, 0.658);
+  color: #000;
+  padding-block: 4rem;
+  text-align: center;
+  border-radius: 30% 20px;
+  overflow: hidden;
+}
+
+.glide__slides {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  touch-action: pan-Y;
+  overflow: hidden;
+  will-change: transform;
+  cursor: grab;
+  list-style: none;
+
+  .glide__slides--dragging {
+    user-select: none;
+  }
+}
+
+.glide__slide {
+  font-size: var(--fs-body-text);
+  padding-inline: 2em;
+  padding-block: auto;
+  font-style: italic;
+  white-space: normal;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+
+  span {
+    font-style: normal;
+    color: var(--clr-blue-100);
+  }
+
+  a {
+    user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  @media (width > 600px) {
+    padding-inline: 4em;
+  }
+}
+
+.glide__bullets {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+.glide__bullet {
+  position: relative;
+  background: #00000081;
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  top: 2rem;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    border: 1px solid black;
+    opacity: 0.8;
+  }
+
+  &:active { 
+    opacity: 1;
+  }
+}

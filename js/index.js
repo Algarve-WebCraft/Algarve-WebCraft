@@ -120,8 +120,6 @@ observer.observe(banner);
 
 /* Testimonial Carousel */
 
-import Glide from "https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/glide.esm.js";
-
 const glide = new Glide(".glide", {
   type: "carousel",
   autoplay: 5000,
