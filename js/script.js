@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 /* Navigation links and hamburger menu*/
 
@@ -50,6 +50,19 @@ navBarLinks.forEach((link) => {
   }
 });
 
+/* Prevent navigation transitions happening on resize */
+
+let resizeTimeout;
+
+window.addEventListener("resize", () => {
+  navBar.classList.add("no-transition");
+
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    navBar.classList.remove("no-transition");
+  }, 1);
+});
+
 /* Sticky navigation bar */
 
 const primaryHeader = document.querySelector("#header");
@@ -62,17 +75,19 @@ window.addEventListener("scroll", () => {
   }
 });
 
-/* Prevent navigation transitions happening on resize */
+/* sun/moon svg change */
 
-let resizeTimeout;
+const svgColorPreferance = document.querySelectorAll(".svg-color-preferance");
+const svgSun = document.querySelector("#svg-sun");
+const svgMoon = document.querySelector("#svg-moon");
 
-window.addEventListener("resize", () => {
-  navBar.classList.add("no-transition");
+svgColorPreferance.forEach((svg) => {
+  svg.addEventListener("click", () => {
+    const isSunHidden = svgSun.classList.contains("hidden");
 
-  clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(() => {
-    navBar.classList.remove("no-transition");
-  }, 1);
+    svgSun.classList.toggle("hidden", !isSunHidden);
+    svgMoon.classList.toggle("hidden", isSunHidden);
+  });
 });
 
 /* Performance section scroll animation */
@@ -89,7 +104,7 @@ const PerformanceObserver = new IntersectionObserver(
     });
   },
   {
-    threshold: .7,
+    threshold: 0.7,
   }
 );
 
@@ -97,8 +112,8 @@ blocks.forEach((block) => PerformanceObserver.observe(block));
 
 /* Portfolio Carousel */
 
-const banner = document.querySelector('.banner');
-const overlay = banner.querySelector('.banner-overlay');
+const banner = document.querySelector(".banner");
+const overlay = banner.querySelector(".banner-overlay");
 
 const observer = new IntersectionObserver(
   ([entry]) => {
@@ -106,9 +121,9 @@ const observer = new IntersectionObserver(
     const bounding = entry.boundingClientRect;
 
     if (ratio < 0.1 || bounding.top < -entry.target.offsetHeight / 9.5) {
-      overlay.classList.add('active');
+      overlay.classList.add("active");
     } else {
-      overlay.classList.remove('active');
+      overlay.classList.remove("active");
     }
   },
   {
@@ -152,4 +167,3 @@ const copyrightSymbol = "\u00A9";
 document.getElementById(
   "year"
 ).innerHTML = `<strong>${copyrightSymbol} Copyright ${currentYear}</strong>`;
-

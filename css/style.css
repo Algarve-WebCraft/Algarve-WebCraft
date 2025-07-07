@@ -151,11 +151,11 @@
   /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 1 / SECTION-TWO / APPROACH ***       \\\\\\\\\\\\\\\\\\\\\\\\\ */
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
-  #pg1-s2-offer {
+  #pg1-s2-approach {
     padding-bottom: var(--padd-60-100);
   }
 
-  .pg1-s2-offer__flex {
+  .pg1-s2-approach__flex {
     display: flex;
     flex-direction: column;
     gap: 4rem;
