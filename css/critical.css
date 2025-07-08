@@ -178,6 +178,7 @@
     font-size: var(--fs-topper-heading);
     color: var(--text-topper-heading-gray);
     letter-spacing: 0.1em;
+    z-index: 10;
   }
 
   .cmp-main-heading,
@@ -329,6 +330,13 @@
 
   .svg-color-preferance {
     cursor: pointer;
+    transition: transform 1s ease-out;
+    /* prettier-ignore */
+    transition-timing-function: linear(0, 0.012 0.9%, 0.049 2%, 0.409 9.3%, 0.513 11.9%, 0.606 14.7%, 0.691 17.9%, 0.762 21.3%, 0.82 25%, 0.868 29.1%, 0.907 33.6%, 0.937 38.7%, 0.976 51.3%, 0.994 68.8%, 1);
+
+    &:hover {
+      transform: translateY(-5px);
+    }
   }
 
   .hamburger-btn {
@@ -407,6 +415,9 @@
     border-bottom-left-radius: 75px;
     border-bottom-right-radius: 75px;
     box-shadow: 1px 1px 60px var(--clr-lighter-black);
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
     transform: translateY(-150%);
     transition: transform 1.2s ease-out;
     /* prettier-ignore */

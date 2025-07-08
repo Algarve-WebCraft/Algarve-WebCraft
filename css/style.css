@@ -3,7 +3,7 @@
   /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 1 / SECTION-ONE / CARDS ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
-  #pg1-s1-cards {
+  .pg1-s1-cards {
     position: relative;
     padding-top: 2.5rem;
     padding-bottom: var(--padd-60-100);
@@ -151,7 +151,7 @@
   /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 1 / SECTION-TWO / APPROACH ***       \\\\\\\\\\\\\\\\\\\\\\\\\ */
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
-  #pg1-s2-approach {
+  .pg1-s2-approach {
     padding-bottom: var(--padd-60-100);
   }
 
@@ -226,7 +226,7 @@
   /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 1 / SECTION-THREE / PERFORMANCE ***       \\\\\\\\\\\\\\\\ */
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
-  #pg1-s3-performance {
+  .pg1-s3-performance {
     background-color: var(--bg-primary-blue);
     padding-block: var(--padd-60-100);
   }
@@ -324,7 +324,7 @@
   /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 1 / SECTION-FOUR / PORTFOLIO ***       \\\\\\\\\\\\\\\\\\\ */
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
-  #pg1-s4-portfolio {
+  .pg1-s4-portfolio {
     padding-top: var(--padd-60-100);
     text-align: center;
 
@@ -423,7 +423,7 @@
   /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 1 / SECTION-FIVE / PRICING ***       \\\\\\\\\\\\\\\\\\\\\ */
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
-  #pg1-s5-pricing {
+  .pg1-s5-pricing {
     padding-bottom: var(--padd-60-100);
   }
 
@@ -447,7 +447,6 @@
     text-align: center;
     margin-inline: auto;
     margin-bottom: 0;
-    z-index: 999;
   }
 
   .pricing-card-container {
@@ -547,7 +546,7 @@
   /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 1 / SECTION-SIX / TESTIMONIALS ***       \\\\\\\\\\\\\\\\ */
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
-  #pg1-s6-testimonials {
+  .pg1-s6-testimonials {
     position: relative;
     padding-top: var(--padd-60-100);
     padding-bottom: clamp(6rem, 13vw, 12rem);

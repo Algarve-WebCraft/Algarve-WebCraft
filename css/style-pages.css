@@ -1,0 +1,48 @@
+@layer components {
+  .cmp-main-heading--other-pages {
+    text-align: center;
+  }
+
+  .cmp-svg-pages-decoration {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: var(--clr-blue-200);
+    height: clamp(12rem, 18vw, 18rem);
+    margin-bottom: clamp(1rem, 8vw, 8rem);
+  }
+
+  .cmp-main-heading--other-pages {
+    margin-top: clamp(4rem, 10vw, 9rem);
+  }
+
+  .cmp-svg-pages-decoration__svg {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: auto;
+    top: 100%;
+    fill: var(--clr-blue-200);
+  }
+}
+
+@layer base {
+  /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+  /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 2 / SECTION-ONE / WHO WE ARE ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
+  /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+  /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+  /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 2 / SECTION-TWO / PORTFOLIO ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
+  /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+  .pg1-s4-portfolio--pg2-s1 {
+  }
+
+  /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+  /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 2 / SECTION-THREE / TESTIMONIALS ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
+  /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+  .cmp-topper-heading--pg2-s2 {
+    z-index: 999;
+  }
+}

@@ -68,7 +68,7 @@ window.addEventListener("resize", () => {
 const primaryHeader = document.querySelector("#header");
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 580) {
+  if (window.scrollY > 400) {
     primaryHeader.classList.add("sticking");
   } else if (window.scrollY === 0) {
     primaryHeader.classList.remove("sticking");
@@ -167,3 +167,37 @@ const copyrightSymbol = "\u00A9";
 document.getElementById(
   "year"
 ).innerHTML = `<strong>${copyrightSymbol} Copyright ${currentYear}</strong>`;
+
+/* Dark-mode change */
+
+function enableDarkMode() {
+  document.body.classList.add("dark-mode");
+  localStorage.setItem("theme", "dark");
+}
+function disableDarkMode() {
+  document.body.classList.remove("dark-mode");
+  localStorage.setItem("theme", "light");
+}
+
+function detectColorScheme() {
+  let theme = "light";
+
+  if (localStorage.getItem("theme")) {
+    theme = localStorage.getItem("theme");
+  } else if (
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  ) {
+    theme = "dark";
+  }
+
+  theme === "dark" ? enableDarkMode() : disableDarkMode();
+}
+
+detectColorScheme();
+
+document.getElementById("dark-mode-toggle").addEventListener("click", () => {
+  localStorage.getItem("theme") === "light"
+    ? enableDarkMode()
+    : disableDarkMode();
+});

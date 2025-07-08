@@ -13,13 +13,13 @@
     <link rel="stylesheet" href="/css/critical.css">
     <link rel="preload" href="/css/style.css" as="style">
     <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all'">
-    <link rel="preload" href="/css/glide.css" as="style">
-    <link rel="stylesheet" href="/css/glide.css" media="print" onload="this.media='all'">
-    <script type="module" src="/js/glide.min.js" defer></script>
+    <link rel="preload" href="/css/style-pages.css" as="style">
+    <link rel="stylesheet" href="/css/style-pages.css">
+    <link rel="preload" href="/css/dark-mode.css" as="style">
+    <link rel="stylesheet" href="/css/dark-mode.css">
     <script type="module" src="/js/script.js" defer></script>
     <noscript>
       <link rel="stylesheet" href="/css/style.css">
-      <link rel="stylesheet" href="/css/glide.css">
     </noscript>
     <title>Algarve WebCraft | Small Business Website Specialist</title>
   </head>
@@ -89,7 +89,15 @@
     </header>
 
     <main id="main">
-      <section id="pg1-s5-pricing">
+
+      <div class="cmp-svg-pages-decoration">
+        <h1 class="cmp-main-heading cmp-main-heading--other-pages">Pricing</h1>
+        <svg viewBox="0 0 1440 160" class="cmp-svg-pages-decoration__svg">
+          <path d="M0,80 C360,160 1080,0 1440,80 L1440,0 L0,0 Z" />
+        </svg>
+      </div>
+
+      <section class="pg1-s5-pricing">
         <div class="wrapper wrapper--mobile-L">
           <span class="cmp-topper-heading cmp-topper-heading--pg1-s5">Our Pricing</span>
           <h2 class="cmp-sub-heading cmp-sub-heading--pg1-s5">Affordable Packages for Any Business</h2>
@@ -243,6 +251,7 @@
           </div>
         </div>
       </section>
+      
       <footer id="footer">
         <svg class="footer__svg-page-decoration" viewBox="0 0 1440 150" aria-hidden="true">
           <path d="M0,0 C300,100 600,0 900,100 C1200,200 1440,0 1440,0 L1440,150 L0,150 Z" fill="#ffffff" />
