@@ -1,40 +1,99 @@
-/* body.dark-mode .targetElement {
-  background: #000000;
-} */
+:root {
+  --bodyTextWhite: #e6e9f1;
+  --clr-dark-theme-100: #011ea0;
+  --clr-dark-theme-200: #0c3a6e;
+  --clr-dark-theme-250: #0065ca;
+  --clr-dark-theme-300: #04121e;
+  --clr-dark-theme-400: #0c0c0c;
+}
 
-@media (width > 0rem) {
-  :root {
-    /* --dark: #121212;
-    --medium: #282828;
-    --accent: #404040;
-    --bodyTextColorWhite: #fafbfc; */
+body.dark-mode {
+  background-color: var(--clr-dark-theme-400);
+  transition: background-color 0.5s;
+}
+
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode a,
+body.dark-mode span,
+body.dark-mode .cmp-sub-heading,
+body.dark-mode .cmp-topper-heading {
+  color: var(--bodyTextWhite);
+}
+
+body.dark-mode .header__container,
+body.dark-mode .nav-bar,
+body.dark-mode #pg1-hero,
+body.dark-mode .pg1-s3-performance,
+body.dark-mode #footer,
+body.dark-mode .cmp-svg-pages-decoration {
+  background-color: var(--clr-dark-theme-300);
+  transition: background-color 0.5s;
+}
+
+body.dark-mode .hero__svg-page-decoration,
+body.dark-mode .footer__svg-page-decoration {
+  fill: var(--clr-dark-theme-400);
+  transition: fill 0.5s;
+}
+
+body.dark-mode .cmp-svg-pages-decoration__svg {
+  fill: var(--clr-dark-theme-300);
+  transition: fill 0.5s;
+}
+
+body.dark-mode .decorative-side-svg {
+  fill: rgb(255, 255, 255);
+  box-shadow: 2px 2px 10px blue;
+}
+
+body.dark-mode .services-card {
+  box-shadow: -5px 5px 10px var(--clr-dark-theme-100);
+
+  .services-card__svg-box {
+    background-color: #000;
   }
-  body.dark-mode {
-    background-color: var(--dark);
+
+  &:hover {
+    background-color: var(--clr-dark-theme-200);
+    box-shadow: 0 0 30px var(--clr-dark-theme-100);
+
+    .services-card__svg-box {
+      background-color: var(--clr-lighter-white);
+    }
   }
-  body.dark-mode p,
-  body.dark-mode li,
-  body.dark-mode h1,
-  body.dark-mode h2,
-  body.dark-mode h3,
-  body.dark-mode h4,
-  body.dark-mode h5,
-  body.dark-mode h6,
-  body.dark-mode .cs-title,
-  body.dark-mode .cs-text,
-  body.dark-mode .cs-li {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode .light {
-    display: none;
-  }
-  body.dark-mode .dark {
-    display: block !important;
-  }
-  .dark {
-    /* class used to hide elements that only need to be seen when dark mode is enabled */
-    display: none;
-  }
+}
+
+body.dark-mode .banner-overlay {
+  background-color: var(--clr-dark-theme-400);
+}
+
+body.dark-mode .pricing-card {
+  background-color: var(--clr-dark-theme-400);
+  box-shadow: 3px 3px 20px var(--clr-dark-theme-200);
+}
+
+body.dark-mode .pricing-card:last-of-type {
+  background-color: var(--clr-dark-theme-300);
+  border: 1px solid var(--clr-dark-theme-200);
+  box-shadow: 7px 7px 30px var(--clr-dark-theme-100);
+}
+
+body.dark-mode .cmp-main-btn {
+  background-color: var(--clr-dark-theme-200);
+}
+
+body.dark-mode .cmp-main-btn--light,
+body.dark-mode .cmp-main-btn-footer {
+  background-color: var(--clr-dark-theme-250);
+}
+
+.dark {
+  /* class used to hide elements that only need to be seen when dark mode is enabled */
+  display: none;
 }
 
 /*-- -------------------------- -->
@@ -43,64 +102,53 @@
 
 /* Mobile */
 
-@media (width > 0rem) {
-  body.dark-mode #dark-mode-toggle .cs-sun {
-    transform: translate(-50%, -50%);
-    opacity: 1;
-  }
-  body.dark-mode #dark-mode-toggle .cs-moon {
-    transform: translate(-50%, -150%);
-    opacity: 0;
-  }
-  #dark-mode-toggle {
-    display: block;
+body.dark-mode #dark-mode-toggle #svg-sun {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+body.dark-mode #dark-mode-toggle #svg-moon {
+  transform: translate(-200%, -50%);
+  opacity: 0;
+}
+
+#dark-mode-toggle {
+  display: block;
+  right: 5.25rem;
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  svg {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 3.75rem;
-    width: 3rem;
-    height: 3rem;
-    background: transparent;
-    border: none;
-    overflow: hidden;
-    padding: 0;
-  }
-  #dark-mode-toggle img,
-  #dark-mode-toggle svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
-    width: 1.5625rem;
-    height: 1.5625rem;
+    width: 2rem;
+    height: 2rem;
     pointer-events: none;
   }
-  #dark-mode-toggle .cs-moon {
+
+  #svg-moon {
     z-index: 2;
-    transition: transform 0.3s, opacity 0.3s, fill 0.3s;
-    fill: #000;
+    transition: transform 0.75s, opacity 0.5s;
   }
-  #dark-mode-toggle .cs-sun {
+
+  #svg-sun {
     z-index: 1;
     transform: translate(-50%, 100%);
     opacity: 0;
-    transition: transform 0.3s, opacity 0.3s;
+    transition: transform 0.75s, opacity 0.5s;
+    /* prettier-ignore */
+    transition-timing-function: linear(0, 0.504 20.5%, 1 37.8%, 0.863 44.4%, 0.831 47.4%, 0.821 50.3%, 0.83 53%, 0.856 55.8%, 1 65.5%, 0.959 69.4%, 0.947 73.2%, 0.955 76.6%, 1 84.5%, 0.991 89.3%, 1);
   }
-}
 
-/* Desktop */
-
-@media (width > 64rem) {
-  #dark-mode-toggle {
+  @media (width > 64rem) {
     position: relative;
     top: auto;
     right: auto;
     transform: none;
     margin-left: 1.875rem;
     margin-bottom: 0rem;
-  }
-  #dark-mode-toggle .cs-moon {
-    /* change to whatever you need it to be */
-    /* fill: #fff; */
   }
 }

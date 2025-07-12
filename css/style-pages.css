@@ -10,6 +10,7 @@
     background-color: var(--clr-blue-200);
     height: clamp(12rem, 18vw, 18rem);
     margin-bottom: clamp(1rem, 8vw, 8rem);
+    transition: background-color .5s;
   }
 
   .cmp-main-heading--other-pages {
@@ -23,6 +24,8 @@
     height: auto;
     top: 100%;
     fill: var(--clr-blue-200);
+    backface-visibility: hidden;
+    transition: fill .5s; 
   }
 }
 

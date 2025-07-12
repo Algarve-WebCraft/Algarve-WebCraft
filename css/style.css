@@ -13,6 +13,7 @@
   .decorative-side-svg {
     display: none;
     position: absolute;
+    fill: var(--clr-blue-300);
     right: -350px;
     top: -30px;
     width: 400px;
@@ -229,6 +230,7 @@
   .pg1-s3-performance {
     background-color: var(--bg-primary-blue);
     padding-block: var(--padd-60-100);
+    transition: background-color .5s;
   }
 
   .performance-text-block__flex-container {
@@ -447,6 +449,7 @@
     text-align: center;
     margin-inline: auto;
     margin-bottom: 0;
+    z-index: 999;
   }
 
   .pricing-card-container {
@@ -584,10 +587,12 @@
     padding-bottom: clamp(1.9rem, 5vw, 3.125rem);
     clip-path: inset(0px 0px 0px 0px);
     overflow: hidden;
+    transition: background-color .5s;
   }
 
   .footer__svg-page-decoration {
     position: absolute;
+    fill: #fff;
     top: -1px;
     transform: scaleX(-1) scaleY(-1);
     backface-visibility: hidden;

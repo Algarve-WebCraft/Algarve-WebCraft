@@ -75,21 +75,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-/* sun/moon svg change */
-
-const svgColorPreferance = document.querySelectorAll(".svg-color-preferance");
-const svgSun = document.querySelector("#svg-sun");
-const svgMoon = document.querySelector("#svg-moon");
-
-svgColorPreferance.forEach((svg) => {
-  svg.addEventListener("click", () => {
-    const isSunHidden = svgSun.classList.contains("hidden");
-
-    svgSun.classList.toggle("hidden", !isSunHidden);
-    svgMoon.classList.toggle("hidden", isSunHidden);
-  });
-});
-
 /* Performance section scroll animation */
 
 const blocks = document.querySelectorAll(".performance-text-block__inner-flex");
@@ -112,52 +97,61 @@ blocks.forEach((block) => PerformanceObserver.observe(block));
 
 /* Portfolio Carousel */
 
-const banner = document.querySelector(".banner");
-const overlay = banner.querySelector(".banner-overlay");
+const banner = document?.querySelector(".banner");
+const overlay = banner?.querySelector(".banner-overlay");
 
-const observer = new IntersectionObserver(
-  ([entry]) => {
-    const ratio = entry.intersectionRatio;
-    const bounding = entry.boundingClientRect;
+if (banner) {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      const ratio = entry.intersectionRatio;
+      const bounding = entry.boundingClientRect;
 
-    if (ratio < 0.1 || bounding.top < -entry.target.offsetHeight / 9.5) {
-      overlay.classList.add("active");
-    } else {
-      overlay.classList.remove("active");
+      if (ratio < 0.1 || bounding.top < -entry.target.offsetHeight / 9.5) {
+        overlay.classList.add("active");
+      } else {
+        overlay.classList.remove("active");
+      }
+    },
+    {
+      threshold: Array.from({ length: 101 }, (_, i) => i / 100),
     }
-  },
-  {
-    threshold: Array.from({ length: 101 }, (_, i) => i / 100),
-  }
-);
+  );
 
-observer.observe(banner);
+  observer.observe(banner);
+}
 
 /* Testimonial Carousel */
 
-const glide = new Glide(".glide", {
-  type: "carousel",
-  autoplay: 5000,
-  hoverpause: true,
-});
+const glideElement = document?.querySelector(".glide");
 
-glide.on(["mount.after", "run"], () => {
-  const slides = document.querySelectorAll(".glide__slide");
-  const bullets = document.querySelectorAll(".glide__bullet");
-  const currentIndex = glide.index;
-
-  slides.forEach((slide, i) => {
-    const isActive = i === currentIndex;
-    slide.setAttribute("aria-hidden", !isActive);
-    slide.setAttribute("tabindex", isActive ? "0" : "-1");
+if (glideElement) {
+  const glide = new Glide(".glide", {
+    type: "carousel",
+    autoplay: 5000,
+    hoverpause: true,
   });
 
-  bullets.forEach((bullet, i) => {
-    bullet.setAttribute("aria-selected", i === currentIndex ? "true" : "false");
-  });
-});
+  glide.on(["mount.after", "run"], () => {
+    const slides = document.querySelectorAll(".glide__slide");
+    const bullets = document.querySelectorAll(".glide__bullet");
+    const currentIndex = glide.index;
 
-glide.mount();
+    slides.forEach((slide, i) => {
+      const isActive = i === currentIndex;
+      slide.setAttribute("aria-hidden", !isActive);
+      slide.setAttribute("tabindex", isActive ? "0" : "-1");
+    });
+
+    bullets.forEach((bullet, i) => {
+      bullet.setAttribute(
+        "aria-selected",
+        i === currentIndex ? "true" : "false"
+      );
+    });
+  });
+
+  glide.mount();
+}
 
 /* Footer copyright-year update */
 
