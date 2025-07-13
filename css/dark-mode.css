@@ -1,60 +1,93 @@
 :root {
   --bodyTextWhite: #e6e9f1;
+  --clr-dark-theme-50: #0065ca;
   --clr-dark-theme-100: #011ea0;
   --clr-dark-theme-200: #0c3a6e;
-  --clr-dark-theme-250: #0065ca;
-  --clr-dark-theme-300: #04121e;
-  --clr-dark-theme-400: #0c0c0c;
+  --clr-dark-theme-300: #041523;
+  --clr-dark-theme-400: #111111;
 }
 
-body.dark-mode {
+html.dark-mode body,
+html.dark-mode .pg1-s3-performance {
+  background-color: var(--clr-dark-theme-400);
+  transition: background-color 0.5s ease-out;
+}
+
+html.dark-mode p,
+html.dark-mode li,
+html.dark-mode h1,
+html.dark-mode h2,
+html.dark-mode h3,
+html.dark-mode a,
+html.dark-mode span,
+html.dark-mode .cmp-sub-heading,
+html.dark-mode .cmp-topper-heading {
+  color: var(--bodyTextWhite);
+}
+
+html.dark-mode .cmp-topper-heading {
+  color: var(--clr-dark-theme-50);
+}
+
+html.dark-mode .header__container,
+html.dark-mode .nav-bar {
   background-color: var(--clr-dark-theme-400);
   transition: background-color 0.5s;
 }
 
-body.dark-mode p,
-body.dark-mode li,
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode a,
-body.dark-mode span,
-body.dark-mode .cmp-sub-heading,
-body.dark-mode .cmp-topper-heading {
-  color: var(--bodyTextWhite);
-}
 
-body.dark-mode .header__container,
-body.dark-mode .nav-bar,
-body.dark-mode #pg1-hero,
-body.dark-mode .pg1-s3-performance,
-body.dark-mode #footer,
-body.dark-mode .cmp-svg-pages-decoration {
+html.dark-mode #pg1-hero,
+html.dark-mode .pg1-s2-approach,
+html.dark-mode .pg1-s4-portfolio,
+html.dark-mode .pg1-s5-pricing,
+html.dark-mode #footer,
+html.dark-mode .cmp-svg-pages-decoration {
   background-color: var(--clr-dark-theme-300);
   transition: background-color 0.5s;
 }
 
-body.dark-mode .hero__svg-page-decoration,
-body.dark-mode .footer__svg-page-decoration {
+html.dark-mode .pg1-s2-approach {
+  padding-top: var(--padd-60-100)
+}
+
+html.dark-mode .header__container {
+  box-shadow: 1px 1px 30px var(--clr-dark-theme-200);
+}
+
+html.dark-mode .hero__svg-page-decoration,
+html.dark-mode .footer__svg-page-decoration {
   fill: var(--clr-dark-theme-400);
-  transition: fill 0.5s;
+  transition: fill 0.5s ease-out;
 }
 
-body.dark-mode .cmp-svg-pages-decoration__svg {
+html.dark-mode .cmp-svg-pages-decoration__svg {
   fill: var(--clr-dark-theme-300);
-  transition: fill 0.5s;
+  transition: fill 0.5s ease-out;
 }
 
-body.dark-mode .decorative-side-svg {
-  fill: rgb(255, 255, 255);
-  box-shadow: 2px 2px 10px blue;
+html.dark-mode .cmp-main-btn,
+html.dark-mode .hamburger-btn {
+  background-color: var(--clr-dark-theme-200);
+  transition: background-color 0.5s;
 }
 
-body.dark-mode .services-card {
-  box-shadow: -5px 5px 10px var(--clr-dark-theme-100);
+html.dark-mode .cmp-main-btn--light,
+html.dark-mode .cmp-main-btn-footer {
+  background-color: var(--clr-dark-theme-50);
+  transition: background-color 0.5s;
+}
+
+html.dark-mode .decorative-side-svg {
+  fill: var(--clr-dark-theme-200);
+  opacity: .55;
+}
+
+html.dark-mode .services-card {
+  box-shadow: -5px 5px 20px var(--clr-dark-theme-100);
 
   .services-card__svg-box {
-    background-color: #000;
+    background-color: transparent;
+    transition: transform .75s ease-out;
   }
 
   &:hover {
@@ -62,33 +95,43 @@ body.dark-mode .services-card {
     box-shadow: 0 0 30px var(--clr-dark-theme-100);
 
     .services-card__svg-box {
-      background-color: var(--clr-lighter-white);
+      transform: scale(1.8) rotate(360deg); 
+      transition: transform .75s;
+
+      @media (prefers-reduced-motion: reduce) {
+        transform: none !important;
+      }
+    }
+
+    svg {
+      fill: #fff;
     }
   }
 }
 
-body.dark-mode .banner-overlay {
-  background-color: var(--clr-dark-theme-400);
+html.dark-mode .banner-overlay {
+  background-color: var(--clr-dark-theme-300);
 }
 
-body.dark-mode .pricing-card {
+html.dark-mode .pricing-card {
   background-color: var(--clr-dark-theme-400);
-  box-shadow: 3px 3px 20px var(--clr-dark-theme-200);
+  box-shadow: 0 0 10px var(--clr-dark-theme-200);
 }
 
-body.dark-mode .pricing-card:last-of-type {
+html.dark-mode .pricing-card:last-of-type {
   background-color: var(--clr-dark-theme-300);
   border: 1px solid var(--clr-dark-theme-200);
   box-shadow: 7px 7px 30px var(--clr-dark-theme-100);
 }
 
-body.dark-mode .cmp-main-btn {
-  background-color: var(--clr-dark-theme-200);
-}
+html.dark-mode .glide__track {
+  background-color: var(--clr-dark-theme-300);
+  border: 1px solid var(--clr-dark-theme-200);
+  box-shadow: -2px 0 5px var(--clr-dark-theme-50);
 
-body.dark-mode .cmp-main-btn--light,
-body.dark-mode .cmp-main-btn-footer {
-  background-color: var(--clr-dark-theme-250);
+  .glide__bullet {
+    background-color: #ffffff76;
+  }
 }
 
 .dark {
@@ -102,12 +145,12 @@ body.dark-mode .cmp-main-btn-footer {
 
 /* Mobile */
 
-body.dark-mode #dark-mode-toggle #svg-sun {
+html.dark-mode #dark-mode-toggle #svg-sun {
   transform: translate(-50%, -50%);
   opacity: 1;
 }
 
-body.dark-mode #dark-mode-toggle #svg-moon {
+html.dark-mode #dark-mode-toggle #svg-moon {
   transform: translate(-200%, -50%);
   opacity: 0;
 }

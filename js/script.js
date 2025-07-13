@@ -165,11 +165,11 @@ document.getElementById(
 /* Dark-mode change */
 
 function enableDarkMode() {
-  document.body.classList.add("dark-mode");
+  document.documentElement.classList.add("dark-mode");
   localStorage.setItem("theme", "dark");
 }
 function disableDarkMode() {
-  document.body.classList.remove("dark-mode");
+  document.documentElement.classList.remove("dark-mode");
   localStorage.setItem("theme", "light");
 }
 

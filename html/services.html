@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="My Site">
+    <script>
+      (function () {
+        let theme = localStorage.getItem("theme");
+        if (!theme && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          theme = "dark";
+        }
+        if (theme === "dark") {
+          document.documentElement.classList.add("dark-mode");
+        }
+      })();
+    </script>
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/oswald-v53-latin-regular.woff2">
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/oswald-v53-latin-500.woff2">
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/oswald-v53-latin-600.woff2">
@@ -63,7 +74,7 @@
                 <path style="fill:#FAF2AF;" d="M346.688,89.104c10.205,5.892,19.176,9.46,27.546-5.038c4.065-7.041,14.598-44.39,4.393-50.282 c-10.205-5.892-37.284,21.904-41.349,28.945C328.908,77.228,336.483,83.213,346.688,89.104z"></path>
                 <path style="fill:#FAF2AF;" d="M369.701,135.164l-0.743,0.742l-3.381,3.381L135.164,369.701 c-2.474-2.474-4.783-4.948-7.092-7.587c-6.185-7.009-11.793-14.514-16.741-22.513c-15.668-25.318-24.74-55.171-24.74-87.168 c0-91.621,74.221-165.842,165.842-165.842c29.936,0,58.057,7.917,82.385,21.936C347.6,115.784,359.31,124.773,369.701,135.164z"></path>
               </svg>
-              
+
               <svg id="svg-moon" fill="#000000" height="32" width="32" viewBox="0 0 36 36">
                 <path d="M29.2,26.72A12.07,12.07,0,0,1,22.9,4.44,13.68,13.68,0,0,0,19.49,4a14,14,0,0,0,0,28,13.82,13.82,0,0,0,10.9-5.34A11.71,11.71,0,0,1,29.2,26.72Z" class="clr-i-solid clr-i-solid-path-1"></path>
               </svg>

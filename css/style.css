@@ -13,7 +13,7 @@
   .decorative-side-svg {
     display: none;
     position: absolute;
-    fill: var(--clr-blue-300);
+    fill: var(--clr-blue-200);
     right: -350px;
     top: -30px;
     width: 400px;
@@ -82,10 +82,11 @@
 
     .services-card__svg-box {
       position: absolute;
-      transform: translate(10px, -65px);
       height: 85px;
       width: 85px;
       background-color: var(--clr-blue-200);
+      top: -45px;
+      left: 40px;
       border-radius: 1rem;
       display: grid;
       place-items: center;
@@ -350,6 +351,10 @@
         width: 50%;
         margin-top: 4rem;
         margin-bottom: 4rem;
+      }
+
+      .banner-overlay {
+        display: none;
       }
     }
   }

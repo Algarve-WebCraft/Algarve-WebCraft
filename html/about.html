@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="My Site">
+    <script>
+      (function () {
+        let theme = localStorage.getItem("theme");
+        if (!theme && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          theme = "dark";
+        }
+        if (theme === "dark") {
+          document.documentElement.classList.add("dark-mode");
+        }
+      })();
+    </script>
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/oswald-v53-latin-regular.woff2">
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/oswald-v53-latin-500.woff2">
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/oswald-v53-latin-600.woff2">
@@ -80,7 +91,7 @@
             </button>
           </div>
 
-          <nav class="nav-bar"> 
+          <nav class="nav-bar">
             <ul>
               <li><a href="../index.html">Home</a></li>
               <li><a href="about.html">About Us</a></li>
@@ -157,7 +168,7 @@
 
       <footer id="footer">
         <svg class="footer__svg-page-decoration" viewBox="0 0 1440 150" aria-hidden="true">
-          <path d="M0,0 C300,100 600,0 900,100 C1200,200 1440,0 1440,0 L1440,150 L0,150 Z"/>
+          <path d="M0,0 C300,100 600,0 900,100 C1200,200 1440,0 1440,0 L1440,150 L0,150 Z" />
         </svg>
 
         <div class="wrapper wrapper--mobile-S">
