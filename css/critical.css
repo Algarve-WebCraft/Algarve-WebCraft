@@ -100,7 +100,7 @@
     -ms-text-size-adjust: none;
 
     --fs-sub-text: 0.8rem;
-    --fs-body-text: clamp(1rem, 1.5vw, 1.2rem);
+    --fs-body-text: clamp(1rem, 1.5vw, 1.1rem);
     --fs-text-heading: clamp(1.25rem, 1.5vw, 1.5rem);
     --fs-topper-heading: clamp(0.8rem, 1.5vw, 1rem);
     --fs-sub-heading: clamp(2rem, 3.5vw, 3rem);
@@ -147,9 +147,9 @@
       outline-offset: 2px;
     }
 
-    @media (prefers-reduced-motion: no-preference) {
+    /* @media (prefers-reduced-motion: no-preference) {
       scroll-behavior: smooth;
-    }
+    } */
   }
 
   .cmp-main-heading {
@@ -168,9 +168,10 @@
 
   .cmp-topper-heading {
     font-size: var(--fs-topper-heading);
+    position: relative;
     color: var(--text-topper-heading-gray);
     letter-spacing: 0.1em;
-    z-index: 10;
+    z-index: 999;
   }
 
   .cmp-main-heading,
@@ -224,7 +225,7 @@
     border: none;
     overflow: hidden;
     box-shadow: 3px 2px 4px var(--clr-blue-300);
-    transition: background-color 0.5s; 
+    transition: background-color 0.5s;
 
     &:hover {
       animation: rotate 0.7s ease-in-out both;
@@ -278,9 +279,9 @@
     transition: background-color 0.5s;
   }
 
-  /* @view-transition {
+  @view-transition {
     navigation: auto;
-  } */
+  }
 
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\      *** HEADER ***       \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
@@ -291,10 +292,10 @@
     top: 0;
     z-index: 1000;
 
-    /* &.sticking {            
+    &.sticking {
       position: sticky;
       animation: slideDown 1.2s ease-out forwards;
-    } */
+    }
   }
 
   .header__container {
@@ -406,7 +407,7 @@
     transform: translateY(-150%);
     /* prettier-ignore */
     transition: transform 1.2s linear(0, 1 44.7%, 0.898 51.8%, 0.874 55.1%, 0.866 58.4%, 0.888 64.3%, 1 77.4%, 0.98 84.5%, 1),
-                background-color .5s; 
+                background-color .5s;
 
     ul {
       color: var(--clr-lighter-black);
@@ -478,7 +479,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      transition: background-color .5s;
+      transition: background-color 0.5s;
     }
   }
 
@@ -568,10 +569,6 @@
       opacity: 1;
       animation: none;
     }
-  }
-
-  .main-btn--pg1-hero {
-    background-color: var(--bg-btn-active);
   }
 
   .main-btn--pg1-hero:first-of-type {

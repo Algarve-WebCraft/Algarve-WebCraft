@@ -10,7 +10,7 @@
     background-color: var(--clr-blue-200);
     height: clamp(12rem, 18vw, 18rem);
     margin-bottom: clamp(1rem, 8vw, 8rem);
-    transition: background-color .5s;
+    transition: background-color 0.5s;
   }
 
   .cmp-main-heading--other-pages {
@@ -25,7 +25,7 @@
     top: 100%;
     fill: var(--clr-blue-200);
     backface-visibility: hidden;
-    transition: fill .5s; 
+    transition: fill 0.5s;
   }
 }
 
@@ -33,6 +33,30 @@
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
   /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 2 / SECTION-ONE / WHO WE ARE ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+  .pg2-s1-who {
+    padding-block: var(--padd-60-100);
+  }
+
+  .who-text-image-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @media (width > 1000px) {
+      flex-direction: row;
+    }
+  }
+
+  .who-text-block {
+    @media (width > 1000px) {
+      max-width: 48%;
+    }
+  }
+
+  .cmp-main-text--pg2-s1 {
+    margin-top: 1rem;
+  }
 
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
   /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 2 / SECTION-TWO / PORTFOLIO ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
@@ -45,7 +69,133 @@
   /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 2 / SECTION-THREE / TESTIMONIALS ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
-  .cmp-topper-heading--pg2-s2 {
+  .pg1-s6-testimonials--pg2-s3 {
+    padding-top: 100px;
+  }
+
+  .cmp-topper-heading--pg2-s3::before {
+    position: relative;
+    content: "";
+    display: block;
+    margin-inline: auto;
+    background: var(--clr-gray-100);
+    height: 1px;
+    width: 60%;
+    margin-bottom: clamp(3.75rem, 8vw, 6.25rem);
+    opacity: 0.3;
     z-index: 999;
   }
+}
+
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 3 / SECTION-ONE / SERVICES ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+.pg3-s1-services {
+  padding-block: var(--padd-60-100);
+}
+
+.services-box-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @media (width > 1000px) {
+    flex-direction: row;
+  }
+}
+
+.services-box__text {
+  @media (width > 1000px) {
+    max-width: 48%;
+  }
+}
+
+.services-page-sub-heading {
+  position: relative;
+  display: inline-block;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 4px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    background: var(--clr-blue-100);
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 13.3rem;
+    box-decoration-break: clone;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 3s ease-in;
+    /* prettier-ignore */
+    transition-timing-function: linear(0, 0.007 1.4%, 0.029 2.9%, 0.117 6.2%, 0.231 9.3%, 0.61 18.6%, 0.716 21.6%, 0.803 24.4%, 0.875 27.2%, 0.934 30%, 0.981 32.9%, 1.017 35.9%, 1.054 41.4%, 1.064 47.8%, 1.005 76.2%, 1);
+  }
+
+  &:first-of-type::after {
+    @media (width > 470px) {
+      width: 100%;
+    }
+  }
+
+  &:last-of-type::after {
+    @media (width > 493px) {
+      width: 100%;
+    }
+  }
+
+  &.in-view::after {
+    transform: scaleX(1);
+  }
+}
+
+.services-page-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+
+  strong {
+    display: inline-block;
+    margin-bottom: 0.25rem;
+    transition: color 0.5s;
+  }
+}
+
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 3 / SECTION-TWO / APPROACH ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+.pg1-s2-approach--pg3-s2 {
+  background-color: var(--bg-primary-blue);
+  padding-block: var(--padd-60-100);
+}
+
+.cmp-topper-heading--pg3-s2,
+.cmp-sub-heading--pg3-s2,
+.cmp-main-text--pg3-s2,
+.text-block--pg3-s2,
+.cmp-text-heading--pg3-s2,
+.text-block-text--pg3-s2 {
+  color: var(--text-body-white);
+}
+
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 4 / SECTION-ONE / PRICING ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+.pg1-s5-pricing--pg4-s1 {
+  padding-block: var(--padd-60-100);
+}
+
+.cmp-topper-heading--pg4-s1::before {
+  height: 0px;
+  margin-bottom: 0;
+}
+
+.pricing-card-container--pg4-s1 {
+  animation-range: entry 0% cover 0%;
 }

@@ -162,6 +162,24 @@ document.getElementById(
   "year"
 ).innerHTML = `<strong>${copyrightSymbol} Copyright ${currentYear}</strong>`;
 
+/* Our services page heading underline draw */
+
+document.addEventListener("DOMContentLoaded", function () {
+  const headings = document.querySelectorAll(".services-page-sub-heading");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+        }
+      });
+    },
+    { threshold: 0.7, rootMargin: "0px 0px -100px 0px" }
+  );
+
+  headings.forEach((h) => observer.observe(h));
+});
+
 /* Dark-mode change */
 
 function enableDarkMode() {
