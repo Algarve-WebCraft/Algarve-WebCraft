@@ -136,13 +136,17 @@ html.dark-mode .services-page-list strong {
   transition: color 0.5s;
 }
 
+html.dark-mode .owner-image-box__text-box--pg2-s1 span {
+    color: var(--clr-blue-200);
+}
+
 html.dark-mode .banner-overlay {
   background-color: var(--clr-dark-theme-300);
   transition: background-color 0.5s, opacity 0.5s ease;
 }
 
 html.dark-mode .pricing-page-svg-decoration {
-  fill: var(--clr-dark-theme-200); 
+  fill: var(--clr-dark-theme-200);
   transition: fill 0.5s;
 }
 
@@ -171,7 +175,6 @@ html.dark-mode .glide__track {
 /*-- -------------------------- -->
 <---      Dark Mode Toggle      -->
 <--- -------------------------- -*/
-
 
 html.dark-mode #dark-mode-toggle #svg-sun {
   transform: translate(-50%, -50%);

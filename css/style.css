@@ -220,6 +220,7 @@
 
   .owner-image-box {
     position: relative;
+    height: fit-content;
 
     img {
       width: 100%;
@@ -229,7 +230,7 @@
 
     .owner-image-box__text-box {
       position: absolute;
-      bottom: 16rem;
+      bottom: 4rem;
       left: 3rem;
       background-color: var(--clr-blue-200);
       color: #fff;
@@ -244,10 +245,6 @@
         font-size: var(--fs-text-heading);
         font-family: var(--ff-headings-oswald);
       }
-    }
-
-    @media (width > 999px) {
-      max-width: 48%;
     }
   }
 

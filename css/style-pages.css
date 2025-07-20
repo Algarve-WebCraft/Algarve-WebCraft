@@ -199,6 +199,11 @@
   }
 }
 
+.owner-image-box__text-box--pg2-s1 {
+  background-color: #fff;
+  color: var(--clr-blue-200);
+}
+
 /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 3 / SECTION-TWO / APPROACH ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
 /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
@@ -246,16 +251,25 @@
 .pricing-page-svg-decoration {
   display: none;
   position: absolute;
-  width: 25rem;
   height: auto;
   top: 150px;
-  right: 40px;
   fill: #00000039;
   animation: autoRun 50s ease-in-out infinite;
   transition: fill 0.5s;
 
   @media (width > 760px) {
     display: unset;
+    width: 20rem;
+    right: -200px;
+  }
+
+  @media (width > 1000px) {
+    right: 30px;
+  }
+
+  @media (width > 1200px) {
+    width: 25rem;
+    right: 80px;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -308,7 +322,7 @@
 
 #terms-page,
 #privacy-page {
-  padding-block: clamp(1.5rem, 8vw, 2.5rem); 
+  padding-block: clamp(1.5rem, 8vw, 2.5rem);
 }
 
 .terms-privacy-pages-flex {
@@ -333,16 +347,16 @@
   margin-left: 1.5rem;
 
   li {
-    font-size: 1rem;;
-    margin-top: .5rem;
+    font-size: 1rem;
+    margin-top: 0.5rem;
   }
 }
 
 .terms-privacy-list {
-  margin-block: .75rem;
+  margin-block: 0.75rem;
   margin-left: 1rem;
 
   li {
-    margin-block: .5rem;
+    margin-block: 0.5rem;
   }
 }
