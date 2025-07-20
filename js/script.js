@@ -182,6 +182,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /* Dark-mode change */
 
+const darkModeButton = document.getElementById("dark-mode-toggle");
+
 function enableDarkMode() {
   document.documentElement.classList.add("dark-mode");
   localStorage.setItem("theme", "dark");
@@ -208,7 +210,10 @@ function detectColorScheme() {
 
 detectColorScheme();
 
-document.getElementById("dark-mode-toggle").addEventListener("click", () => {
+darkModeButton.addEventListener("click", () => {
+  const isPressed = darkModeButton.getAttribute("aria-pressed") === "true";
+  darkModeButton.setAttribute("aria-pressed", String(!isPressed));
+
   localStorage.getItem("theme") === "light"
     ? enableDarkMode()
     : disableDarkMode();

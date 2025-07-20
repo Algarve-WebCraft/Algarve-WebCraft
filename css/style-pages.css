@@ -35,13 +35,18 @@
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
   .pg2-s1-who {
-    padding-block: var(--padd-60-100);
+    padding-top: var(--padd-60-100);
+
+    @media (width > 1000px) {
+      padding-block: var(--padd-60-100);
+    }
   }
 
   .who-text-image-flex {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    align-items: center;
+    gap: 4rem;
 
     @media (width > 1000px) {
       flex-direction: row;
@@ -56,6 +61,35 @@
 
   .cmp-main-text--pg2-s1 {
     margin-top: 1rem;
+  }
+
+  .cmp-main-btn--pg2-s1 {
+    margin-top: 2rem;
+  }
+
+  .who-image-block {
+    position: relative;
+  }
+
+  .who-image-block__first-image {
+    width: 85%;
+    height: auto;
+    margin-left: auto;
+    border-radius: 2.5em;
+    box-shadow: 0 0 1rem var(--clr-gray-200);
+  }
+
+  .who-image-block__second-image-container {
+    position: absolute;
+    width: 45%;
+    bottom: 30px;
+    left: 10px;
+  }
+
+  .who-image-block__second-image {
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.75rem;
   }
 
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
@@ -188,6 +222,7 @@
 /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 .pg1-s5-pricing--pg4-s1 {
+  position: relative;
   padding-block: var(--padd-60-100);
 }
 
@@ -196,6 +231,118 @@
   margin-bottom: 0;
 }
 
+.cmp-main-text--pg4-s1 {
+  max-width: 65ch;
+  margin-top: 0.5rem;
+
+  span {
+    text-decoration: underline wavy;
+    text-decoration-color: var(--clr-blue-100);
+    text-decoration-thickness: 0.05rem;
+    text-underline-offset: 0.1em;
+  }
+}
+
+.pricing-page-svg-decoration {
+  display: none;
+  position: absolute;
+  width: 25rem;
+  height: auto;
+  top: 150px;
+  right: 40px;
+  fill: #00000039;
+  animation: autoRun 50s ease-in-out infinite;
+  transition: fill 0.5s;
+
+  @media (width > 760px) {
+    display: unset;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@keyframes slideAround {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(200px, 400px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
 .pricing-card-container--pg4-s1 {
   animation-range: entry 0% cover 0%;
+}
+
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 5 / SECTION-ONE / CONTACT ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+.pg5-s1-contact {
+  padding-block: var(--padd-60-100);
+}
+
+.decorative-side-svg--pg5-s1 {
+  top: 200px;
+  right: -70px;
+  z-index: 999;
+}
+
+.main-text--pg5-s1 {
+  max-width: 65ch;
+
+  span {
+    text-decoration: underline wavy;
+    text-underline-offset: 0.2em;
+  }
+}
+
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* \\\\\\\\\\\\\\\\\\\\\\\      *** TERMS OF USE / PRIVACY POLICY ***       \\\\\\\\\\\\\\\\\\\\\\ */
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+#terms-page,
+#privacy-page {
+  padding-block: clamp(1.5rem, 8vw, 2.5rem); 
+}
+
+.terms-privacy-pages-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  @media (width > 1000px) {
+  }
+}
+
+.terms-privacy-section {
+  max-width: 70ch;
+}
+
+.cmp-sub-heading--terms-privacy {
+  font-size: 2rem;
+}
+
+.cmp-main-text--terms-privacy-nav__list {
+  list-style: decimal;
+  margin-left: 1.5rem;
+
+  li {
+    font-size: 1rem;;
+    margin-top: .5rem;
+  }
+}
+
+.terms-privacy-list {
+  margin-block: .75rem;
+  margin-left: 1rem;
+
+  li {
+    margin-block: .5rem;
+  }
 }

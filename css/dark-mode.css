@@ -22,7 +22,7 @@ a,
 span,
 .cmp-sub-heading,
 .cmp-topper-heading {
-  transition: color .5s transform 0.5s;
+  transition: color 0.5s transform 0.5s;
 }
 
 html.dark-mode p,
@@ -34,8 +34,13 @@ html.dark-mode a,
 html.dark-mode span,
 html.dark-mode .cmp-sub-heading,
 html.dark-mode .cmp-topper-heading {
-  color: var(--bodyTextWhite); 
-  transition: color .5s transform 0.5s;
+  color: var(--bodyTextWhite);
+  transition: color 0.5s transform 0.5s;
+}
+
+html.dark-mode .who-image-block__image {
+  box-shadow: 0 0 1rem #ffffff9b;
+  transition: box-shadow 0.5s;
 }
 
 html.dark-mode .cmp-topper-heading {
@@ -47,7 +52,7 @@ html.dark-mode .pg1-s2-approach,
 html.dark-mode .pg1-s4-portfolio,
 html.dark-mode .pg1-s5-pricing,
 html.dark-mode #footer,
-html.dark-mode .cmp-svg-pages-decoration { 
+html.dark-mode .cmp-svg-pages-decoration {
   background-color: var(--clr-dark-theme-300);
   transition: background-color 0.5s;
 }
@@ -127,18 +132,23 @@ html.dark-mode .services-card {
 }
 
 html.dark-mode .services-page-list strong {
-    color: var(--clr-blue-100);
-    transition: color 0.5s; 
-} 
+  color: var(--clr-blue-100);
+  transition: color 0.5s;
+}
 
 html.dark-mode .banner-overlay {
   background-color: var(--clr-dark-theme-300);
   transition: background-color 0.5s, opacity 0.5s ease;
 }
 
+html.dark-mode .pricing-page-svg-decoration {
+  fill: var(--clr-dark-theme-200); 
+  transition: fill 0.5s;
+}
+
 html.dark-mode .pricing-card {
   background-color: var(--clr-dark-theme-400);
-  box-shadow: 0 0 10px var(--clr-dark-theme-200); 
+  box-shadow: 0 0 10px var(--clr-dark-theme-200);
   transition: background-color 0.5s;
 }
 
@@ -158,16 +168,10 @@ html.dark-mode .glide__track {
   }
 }
 
-.dark {
-  /* class used to hide elements that only need to be seen when dark mode is enabled */
-  display: none;
-}
-
 /*-- -------------------------- -->
 <---      Dark Mode Toggle      -->
 <--- -------------------------- -*/
 
-/* Mobile */
 
 html.dark-mode #dark-mode-toggle #svg-sun {
   transform: translate(-50%, -50%);

@@ -192,10 +192,8 @@
 
   .approach-fees-heading-span {
     display: inline-block;
-    text-decoration: underline;
-    text-decoration-style: wavy;
-    text-decoration-thickness: .15rem;
-    text-decoration-color: var(--clr-blue-100);
+    text-decoration: underline wavy .15rem var(--clr-blue-100);
+    text-underline-offset: 0.15em;
   }
 
   .text-block {
