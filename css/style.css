@@ -219,9 +219,30 @@
   }
 
   .owner-image-box {
+    position: relative;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 7rem;
+    }
+
     .owner-image-box__text-box {
+      position: absolute;
+      bottom: 16rem;
+      left: 3rem;
+      background-color: var(--clr-blue-200);
+      color: #fff;
+      padding: 1.5em 2em;
+      border-radius: 1rem;
+
       span {
         display: block;
+      }
+
+      span:first-of-type {
+        font-size: var(--fs-text-heading);
+        font-family: var(--ff-headings-oswald);
       }
     }
 
