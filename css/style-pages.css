@@ -1,5 +1,6 @@
 @layer components {
   .cmp-main-heading--other-pages {
+    margin-top: clamp(4rem, 10vw, 9rem);
     text-align: center;
   }
 
@@ -11,10 +12,6 @@
     height: clamp(12rem, 18vw, 18rem);
     margin-bottom: clamp(1rem, 8vw, 8rem);
     transition: background-color 0.5s;
-  }
-
-  .cmp-main-heading--other-pages {
-    margin-top: clamp(4rem, 10vw, 9rem);
   }
 
   .cmp-svg-pages-decoration__svg {
@@ -31,7 +28,7 @@
 
 @layer base {
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
-  /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 2 / SECTION-ONE / WHO WE ARE ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
+  /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 2 / SECTION-ONE / ABOUT ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
   .pg2-s1-who {
@@ -104,259 +101,339 @@
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
   .pg1-s6-testimonials--pg2-s3 {
-    padding-top: 100px;
+    padding-top: 200px;
   }
 
-  .cmp-topper-heading--pg2-s3::before {
+  /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+  /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 3 / SECTION-ONE / SERVICES ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
+  /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+  .pg3-s1-services {
+    padding-block: var(--padd-60-100);
+  }
+
+  .services-box-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @media (width > 1000px) {
+      flex-direction: row;
+    }
+  }
+
+  .services-box__text {
+    @media (width > 1000px) {
+      max-width: 48%;
+    }
+  }
+
+  .services-page-sub-heading {
     position: relative;
-    content: "";
-    display: block;
-    margin-inline: auto;
-    background: var(--clr-gray-100);
-    height: 1px;
-    width: 60%;
-    margin-bottom: clamp(3.75rem, 8vw, 6.25rem);
-    opacity: 0.3;
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 4px;
+    line-height: 1.4em;
+    text-decoration: underline;
+    text-decoration-color: var(--clr-blue-100);
+    text-underline-offset: 0.28em;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background: var(--clr-blue-100);
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0;
+      box-decoration-break: clone;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 3s ease-in;
+      /* prettier-ignore */
+      transition-timing-function: linear(0, 0.007 1.4%, 0.029 2.9%, 0.117 6.2%, 0.231 9.3%, 0.61 18.6%, 0.716 21.6%, 0.803 24.4%, 0.875 27.2%, 0.934 30%, 0.981 32.9%, 1.017 35.9%, 1.054 41.4%, 1.064 47.8%, 1.005 76.2%, 1);
+
+      @media (width > 500px) {
+        width: 100%; /* Only show moving underline on bigger screens */
+      }
+    }
+
+    &.in-view::after {
+      transform: scaleX(1);
+    }
+
+    @media (width > 500px) {
+      text-decoration: unset;
+      line-height: 1.1em;
+    }
+  }
+
+  .services-page-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+
+    strong {
+      display: inline-block;
+      margin-bottom: 0.25rem;
+      transition: color 0.5s;
+    }
+  }
+
+  /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+  /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 3 / SECTION-TWO / MISSION ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
+  /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+  .pg1-s2-mission--pg3-s2 {
+    background-color: var(--bg-primary-blue);
+    padding-block: var(--padd-60-100);
+  }
+
+  .cmp-topper-heading--pg3-s2,
+  .cmp-sub-heading--pg3-s2,
+  .cmp-main-text--pg3-s2,
+  .text-block--pg3-s2,
+  .text-block-text--pg3-s2,
+  .cmp-text-heading--pg3-s2,
+  .cards-text {
+    color: var(--text-body-white);
+  }
+
+  .decorative-side-svg {
+    fill: var(--clr-blue-150);
+  }
+
+  .services-card--pg3-s2 {
+    background-color: var(--bg-primary-blue);
+
+    .services-card__svg-box {
+      background-color: var(--clr-lighter-white);
+      box-shadow: -8px 8px 30px #000000a5;
+
+      svg {
+        fill: #000;
+      }
+    }
+
+    &:hover {
+      background-color: var(--clr-lighter-white);
+
+      h3,
+      p {
+        color: var(--clr-gray-200);
+      }
+
+      svg {
+        fill: #fff;
+      }
+    }
+
+    &:hover .services-card__svg-box {
+      background-color: var(--clr-blue-200);
+    }
+  }
+
+  /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+  /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 3 / SECTION-THREE / APPROACH ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
+  /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+  .pg1-s1-approach--pg3-s3 {
+    padding-top: var(--padd-60-100);
+  }
+
+  /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+  /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 4 / SECTION-ONE / PRICING ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
+  /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+  .pg1-s5-pricing--pg4-s1 {
+    position: relative;
+    padding-block: var(--padd-60-100);
+  }
+
+  .cmp-topper-heading--pg4-s1::before {
+    height: 0px;
+    margin-bottom: 0;
+  }
+
+  .cmp-main-text--pg4-s1 {
+    max-width: 65ch;
+    margin-top: 0.5rem;
+
+    span {
+      text-decoration: underline wavy;
+      text-decoration-color: var(--clr-blue-100);
+      text-decoration-thickness: 0.05rem;
+      text-underline-offset: 0.1em;
+    }
+  }
+
+  .pricing-page-svg-decoration {
+    display: none;
+    position: absolute;
+    height: auto;
+    top: 150px;
+    fill: #00000039;
+    animation: autoRun 50s ease-in-out infinite;
+    transition: fill 0.5s;
+
+    @media (width > 760px) {
+      display: unset;
+      width: 20rem;
+      right: -200px;
+    }
+
+    @media (width > 1000px) {
+      right: 30px;
+    }
+
+    @media (width > 1200px) {
+      width: 25rem;
+      right: 80px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+  }
+
+  @keyframes slideAround {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    50% {
+      transform: translate(200px, 400px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+
+  .pricing-card-container--pg4-s1 {
+    animation-range: entry 0% cover 0%;
+  }
+
+  /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+  /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 5 / SECTION-ONE / CONTACT ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
+  /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+  #main {
+    overflow: hidden;
+  }
+
+  .pg5-s1-contact {
+    padding-block: var(--padd-60-100);
+    text-align: center;
+
+    @media (width > 760px) {
+      text-align: unset;
+    }
+  }
+
+  .decorative-side-svg--pg5-s1 {
+    fill: var(--clr-blue-200);
+    top: 200px;
+    right: -200px;
     z-index: 999;
   }
-}
 
-/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
-/* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 3 / SECTION-ONE / SERVICES ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
-/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+  .cmp-sub-heading--pg5-s1 {
+    margin-inline: auto;
 
-.pg3-s1-services {
-  padding-block: var(--padd-60-100);
-}
-
-.services-box-flex {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-
-  @media (width > 1000px) {
-    flex-direction: row;
-  }
-}
-
-.services-box__text {
-  @media (width > 1000px) {
-    max-width: 48%;
-  }
-}
-
-.services-page-sub-heading {
-  position: relative;
-  display: inline-block;
-  font-size: 1.5rem;
-  margin-top: 2rem;
-  margin-bottom: 1.2rem;
-  padding-bottom: 4px;
-
-  &::after {
-    content: "";
-    position: absolute;
-    background: var(--clr-blue-100);
-    left: 0;
-    bottom: 0;
-    height: 2px;
-    width: 13.3rem;
-    box-decoration-break: clone;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 3s ease-in;
-    /* prettier-ignore */
-    transition-timing-function: linear(0, 0.007 1.4%, 0.029 2.9%, 0.117 6.2%, 0.231 9.3%, 0.61 18.6%, 0.716 21.6%, 0.803 24.4%, 0.875 27.2%, 0.934 30%, 0.981 32.9%, 1.017 35.9%, 1.054 41.4%, 1.064 47.8%, 1.005 76.2%, 1);
-  }
-
-  &:first-of-type::after {
-    @media (width > 470px) {
-      width: 100%;
+    @media (width > 760px) {
+      margin-inline: unset;
     }
   }
 
-  &:last-of-type::after {
-    @media (width > 493px) {
-      width: 100%;
+  .main-text--pg5-s1 {
+    max-width: 65ch;
+  }
+
+  .contact-page-contact-box {
+    margin-top: 3rem;
+  }
+
+  .contact-page-contact-box__list-flex {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    width: fit-content;
+    margin-top: 2rem;
+    list-style: none;
+    text-align: left;
+
+    svg {
+      fill: var(--clr-dark-theme-100);
+      width: 2rem;
+      transition: 0.5s ease-in-out;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+    }
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &:hover svg {
+      transform: scale(2.25);
+      transition: transform 0.5s ease-in-out fill 0.5s;
     }
   }
 
-  &.in-view::after {
-    transform: scaleX(1);
-  }
-}
+  /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+  /* \\\\\\\\\\\\\\\\\\\\\\\      *** TERMS OF USE / PRIVACY POLICY ***       \\\\\\\\\\\\\\\\\\\\\\ */
+  /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
-.services-page-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  list-style: none;
-
-  strong {
-    display: inline-block;
-    margin-bottom: 0.25rem;
-    transition: color 0.5s;
-  }
-}
-
-.owner-image-box__text-box--pg2-s1 {
-  background-color: #fff;
-  color: var(--clr-blue-200);
-}
-
-/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
-/* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 3 / SECTION-TWO / APPROACH ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
-/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
-
-.pg1-s2-approach--pg3-s2 {
-  background-color: var(--bg-primary-blue);
-  padding-block: var(--padd-60-100);
-}
-
-.cmp-topper-heading--pg3-s2,
-.cmp-sub-heading--pg3-s2,
-.cmp-main-text--pg3-s2,
-.text-block--pg3-s2,
-.cmp-text-heading--pg3-s2,
-.text-block-text--pg3-s2 {
-  color: var(--text-body-white);
-}
-
-/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
-/* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 4 / SECTION-ONE / PRICING ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
-/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
-
-.pg1-s5-pricing--pg4-s1 {
-  position: relative;
-  padding-block: var(--padd-60-100);
-}
-
-.cmp-topper-heading--pg4-s1::before {
-  height: 0px;
-  margin-bottom: 0;
-}
-
-.cmp-main-text--pg4-s1 {
-  max-width: 65ch;
-  margin-top: 0.5rem;
-
-  span {
-    text-decoration: underline wavy;
-    text-decoration-color: var(--clr-blue-100);
-    text-decoration-thickness: 0.05rem;
-    text-underline-offset: 0.1em;
-  }
-}
-
-.pricing-page-svg-decoration {
-  display: none;
-  position: absolute;
-  height: auto;
-  top: 150px;
-  fill: #00000039;
-  animation: autoRun 50s ease-in-out infinite;
-  transition: fill 0.5s;
-
-  @media (width > 760px) {
-    display: unset;
-    width: 20rem;
-    right: -200px;
+  #terms-page,
+  #privacy-page {
+    padding-block: clamp(1.5rem, 8vw, 2.5rem);
   }
 
-  @media (width > 1000px) {
-    right: 30px;
+  .terms-privacy-pages-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    @media (width > 1000px) {
+    }
   }
 
-  @media (width > 1200px) {
-    width: 25rem;
-    right: 80px;
+  .terms-privacy-section {
+    max-width: 70ch;
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    animation: none;
+  .cmp-sub-heading--terms-privacy {
+    font-size: 2rem;
   }
-}
 
-@keyframes slideAround {
-  0% {
-    transform: translate(0px, 0px);
+  .cmp-main-text--terms-privacy-nav__list {
+    list-style: decimal;
+    margin-left: 1.5rem;
+
+    li {
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
   }
-  50% {
-    transform: translate(200px, 400px);
-  }
-  100% {
-    transform: translate(0px, 0px);
-  }
-}
 
-.pricing-card-container--pg4-s1 {
-  animation-range: entry 0% cover 0%;
-}
+  .terms-privacy-list {
+    margin-block: 0.75rem;
+    margin-left: 1rem;
 
-/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
-/* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 5 / SECTION-ONE / CONTACT ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
-/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
-
-.pg5-s1-contact {
-  padding-block: var(--padd-60-100);
-}
-
-.decorative-side-svg--pg5-s1 {
-  top: 200px;
-  right: -70px;
-  z-index: 999;
-}
-
-.main-text--pg5-s1 {
-  max-width: 65ch;
-
-  span {
-    text-decoration: underline wavy;
-    text-underline-offset: 0.2em;
-  }
-}
-
-/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
-/* \\\\\\\\\\\\\\\\\\\\\\\      *** TERMS OF USE / PRIVACY POLICY ***       \\\\\\\\\\\\\\\\\\\\\\ */
-/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
-
-#terms-page,
-#privacy-page {
-  padding-block: clamp(1.5rem, 8vw, 2.5rem);
-}
-
-.terms-privacy-pages-flex {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-
-  @media (width > 1000px) {
-  }
-}
-
-.terms-privacy-section {
-  max-width: 70ch;
-}
-
-.cmp-sub-heading--terms-privacy {
-  font-size: 2rem;
-}
-
-.cmp-main-text--terms-privacy-nav__list {
-  list-style: decimal;
-  margin-left: 1.5rem;
-
-  li {
-    font-size: 1rem;
-    margin-top: 0.5rem;
-  }
-}
-
-.terms-privacy-list {
-  margin-block: 0.75rem;
-  margin-left: 1rem;
-
-  li {
-    margin-block: 0.5rem;
+    li {
+      margin-block: 0.5rem;
+    }
   }
 }

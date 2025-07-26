@@ -122,7 +122,7 @@
     --clr-gray-100: #707070;
     --clr-gray-200: #4e4b66;
     --clr-blue-100: #43b7ff;
-    --clr-blue-150: #43b7ffcb;
+    --clr-blue-150: #1469d9;
     --clr-blue-200: #001f3f;
     --clr-blue-300: #111926;
     --clr-navigation-shadow: hsla(0, 0%, 27%, 0.3);
@@ -130,17 +130,13 @@
     --bg-primary-blue: var(--clr-blue-200);
     --bg-btn: var(--clr-blue-200);
     --bg-btn-active: var(--clr-blue-100);
-    --bg-svg-decorations: var(--clr-blue-150);
+    --bg-svg-decorations: var(--clr-blue-100);
 
-    --text-main-heading-white: var(--clr-lighter-white);
-    --text-card-white: var(--clr-lighter-white);
     --text-body-white: var(--clr-lighter-white);
     --text-sub-heading-black: var(--clr-lighter-black);
     --text-topper-heading-gray: var(--clr-gray-100);
-    --text-primary-light: var(--clr-blue-100);
     --text-primary: var(--clr-gray-200);
     --text-primary-dark: var(--clr-blue-200);
-    --text-card-heading: var(--clr-blue-300);
 
     :focus-visible {
       outline: 2px solid var(--clr-blue-200);
@@ -155,7 +151,7 @@
   .cmp-main-heading {
     font-size: var(--fs-heading);
     font-weight: 600;
-    color: var(--text-main-heading-white);
+    color: var(--clr-lighter-white);
     max-width: 19ch;
     margin-inline: auto;
   }

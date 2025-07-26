@@ -13,29 +13,25 @@ html.dark-mode .pg1-s3-performance {
   transition: background-color 0.5s;
 }
 
-p,
-li,
-h1,
-h2,
-h3,
-a,
-span,
-.cmp-sub-heading,
-.cmp-topper-heading {
-  transition: color 0.5s transform 0.5s;
-}
-
 html.dark-mode p,
 html.dark-mode li,
 html.dark-mode h1,
 html.dark-mode h2,
 html.dark-mode h3,
 html.dark-mode a,
-html.dark-mode span,
+html.dark-mode span:not(.pricing-card li span),
 html.dark-mode .cmp-sub-heading,
 html.dark-mode .cmp-topper-heading {
   color: var(--bodyTextWhite);
-  transition: color 0.5s transform 0.5s;
+  transition: color 0.5s, transform 0.5s;
+}
+
+html.dark-mode .nav-bar .active-link {
+  color: var(--clr-blue-100);
+
+  @media (width > 1000px) {
+    color: var(--bodyTextWhite);
+  }
 }
 
 html.dark-mode .who-image-block__image {
@@ -48,7 +44,7 @@ html.dark-mode .cmp-topper-heading {
 }
 
 html.dark-mode #pg1-hero,
-html.dark-mode .pg1-s2-approach,
+html.dark-mode .pg1-s2-mission,
 html.dark-mode .pg1-s4-portfolio,
 html.dark-mode .pg1-s5-pricing,
 html.dark-mode #footer,
@@ -64,7 +60,7 @@ html.dark-mode .pg1-s5-pricing--pg4-s1 {
   transition: transform 3s ease-in background-color 0.5s;
 }
 
-html.dark-mode .pg1-s2-approach {
+html.dark-mode .pg1-s2-mission {
   padding-top: var(--padd-60-100);
 }
 
@@ -105,11 +101,13 @@ html.dark-mode .main-btn--pg1-hero:last-of-type {
 }
 
 html.dark-mode .services-card {
+  background-color: var(--clr-dark-theme-400);
   box-shadow: -5px 5px 20px var(--clr-dark-theme-100);
+  transition: transform 0.5s, background-color 0.5s;
 
   .services-card__svg-box {
     background-color: transparent;
-    transition: transform 0.75s ease-out;
+    transition: transform 0.5s ease-out, background-color 0.5s;
   }
 
   &:hover {
@@ -118,7 +116,7 @@ html.dark-mode .services-card {
 
     .services-card__svg-box {
       transform: scale(1.8) rotate(360deg);
-      transition: transform 0.75s;
+      transition: transform 0.5s;
 
       @media (prefers-reduced-motion: reduce) {
         transform: none !important;
@@ -131,13 +129,24 @@ html.dark-mode .services-card {
   }
 }
 
+html.dark-mode .services-card--pg3-s2 {
+  .services-card__svg-box {
+    box-shadow: unset;
+  }
+
+  h3,
+  p {
+    color: var(--clr-lighter-white);
+  }
+
+  svg {
+    fill: #fff;
+  }
+}
+
 html.dark-mode .services-page-list strong {
   color: var(--clr-blue-100);
   transition: color 0.5s;
-}
-
-html.dark-mode .owner-image-box__text-box--pg2-s1 span {
-    color: var(--clr-blue-200);
 }
 
 html.dark-mode .banner-overlay {
@@ -156,10 +165,16 @@ html.dark-mode .pricing-card {
   transition: background-color 0.5s;
 }
 
+html.dark-mode .pricing-card:first-of-type {
+  li span {
+    color: var(--clr-blue-100);
+  }
+}
+
 html.dark-mode .pricing-card:last-of-type {
   background-color: var(--clr-dark-theme-300);
   border: 1px solid var(--clr-dark-theme-200);
-  box-shadow: 7px 7px 30px var(--clr-dark-theme-100);
+  box-shadow: 0 0 50px var(--clr-dark-theme-100);
 }
 
 html.dark-mode .glide__track {
@@ -169,6 +184,22 @@ html.dark-mode .glide__track {
 
   .glide__bullet {
     background-color: #ffffff76;
+  }
+}
+
+html.dark-mode .pg1-s2-mission--pg3-s2 {
+  background-color: var(--clr-dark-theme-300);
+  padding-block: var(--padd-60-100);
+}
+
+html.dark-mode .pg1-s1-approach--pg3-s3 {
+  background-color: var(--clr-dark-theme-400);
+}
+
+html.dark-mode .contact-page-contact-box__list-flex {
+  svg {
+    fill: var(--clr-dark-theme-200);
+    transition: transform 0.5s ease-in-out fill 0.5s;
   }
 }
 

@@ -1,11 +1,123 @@
 @layer base {
+  p,
+  li,
+  h1,
+  h2,
+  h3,
+  a,
+  span,
+  .cmp-sub-heading,
+  .cmp-topper-heading {
+    transition: color 0.5s, transform 0.5s;
+  }
+
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
-  /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 1 / SECTION-ONE / CARDS ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
+  /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 1 / SECTION-ONE / APPROACH ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
-  .pg1-s1-cards {
-    position: relative;
+  .pg1-s1-approach {
     padding-top: 2.5rem;
+    padding-bottom: var(--padd-60-100);
+  }
+
+  .pg1-s1-approach__flex {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+
+    @media (width > 999px) {
+      flex-direction: row;
+    }
+  }
+
+  .cmp-main-text--pg1-s1 {
+    margin-bottom: 1rem;
+  }
+
+  .text-block-container {
+    display: grid;
+    gap: clamp(1rem, 4vw, 2.5rem);
+
+    @media (width > 760px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (width > 999px) {
+      max-width: 48%;
+    }
+  }
+
+  .text-block-container__main-text {
+    @media (width > 760px) {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .approach-fees-heading-span {
+    display: inline-block;
+    text-decoration: underline wavy 0.15rem var(--clr-blue-100);
+    text-underline-offset: 0.15em;
+  }
+
+  .text-block {
+    p {
+      font-size: clamp(0.875rem, 2vw, 1rem);
+    }
+  }
+
+  .text-block__svg-heading {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+
+    svg {
+      fill: var(--bg-svg-decorations);
+    }
+  }
+
+  .cmp-main-btn--pg1-s1 {
+    position: relative;
+    margin-right: auto;
+    margin-top: 2rem;
+  }
+
+  .owner-image-box {
+    position: relative;
+    height: fit-content;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 7rem;
+      box-shadow: 0 0 1rem var(--clr-gray-200);
+    }
+
+    .owner-image-box__text-box {
+      position: absolute;
+      bottom: 3rem;
+      left: 3rem;
+      background-color: var(--clr-blue-200);
+      color: #fff;
+      padding: 1em 1.5em;
+      border-radius: 1rem;
+
+      span {
+        display: block;
+      }
+
+      span:first-of-type {
+        font-size: var(--fs-text-heading);
+        font-family: var(--ff-headings-oswald);
+      }
+    }
+  }
+
+  /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+  /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 1 / SECTION-TWO / MISSION ***       \\\\\\\\\\\\\\\\\\\\\\\\\ */
+  /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+  .pg1-s2-mission {
+    position: relative;
     padding-bottom: var(--padd-60-100);
     overflow-x: clip;
   }
@@ -44,7 +156,7 @@
     }
   }
 
-  .sub-heading--pg1-s1 {
+  .sub-heading--pg1-s2 {
     max-width: 22ch;
     margin-inline: auto;
 
@@ -53,7 +165,7 @@
     }
   }
 
-  .main-text--pg1-s1 {
+  .main-text--pg1-s2 {
     max-width: 65ch;
   }
 
@@ -75,6 +187,7 @@
   .services-card {
     position: relative;
     padding: 1.25em 1.5em;
+    background-color: var(--clr-lighter-white);
     border-radius: 1.5rem;
     text-align: left;
     box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.336);
@@ -120,6 +233,7 @@
     &:hover {
       background-color: var(--clr-blue-200);
       transform: translateX(-10px);
+      transition: transform 0.5, background-color 5s;
 
       .services-card__svg-box {
         background-color: var(--clr-blue-100);
@@ -145,107 +259,8 @@
     }
   }
 
-  .cmp-main-btn--pg1-s1 {
-    margin-top: 4rem;
-  }
-
-  /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
-  /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 1 / SECTION-TWO / APPROACH ***       \\\\\\\\\\\\\\\\\\\\\\\\\ */
-  /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
-
-  .pg1-s2-approach {
-    padding-bottom: var(--padd-60-100);
-  }
-
-  .pg1-s2-approach__flex {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-
-    @media (width > 999px) {
-      flex-direction: row;
-    }
-  }
-
-  .cmp-main-text--pg1-s2 {
-    margin-bottom: 1rem;
-  }
-
-  .text-block-container {
-    display: grid;
-    gap: clamp(1rem, 4vw, 2.5rem);
-
-    @media (width > 760px) {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    @media (width > 999px) {
-      max-width: 48%;
-    }
-  }
-
-  .text-block-container__main-text {
-    @media (width > 760px) {
-      grid-column: 1 / -1;
-    }
-  }
-
-  .approach-fees-heading-span {
-    display: inline-block;
-    text-decoration: underline wavy .15rem var(--clr-blue-100);
-    text-underline-offset: 0.15em;
-  }
-
-  .text-block {
-    p {
-      font-size: clamp(0.875rem, 2vw, 1rem);
-    }
-  }
-
-  .text-block__svg-heading {
-    display: flex;
-    gap: 0.75rem;
-    margin-bottom: 0.5rem;
-
-    svg {
-      fill: var(--bg-svg-decorations);
-    }
-  }
-
   .cmp-main-btn--pg1-s2 {
-    position: relative;
-    margin-right: auto;
-    margin-top: 2rem;
-  }
-
-  .owner-image-box {
-    position: relative;
-    height: fit-content;
-
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 7rem;
-    }
-
-    .owner-image-box__text-box {
-      position: absolute;
-      bottom: 4rem;
-      left: 3rem;
-      background-color: var(--clr-blue-200);
-      color: #fff;
-      padding: 1.5em 2em;
-      border-radius: 1rem;
-
-      span {
-        display: block;
-      }
-
-      span:first-of-type {
-        font-size: var(--fs-text-heading);
-        font-family: var(--ff-headings-oswald);
-      }
-    }
+    margin-top: 4rem;
   }
 
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
@@ -269,10 +284,7 @@
   }
 
   .performance-text-block__text-block {
-    @media (width > 760px) {
-      max-width: 50%;
-      order: 2;
-    }
+    order: 1;
   }
 
   .cmp-sub-heading--pg1-s3 {
@@ -341,6 +353,15 @@
 
   .performance-text-block__image-block {
     margin-top: 3rem;
+
+    img {
+      position: relative;
+      width: 100%;
+      height: auto;
+      border-radius: 1.5em;
+      box-shadow: 0 0 1rem white;
+      z-index: 999;
+    }
 
     @media (width > 760px) {
       max-width: 50%;
@@ -510,18 +531,14 @@
       font-size: var(--fs-card-heading);
       font-family: var(--ff-headings-oswald);
       font-weight: 700;
-      color: var(--text-card-heading);
+      color: var(--clr-blue-300);
       text-transform: uppercase;
       margin-bottom: 1.5rem;
       text-align: center;
     }
 
     p {
-      font-size: var(--fs-card-text);
-    }
-
-    .pricing-card__price-span {
-      color: var(--clr-blue-100) !important;
+      font-size: var(--clr-lighter-white);
     }
 
     ul {
@@ -533,22 +550,27 @@
       justify-content: space-between;
       margin-bottom: 0.75rem;
 
+      span {
+        color: var(--clr-blue-100);
+      }
+
       svg {
         margin-left: 1.25rem;
         fill: var(--bg-svg-decorations);
       }
     }
 
-    span:first-of-type {
+    &:first-child {
+      li span {
+        color: var(--clr-blue-150);
+      }
+    }
+
+    .pricing-card__main-price-span {
       font-size: 3rem;
       font-family: var(--ff-headings-oswald);
       font-weight: 900;
       color: var(--text-sub-heading-black);
-    }
-
-    span:last-of-type {
-      font-size: 1rem;
-      color: var(--text-primary);
     }
 
     a {
@@ -563,8 +585,9 @@
 
       h3,
       p,
-      span {
-        color: var(--text-card-white);
+      .pricing-card__main-price-span,
+      .pricing-card__secondary-price-span {
+        color: var(--clr-lighter-white);
       }
 
       a {
@@ -572,6 +595,10 @@
         color: var(--text-primary-dark);
       }
     }
+  }
+
+  .pricing-card span {
+    background-color: transparent;
   }
 
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
@@ -703,7 +730,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    font-size: var(--fs-card-text);
+    font-size: var(--clr-lighter-white);
     margin-top: 2.5rem;
     text-align: center;
 
