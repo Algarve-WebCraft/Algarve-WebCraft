@@ -26,6 +26,14 @@ html.dark-mode .cmp-topper-heading {
   transition: color 0.5s, transform 0.5s;
 }
 
+html.dark-mode .business-logo-container .logo-front {
+  transform: rotateY(0deg);
+}
+
+html.dark-mode .business-logo-container .logo-back {
+  transform: rotateY(180deg);
+}
+
 html.dark-mode .nav-bar .active-link {
   color: var(--clr-blue-100);
 
@@ -188,16 +196,16 @@ html.dark-mode .glide__track {
 }
 
 html.dark-mode .pg2-s1-who {
-  padding-bottom: var(--padd-60-100); 
+  padding-bottom: var(--padd-60-100);
 }
 
 html.dark-mode .pg1-s6-testimonials--pg2-s3 {
   padding-top: 12rem;
 
   .cmp-topper-heading--pg2-s3::before {
-    top: -1000%;  
+    top: -1000%;
     background: #fff;
-  } 
+  }
 
   @media (width > 47.5rem) {
     padding-top: 14rem;

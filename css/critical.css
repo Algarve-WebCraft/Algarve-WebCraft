@@ -115,9 +115,7 @@
 
     --padd-60-100: clamp(3.75rem, 8vw, 6.25rem);
 
-    --clr-white: #fff;
     --clr-lighter-white: #fafbfc;
-    --clr-black: #000;
     --clr-lighter-black: #1a1a1a;
     --clr-gray-100: #707070;
     --clr-gray-200: #4e4b66;
@@ -147,7 +145,7 @@
       scroll-behavior: smooth;
     }
   }
- 
+
   .cmp-main-heading {
     font-size: var(--fs-heading);
     font-weight: 600;
@@ -209,7 +207,7 @@
     font-family: var(--ff-headings-oswald);
     font-size: 1rem;
     font-weight: 600;
-    color: var(--clr-white);
+    color: #fff;
     background-color: var(--bg-btn);
     padding: 0.75em 3em;
     border-radius: 3em;
@@ -308,10 +306,30 @@
     align-items: center;
   }
 
-  .company-logo {
+  .business-logo-container {
+    position: relative;
     width: 25%;
-    max-width: 12.5rem;
     height: auto;
+    align-self: start;
+    top: 0.625rem;
+    perspective: 1000px;
+  }
+
+  .business-logo {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    backface-visibility: hidden;
+    transition: transform .5s ease-out;
+  }
+
+  .logo-front {
+    transform: rotateY(180deg);
+  }
+
+  .logo-back {
+    transform: rotateY(0deg);
+    z-index: 2;
   }
 
   .hamburger-btn-box {
@@ -352,19 +370,19 @@
       transform: scale(1.15);
 
       span:first-child {
-        transform: rotate(410deg) translate(.5rem, .44rem);
+        transform: rotate(410deg) translate(0.5rem, 0.44rem);
       }
       span:nth-child(2) {
         opacity: 0;
       }
       span:last-child {
-        transform: rotate(-410deg) translate(.5rem, -.44rem);
+        transform: rotate(-410deg) translate(0.5rem, -0.44rem);
       }
     }
 
     &:hover span,
     &:focus-visible span {
-      background: var(--clr-white);
+      background: #fff;
     }
 
     @media (width > 62.5rem) {
@@ -597,7 +615,7 @@
     bottom: -1px;
     transform: scaleX(-1);
     backface-visibility: hidden;
-    fill: var(--clr-white);
+    fill: #fff;
     transition: fill 0.5s;
   }
 }
