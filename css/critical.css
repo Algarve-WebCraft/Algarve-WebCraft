@@ -143,11 +143,11 @@
       outline-offset: 2px;
     }
 
-    /* @media (prefers-reduced-motion: no-preference) {
+    @media (prefers-reduced-motion: no-preference) {
       scroll-behavior: smooth;
-    } */
+    }
   }
-
+ 
   .cmp-main-heading {
     font-size: var(--fs-heading);
     font-weight: 600;
@@ -232,19 +232,19 @@
     &:after {
       background: var(--clr-lighter-white);
       content: "";
-      height: 150px;
-      width: 50px;
-      left: -50px;
+      height: 9.37rem;
+      width: 3.12rem;
+      left: -3.12rem;
       opacity: 0.4;
       position: absolute;
-      top: -100px;
+      top: -6.25rem;
       z-index: -10;
       transform: rotate(25deg) translateX(0);
       transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
     }
 
     &:hover:after {
-      transform: rotate(25deg) translateX(280px);
+      transform: rotate(25deg) translateX(17.5rem);
       transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
     }
 
@@ -310,7 +310,7 @@
 
   .company-logo {
     width: 25%;
-    max-width: 200px;
+    max-width: 12.5rem;
     height: auto;
   }
 
@@ -322,8 +322,8 @@
   }
 
   .hamburger-btn {
-    width: 30px;
-    height: 24px;
+    width: 1.87rem;
+    height: 1.5rem;
     background-color: var(--clr-blue-200);
     display: flex;
     flex-direction: column;
@@ -352,13 +352,13 @@
       transform: scale(1.15);
 
       span:first-child {
-        transform: rotate(410deg) translate(8px, 7px);
+        transform: rotate(410deg) translate(.5rem, .44rem);
       }
       span:nth-child(2) {
         opacity: 0;
       }
       span:last-child {
-        transform: rotate(-410deg) translate(8px, -7px);
+        transform: rotate(-410deg) translate(.5rem, -.44rem);
       }
     }
 
@@ -367,7 +367,7 @@
       background: var(--clr-white);
     }
 
-    @media (width > 1000px) {
+    @media (width > 62.5rem) {
       & {
         display: none;
       }
@@ -394,8 +394,8 @@
     padding: 2em;
     text-align: center;
     z-index: -1;
-    border-bottom-left-radius: 75px;
-    border-bottom-right-radius: 75px;
+    border-bottom-left-radius: 4.7rem;
+    border-bottom-right-radius: 4.7rem;
     box-shadow: 1px 1px 60px var(--clr-lighter-black);
     user-select: none;
     -webkit-user-select: none;
@@ -415,7 +415,7 @@
       margin-bottom: 0;
       list-style: none;
 
-      @media (width > 1000px) {
+      @media (width > 62.5rem) {
         & {
           font-size: var(--fs-nav-L-screen);
           flex-direction: row;
@@ -449,7 +449,7 @@
         color: var(--clr-blue-100) !important;
       }
 
-      @media (width > 1000px) {
+      @media (width > 62.5rem) {
         &.active-link {
           border-bottom: 2px solid var(--clr-blue-100);
           color: var(--clr-lighter-black);
@@ -457,7 +457,7 @@
       }
     }
 
-    @media (width > 1000px) {
+    @media (width > 62.5rem) {
       & {
         position: relative;
         margin-right: 7rem;
@@ -500,9 +500,9 @@
     overflow: hidden;
     transition: background-color 0.5s;
 
-    @media (width > 760px) {
+    @media (width > 47.5rem) {
       text-align: left;
-      padding-bottom: 10rem;
+      padding-bottom: 12rem;
     }
   }
 
@@ -511,7 +511,7 @@
     flex-direction: column;
     gap: clamp(4rem, 7vw, 8rem);
 
-    @media (width > 760px) {
+    @media (width > 47.5rem) {
       flex-direction: row;
     }
   }
@@ -528,7 +528,7 @@
     margin-inline: auto;
     margin-bottom: 1.75rem;
 
-    @media (width > 760px) {
+    @media (width > 47.5rem) {
       margin-inline: initial;
     }
   }
@@ -537,11 +537,11 @@
     display: flex;
     justify-content: center;
     position: relative;
-    bottom: 50px;
+    bottom: 3rem;
   }
 
   .hero__svg-main {
-    width: 200px;
+    width: 11rem;
     height: auto;
     fill: white;
     stroke: black;
@@ -551,14 +551,18 @@
     animation: rotate-diagonal-small-s 5s linear(0, 0.002 0.5%, 0.009 1%, 0.02 1.5%, 0.035 2%, 0.054 2.5%, 0.08 3.1%, 0.138 4.2%, 0.199 5.2%, 0.274 6.3%, 0.585 10.5%, 0.71 12.3%, 0.775 13.3%, 0.829 14.2%, 0.88 15.1%, 0.926 16%, 0.967 16.9%, 1.004 17.8%, 1.036 18.7%, 1.067 19.7%, 1.09 20.6%, 1.111 21.6%, 1.125 22.5%, 1.137 23.5%, 1.146 24.7%, 1.15 26%, 1.149 27.4%, 1.142 28.9%, 1.132 30.2%, 1.12 31.6%, 1.048 38.2%, 1.03 40%, 1.017 41.6%, 1.003 43.5%, 0.993 45.4%, 0.985 47.3%, 0.98 49.3%, 0.977 52%, 0.979 55.1%, 0.997 67.5%, 1.003 74.5%, 1.003 81%, 1) 3s 1 forwards,
       colorPulse 15s linear 3s infinite;
 
-    @media (width > 760px) {
+    @media (width > 47.5rem) {
       position: relative;
-      width: clamp(300px, 36vw, 450px);
-      bottom: 50px;
+      width: clamp(15.6rem, 30vw, 23rem);
+      left: 0;
       /* prettier-ignore */
       animation: 
         rotate-diagonal-large-s 10s linear(0, 0.002 0.5%, 0.009 1%, 0.02 1.5%, 0.035 2%, 0.054 2.5%, 0.08 3.1%,0.138 4.2%, 0.199 5.2%, 0.274 6.3%, 0.585 10.5%, 0.71 12.3%, 0.775 13.3%,0.829 14.2%, 0.88 15.1%, 0.926 16%, 0.967 16.9%, 1.004 17.8%, 1.036 18.7%,1.067 19.7%, 1.09 20.6%, 1.111 21.6%, 1.125 22.5%, 1.137 23.5%, 1.146 24.7%,1.15 26%, 1.149 27.4%, 1.142 28.9%, 1.132 30.2%, 1.12 31.6%, 1.048 38.2%,1.03 40%, 1.017 41.6%, 1.003 43.5%, 0.993 45.4%, 0.985 47.3%, 0.98 49.3%,0.977 52%, 0.979 55.1%, 0.997 67.5%, 1.003 74.5%, 1.003 81%, 1) 1 forwards,
         colorPulse 15s linear infinite;
+    }
+
+    @media (width > 81.25rem) {
+      left: 9rem;
     }
 
     @media (prefers-reduced-motion: reduce) {

@@ -127,7 +127,7 @@ const glideElement = document?.querySelector(".glide");
 if (glideElement) {
   const glide = new Glide(".glide", {
     type: "carousel",
-    autoplay: 5000,
+    autoplay: 10000,
     hoverpause: true,
   });
 

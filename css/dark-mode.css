@@ -29,7 +29,7 @@ html.dark-mode .cmp-topper-heading {
 html.dark-mode .nav-bar .active-link {
   color: var(--clr-blue-100);
 
-  @media (width > 1000px) {
+  @media (width > 62.5rem) {
     color: var(--bodyTextWhite);
   }
 }
@@ -151,7 +151,7 @@ html.dark-mode .services-page-list strong {
 
 html.dark-mode .banner-overlay {
   background-color: var(--clr-dark-theme-300);
-  transition: background-color 0.5s, opacity 0.5s ease;
+  transition: background-color 0.5s, opacity 0.5s;
 }
 
 html.dark-mode .pricing-page-svg-decoration {
@@ -187,13 +187,21 @@ html.dark-mode .glide__track {
   }
 }
 
-html.dark-mode .pg1-s2-mission--pg3-s2 {
-  background-color: var(--clr-dark-theme-300);
-  padding-block: var(--padd-60-100);
+html.dark-mode .pg2-s1-who {
+  padding-bottom: var(--padd-60-100); 
 }
 
-html.dark-mode .pg1-s1-approach--pg3-s3 {
-  background-color: var(--clr-dark-theme-400);
+html.dark-mode .pg1-s6-testimonials--pg2-s3 {
+  padding-top: 12rem;
+
+  .cmp-topper-heading--pg2-s3::before {
+    top: -1000%;  
+    background: #fff;
+  } 
+
+  @media (width > 47.5rem) {
+    padding-top: 14rem;
+  }
 }
 
 html.dark-mode .contact-page-contact-box__list-flex {
@@ -201,6 +209,14 @@ html.dark-mode .contact-page-contact-box__list-flex {
     fill: var(--clr-dark-theme-200);
     transition: transform 0.5s ease-in-out fill 0.5s;
   }
+}
+
+html.dark-mode .dark-mode-hidden {
+  display: none;
+}
+
+html.dark-mode .dark-mode-show {
+  display: block;
 }
 
 /*-- -------------------------- -->
