@@ -140,10 +140,6 @@
       outline: 2px solid var(--clr-blue-200);
       outline-offset: 2px;
     }
-
-    @media (prefers-reduced-motion: no-preference) {
-      scroll-behavior: smooth;
-    }
   }
 
   .cmp-main-heading {
@@ -320,7 +316,7 @@
     width: 200px;
     height: auto;
     backface-visibility: hidden;
-    transition: transform .5s ease-out;
+    transition: transform 0.5s ease-out;
 
     @media (prefers-reduced-motion: reduce) {
       transition: none !important;

@@ -1,3 +1,9 @@
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 @layer base {
   p,
   li,
@@ -505,7 +511,6 @@
   }
 
   .cmp-topper-heading--pg1-s4 {
-
     font-size: clamp(0.75rem, 2vw, 1.75rem);
     bottom: -30px;
 
