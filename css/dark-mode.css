@@ -199,19 +199,6 @@ html.dark-mode .pg2-s1-who {
   padding-bottom: var(--padd-60-100);
 }
 
-html.dark-mode .pg1-s6-testimonials--pg2-s3 {
-  padding-top: 12rem;
-
-  .cmp-topper-heading--pg2-s3::before {
-    top: -1000%;
-    background: #fff;
-  }
-
-  @media (width > 47.5rem) {
-    padding-top: 14rem;
-  }
-}
-
 html.dark-mode .contact-page-contact-box__list-flex {
   svg {
     fill: var(--clr-dark-theme-200);

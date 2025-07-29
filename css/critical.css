@@ -321,6 +321,10 @@
     height: auto;
     backface-visibility: hidden;
     transition: transform .5s ease-out;
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none !important;
+    }
   }
 
   .logo-front {
