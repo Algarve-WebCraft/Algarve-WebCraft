@@ -1,6 +1,6 @@
 "use strict";
 
-/* Navigation links and hamburger menu*/
+/* Navigation links and hamburger menu */
 
 const hamburgerBtn = document.querySelector(".hamburger-btn");
 const navBar = document.querySelector(".nav-bar");
@@ -180,6 +180,10 @@ document.addEventListener("DOMContentLoaded", function () {
   headings.forEach((h) => observer.observe(h));
 });
 
+/* Swup page navigation */
+
+const swup = new Swup();
+
 /* Dark-mode change */
 
 const darkModeButton = document.getElementById("dark-mode-toggle");
@@ -210,11 +214,27 @@ function detectColorScheme() {
 
 detectColorScheme();
 
+function switchTheme(newTheme) {
+  if (newTheme === "dark") {
+    enableDarkMode();
+  } else {
+    disableDarkMode();
+  }
+}
+
 darkModeButton.addEventListener("click", () => {
   const isPressed = darkModeButton.getAttribute("aria-pressed") === "true";
   darkModeButton.setAttribute("aria-pressed", String(!isPressed));
 
-  localStorage.getItem("theme") === "light"
-    ? enableDarkMode()
-    : disableDarkMode();
+  const currentTheme = localStorage.getItem("theme") || "light";
+  const newTheme = currentTheme === "light" ? "dark" : "light";
+
+  if (!document.startViewTransition) {
+    switchTheme(newTheme);
+    return;
+  }
+
+  document.startViewTransition(() => {
+    switchTheme(newTheme);
+  });
 });

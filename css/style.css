@@ -5,18 +5,6 @@
 }
 
 @layer base {
-  p,
-  li,
-  h1,
-  h2,
-  h3,
-  a,
-  span,
-  .cmp-sub-heading,
-  .cmp-topper-heading {
-    transition: color 0.5s, transform 0.5s;
-  }
-
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
   /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 1 / SECTION-ONE / APPROACH ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
@@ -231,7 +219,7 @@
       border-radius: 1rem;
       display: grid;
       place-items: center;
-      transition: background-color 0.5s;
+      transition: transform 0.5s, background-color 0.5s;
     }
 
     svg {
@@ -243,13 +231,11 @@
       font-size: clamp(1.25rem, 2vw, 1.5625rem);
       margin-top: 3rem;
       margin-bottom: 0.75rem;
-      transition: color 0.5s;
     }
 
     p {
       font-size: clamp(0.875rem, 2vw, 1rem);
       margin-bottom: 2rem;
-      transition: color 0.5s;
     }
 
     span {
@@ -265,7 +251,6 @@
 
       .services-card__svg-box {
         background-color: var(--clr-blue-100);
-        transition: background-color 0.5s;
       }
 
       svg {
@@ -298,7 +283,6 @@
   .pg1-s3-performance {
     background-color: var(--bg-primary-blue);
     padding-block: var(--padd-60-100);
-    transition: background-color 0.5s;
   }
 
   .performance-text-block__flex-container {
@@ -498,7 +482,7 @@
     opacity: 0;
     pointer-events: none;
     z-index: 10;
-    transition: background-color 0.5s, opacity 0.5s;
+    transition: opacity 0.75s ease-in-out;
   }
 
   .banner-overlay.active {
@@ -700,7 +684,6 @@
     padding-bottom: clamp(1.9rem, 5vw, 3.125rem);
     clip-path: inset(0px 0px 0px 0px);
     overflow: hidden;
-    transition: background-color 0.5s;
   }
 
   .footer__svg-page-decoration {
@@ -709,7 +692,6 @@
     top: -1px;
     transform: scaleX(-1) scaleY(-1);
     backface-visibility: hidden;
-    transition: fill 0.5s;
   }
 
   .footer-flex-container {

@@ -10,7 +10,6 @@
 html.dark-mode body,
 html.dark-mode .pg1-s3-performance {
   background-color: var(--clr-dark-theme-400);
-  transition: background-color .5s;
 }
 
 html.dark-mode p,
@@ -23,7 +22,6 @@ html.dark-mode span:not(.pricing-card li span),
 html.dark-mode .cmp-sub-heading,
 html.dark-mode .cmp-topper-heading {
   color: var(--bodyTextWhite);
-  transition: color 0.5s, transform 0.5s;
 }
 
 html.dark-mode .business-logo-container .logo-front {
@@ -44,7 +42,6 @@ html.dark-mode .nav-bar .active-link {
 
 html.dark-mode .who-image-block__image {
   box-shadow: 0 0 1rem #ffffff9b;
-  transition: box-shadow 0.5s;
 }
 
 html.dark-mode .cmp-topper-heading {
@@ -58,14 +55,12 @@ html.dark-mode .pg1-s5-pricing,
 html.dark-mode #footer,
 html.dark-mode .cmp-svg-pages-decoration {
   background-color: var(--clr-dark-theme-300);
-  transition: background-color 0.5s;
 }
 
 html.dark-mode .header__container,
 html.dark-mode .nav-bar,
 html.dark-mode .pg1-s5-pricing--pg4-s1 {
   background-color: var(--clr-dark-theme-400);
-  transition: transform 0.6s ease-in background-color 0.5s;
 }
 
 html.dark-mode .pg1-s2-mission {
@@ -79,24 +74,20 @@ html.dark-mode .header__container {
 html.dark-mode .hero__svg-page-decoration,
 html.dark-mode .footer__svg-page-decoration {
   fill: var(--clr-dark-theme-400);
-  transition: fill 0.5s;
 }
 
 html.dark-mode .cmp-svg-pages-decoration__svg {
   fill: var(--clr-dark-theme-300);
-  transition: fill 0.5s;
 }
 
 html.dark-mode .hamburger-btn,
 html.dark-mode .cmp-main-btn {
   background-color: var(--clr-dark-theme-200);
-  transition: transform 3s ease-in background-color 0.5s;
 }
 
 html.dark-mode .cmp-main-btn--light,
 html.dark-mode .cmp-main-btn-footer {
   background-color: var(--clr-dark-theme-50);
-  transition: background-color 0.5s;
 }
 
 html.dark-mode .decorative-side-svg {
@@ -111,11 +102,9 @@ html.dark-mode .main-btn--pg1-hero:last-of-type {
 html.dark-mode .services-card {
   background-color: var(--clr-dark-theme-400);
   box-shadow: -5px 5px 20px var(--clr-dark-theme-100);
-  transition: transform 0.5s, background-color 0.5s;
 
   .services-card__svg-box {
     background-color: transparent;
-    transition: transform 0.5s ease-out, background-color 0.5s;
   }
 
   &:hover {
@@ -154,23 +143,19 @@ html.dark-mode .services-card--pg3-s2 {
 
 html.dark-mode .services-page-list strong {
   color: var(--clr-blue-100);
-  transition: color 0.5s;
 }
 
 html.dark-mode .banner-overlay {
   background-color: var(--clr-dark-theme-300);
-  transition: background-color 0.5s, opacity 0.5s;
 }
 
 html.dark-mode .pricing-page-svg-decoration {
   fill: var(--clr-dark-theme-200);
-  transition: fill 0.5s;
 }
 
 html.dark-mode .pricing-card {
   background-color: var(--clr-dark-theme-400);
   box-shadow: 0 0 10px var(--clr-dark-theme-200);
-  transition: background-color 0.5s;
 }
 
 html.dark-mode .pricing-card:first-of-type {
@@ -202,7 +187,6 @@ html.dark-mode .pg2-s1-who {
 html.dark-mode .contact-page-contact-box__list-flex {
   svg {
     fill: var(--clr-dark-theme-200);
-    transition: transform 0.5s ease-in-out fill 0.5s;
   }
 }
 
@@ -239,10 +223,10 @@ html.dark-mode #dark-mode-toggle #svg-moon {
 
   svg {
     position: absolute;
-    transform: translate(-50%, -50%);
     width: 2rem;
     height: 2rem;
     pointer-events: none;
+    transform: translate(-50%, -50%);
   }
 
   #svg-moon {
@@ -255,6 +239,7 @@ html.dark-mode #dark-mode-toggle #svg-moon {
     transform: translate(-50%, 100%);
     opacity: 0;
     transition: transform 0.75s, opacity 0.5s;
+
     /* prettier-ignore */
     transition-timing-function: linear(0, 0.504 20.5%, 1 37.8%, 0.863 44.4%, 0.831 47.4%, 0.821 50.3%, 0.83 53%, 0.856 55.8%, 1 65.5%, 0.959 69.4%, 0.947 73.2%, 0.955 76.6%, 1 84.5%, 0.991 89.3%, 1);
   }

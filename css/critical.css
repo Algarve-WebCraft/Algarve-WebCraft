@@ -91,6 +91,31 @@
     src: url("../assets/fonts/oswald-v53-latin-700.woff2") format("woff2");
   }
 
+  /* Animation change for dark-mode */
+
+  html {
+    view-transition-name: theme;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    ::view-transition-old(theme) {
+      animation-delay: .55s;
+      will-change: opacity, background-color; 
+    }
+
+    ::view-transition-new(theme) {
+      animation: circle-in-S 0.5s ease-in;
+      will-change: opacity, background-color;
+    }
+
+    @media (width > 47.5rem) {
+      ::view-transition-new(theme) {
+        animation: circle-in-L 0.5s ease-in;
+        will-change: opacity, background-color;
+      }
+    }
+  }
+
   :root {
     text-size-adjust: none;
     -moz-text-size-adjust: none;
@@ -215,7 +240,7 @@
     border: none;
     overflow: hidden;
     box-shadow: 3px 2px 4px var(--clr-blue-300);
-    transition: background-color 0.5s;
+    /* transition: background-color 0.5s; */
 
     &:hover {
       animation: rotate 0.7s ease-in-out both;
@@ -234,12 +259,12 @@
       top: -6.25rem;
       z-index: -10;
       transform: rotate(25deg) translateX(0);
-      transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+      /* transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1); */
     }
 
     &:hover:after {
       transform: rotate(25deg) translateX(17.5rem);
-      transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+      /* transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1); */
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -266,11 +291,6 @@
     font-weight: 400;
     color: var(--text-primary);
     overflow-x: clip;
-    transition: background-color 0.5s;
-  }
-
-  @view-transition {
-    navigation: auto;
   }
 
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
@@ -292,7 +312,6 @@
     width: 100%;
     background-color: var(--clr-lighter-white);
     box-shadow: 1px 1px 25px var(--clr-navigation-shadow);
-    transition: background-color 0.5s;
   }
 
   .wrapper--header {
@@ -316,7 +335,7 @@
     width: 200px;
     height: auto;
     backface-visibility: hidden;
-    transition: transform 0.5s ease-out;
+    transition: transform 1.5s;
 
     @media (prefers-reduced-motion: reduce) {
       transition: none !important;
@@ -420,8 +439,7 @@
     -ms-user-select: none;
     transform: translateY(-150%);
     /* prettier-ignore */
-    transition: transform 1.2s linear(0, 1 44.7%, 0.898 51.8%, 0.874 55.1%, 0.866 58.4%, 0.888 64.3%, 1 77.4%, 0.98 84.5%, 1),
-                background-color .5s;
+    transition: transform 1.2s linear(0, 1 44.7%, 0.898 51.8%, 0.874 55.1%, 0.866 58.4%, 0.888 64.3%, 1 77.4%, 0.98 84.5%, 1);
 
     ul {
       color: var(--clr-lighter-black);
@@ -455,7 +473,6 @@
 
     a {
       text-decoration: none;
-      transition: color 0.35s;
 
       &.active-link {
         font-weight: bold;
@@ -491,10 +508,6 @@
         height: 0;
       }
     }
-
-    @media (prefers-reduced-motion: reduce) {
-      transition: background-color 0.5s;
-    }
   }
 
   .hamburger-btn__open {
@@ -516,7 +529,6 @@
     padding-top: clamp(6rem, 14vw, 8rem);
     clip-path: inset(0px 0px 0px 0px);
     overflow: hidden;
-    transition: background-color 0.5s;
 
     @media (width > 47.5rem) {
       text-align: left;
@@ -559,8 +571,10 @@
   }
 
   .hero__svg-main {
-    width: 11rem;
+    width: 8rem;
     height: auto;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
     fill: white;
     stroke: black;
     fill: var(--bg-svg-decorations);
@@ -572,6 +586,7 @@
     @media (width > 47.5rem) {
       position: relative;
       width: clamp(15.6rem, 30vw, 23rem);
+      margin-block: 0;
       left: 0;
       /* prettier-ignore */
       animation: 
@@ -616,6 +631,36 @@
     transform: scaleX(-1);
     backface-visibility: hidden;
     fill: #fff;
-    transition: fill 0.5s;
+  }
+}
+
+@layer animations {
+  @keyframes circle-in-L {
+    /* For larger screens */
+    from {
+      clip-path: circle(0% at 50% 0%);
+    }
+    to {
+      clip-path: circle(100% at 50% 0%);
+    }
+  }
+
+  @keyframes circle-in-S {
+    /* For mobile screens */
+    from {
+      clip-path: circle(0% at 50% 0%);
+    }
+    to {
+      clip-path: circle(130% at 50% 0%);
+    }
+  }
+
+  @keyframes circle-out {
+    from {
+      translate: 0 0;
+    }
+    to {
+      translate: -100% 0;
+    }
   }
 }
