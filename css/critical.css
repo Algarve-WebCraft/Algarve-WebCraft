@@ -58,6 +58,157 @@
   }
 }
 
+@layer page-transitions {
+  /* @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  } */
+
+  /* Animation change for dark-mode */
+
+  @media (prefers-reduced-motion: no-preference) {
+    ::view-transition-old(root) {
+      animation-delay: 0.5s;
+    }
+
+    ::view-transition-new(root) {
+      animation: circle-in-S 0.5s ease-out;
+    }
+
+    @media (width > 47.5rem) {
+      ::view-transition-new(root) {
+        animation: circle-in-L 0.5s ease-out;
+      }
+    }
+  }
+  /* SWUP animation changes */
+
+  @media (prefers-reduced-motion: no-preference) {
+    .transition-slide {
+      transform: translateX(0);
+      transition: 0.25s;
+    }
+
+    html.is-animating .transition-slide {
+      transform: translateX(100%);
+    }
+
+    html.is-leaving .transition-slide {
+      opacity: 0;
+    }
+
+    html.is-rendering .transition-slide {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+
+    .transition-reverse-slide-main {
+      transform: translateY(0);
+      transform-origin: left;
+      transition: 0.5s;
+      position: relative;
+    }
+
+    html.is-animating .transition-reverse-slide-main,
+    html.is-rendering .transition-reverse-slide-main {
+      transform: translateY(-70%);
+
+      @media (width > 47.5rem) {
+        transform: translateY(-55%);
+      }
+
+      @media (width > 62.5rem) {
+        transform: translateY(-40%);
+      }
+    }
+
+    .transition-reverse-slide {
+      transform: translateY(0);
+      transform-origin: left;
+      transition: 0.6s;
+      position: relative;
+    }
+
+    html.is-animating .transition-reverse-slide {
+      transform: translateY(100%);
+    }
+
+    html.is-leaving .transition-reverse-slide {
+      opacity: 0;
+    }
+
+    html.is-rendering .transition-reverse-slide {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+
+    .transition-fade {
+      opacity: 1;
+      transition: opacity 0.6s ease;
+    }
+
+    html.is-animating .transition-fade,
+    html.is-leaving .transition-fade,
+    html.is-rendering .transition-fade {
+      opacity: 0 !important;
+    }
+
+    .hero__image-main-container {
+      opacity: 1;
+      transition: opacity 0.6s ease;
+    }
+
+    html.is-leaving .hero__image-main-container {
+      opacity: 0;
+    }
+  }
+
+  /* Main page first-load animation changes */
+
+  @media (prefers-reduced-motion: no-preference) {
+    /*/* .loading is on the body to start and changed after 2s so all these styles are removed soon after loading */
+    .loading #header {
+      animation: header-slide-across 0.75s ease-out;
+    }
+
+    .loading .topper-heading--pg1-hero {
+      animation: headingSlideIn 0.75s ease-out 1.25s forwards;
+    }
+
+    .loading #hero-heading {
+      animation: headingSlideIn 0.5s ease-out 1s forwards;
+    }
+
+    .loading .hero-text {
+      animation: headingSlideIn 0.5s ease-out 1.25s forwards;
+    }
+
+    .loading .main-btn--pg1-hero:first-of-type {
+      opacity: 0;
+      animation: headingSlideIn 0.5s ease-out 1.5s forwards;
+    }
+
+    .loading .main-btn--pg1-hero:last-of-type {
+      opacity: 0;
+      animation: headingSlideIn 0.25s ease-out 1.75s forwards;
+    }
+
+    .topper-heading--pg1-hero,
+    .hero-text,
+    #hero-heading {
+      opacity: 0;
+    }
+
+    /*/* .loaded replaces .loading on body so these styles can remain for the rest of the session */
+    .loaded .topper-heading--pg1-hero,
+    .loaded .hero-text,
+    .loaded #hero-heading {
+      opacity: 1;
+    }
+  }
+}
+
 @layer components {
   @font-face {
     font-display: swap;
@@ -89,31 +240,6 @@
     font-style: normal;
     font-weight: 700;
     src: url("../assets/fonts/oswald-v53-latin-700.woff2") format("woff2");
-  }
-
-  /* Animation change for dark-mode */
-
-  html {
-    view-transition-name: theme;
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    ::view-transition-old(theme) {
-      animation-delay: .55s;
-      will-change: opacity, background-color; 
-    }
-
-    ::view-transition-new(theme) {
-      animation: circle-in-S 0.5s ease-in;
-      will-change: opacity, background-color;
-    }
-
-    @media (width > 47.5rem) {
-      ::view-transition-new(theme) {
-        animation: circle-in-L 0.5s ease-in;
-        will-change: opacity, background-color;
-      }
-    }
   }
 
   :root {
@@ -162,7 +288,7 @@
     --text-primary-dark: var(--clr-blue-200);
 
     :focus-visible {
-      outline: 2px solid var(--clr-blue-200);
+      outline: 2px solid var(--clr-blue-100);
       outline-offset: 2px;
     }
   }
@@ -240,7 +366,6 @@
     border: none;
     overflow: hidden;
     box-shadow: 3px 2px 4px var(--clr-blue-300);
-    /* transition: background-color 0.5s; */
 
     &:hover {
       animation: rotate 0.7s ease-in-out both;
@@ -259,12 +384,12 @@
       top: -6.25rem;
       z-index: -10;
       transform: rotate(25deg) translateX(0);
-      /* transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1); */
+      transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
     }
 
     &:hover:after {
       transform: rotate(25deg) translateX(17.5rem);
-      /* transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1); */
+      transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -323,19 +448,30 @@
 
   .business-logo-container {
     position: relative;
-    width: 25%;
+    min-width: 60%;
     height: auto;
     align-self: start;
-    top: 0.625rem;
+    top: 0.85rem;
     perspective: 1000px;
+
+    @media (width > 62.5rem) {
+      width: 25%;
+      min-width: unset;
+    }
   }
 
   .business-logo {
     position: absolute;
-    width: 200px;
+    width: 100%;
+    max-width: 10rem;
     height: auto;
     backface-visibility: hidden;
     transition: transform 1.5s;
+
+    @media (width > 62.5rem) {
+      width: 100%;
+      max-width: 12rem;
+    }
 
     @media (prefers-reduced-motion: reduce) {
       transition: none !important;
@@ -473,21 +609,38 @@
 
     a {
       text-decoration: none;
+      color: var(--clr-lighter-black);
+      transition: color 0.3s ease-out;
 
       &.active-link {
         font-weight: bold;
         color: var(--clr-blue-100);
       }
 
-      &:hover,
-      &:focus-visible {
+      &:hover {
         color: var(--clr-blue-100) !important;
+        transition: color 0.2s ease-out;
       }
 
       @media (width > 62.5rem) {
         &.active-link {
-          border-bottom: 2px solid var(--clr-blue-100);
+          position: relative;
           color: var(--clr-lighter-black);
+        }
+
+        &.active-link::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+          width: 0%;
+          height: 2px;
+          background-color: var(--clr-blue-100);
+          transition: width 0.6s ease-out;
+        }
+
+        &.active-link.animate-underline::after {
+          width: 100%;
         }
       }
     }
@@ -532,7 +685,7 @@
 
     @media (width > 47.5rem) {
       text-align: left;
-      padding-bottom: 12rem;
+      padding-bottom: 1.85rem;
     }
   }
 
@@ -544,6 +697,10 @@
     @media (width > 47.5rem) {
       flex-direction: row;
     }
+  }
+
+  .hero__text-container {
+    min-width: 50%;
   }
 
   .topper-heading--pg1-hero {
@@ -563,39 +720,62 @@
     }
   }
 
-  .hero__svg-main-container {
+  .hero__image-main-container {
+    position: relative;
     display: flex;
     justify-content: center;
-    position: relative;
-    bottom: 3rem;
+    align-items: center;
+    max-width: 100%;
+    bottom: 4rem;
+    animation: tilt 18s ease-out 5s infinite;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
   }
 
-  .hero__svg-main {
-    width: 8rem;
+  .hero__image-main {
+    display: none;
+    position: relative;
+    width: 100%;
+    max-width: 7rem;
     height: auto;
-    margin-top: 2rem;
+    object-fit: contain;
+    margin-top: 3rem;
     margin-bottom: 1rem;
-    fill: white;
-    stroke: black;
-    fill: var(--bg-svg-decorations);
     opacity: 0;
-    /* prettier-ignore */
-    animation: rotate-diagonal-small-s 5s linear(0, 0.002 0.5%, 0.009 1%, 0.02 1.5%, 0.035 2%, 0.054 2.5%, 0.08 3.1%, 0.138 4.2%, 0.199 5.2%, 0.274 6.3%, 0.585 10.5%, 0.71 12.3%, 0.775 13.3%, 0.829 14.2%, 0.88 15.1%, 0.926 16%, 0.967 16.9%, 1.004 17.8%, 1.036 18.7%, 1.067 19.7%, 1.09 20.6%, 1.111 21.6%, 1.125 22.5%, 1.137 23.5%, 1.146 24.7%, 1.15 26%, 1.149 27.4%, 1.142 28.9%, 1.132 30.2%, 1.12 31.6%, 1.048 38.2%, 1.03 40%, 1.017 41.6%, 1.003 43.5%, 0.993 45.4%, 0.985 47.3%, 0.98 49.3%, 0.977 52%, 0.979 55.1%, 0.997 67.5%, 1.003 74.5%, 1.003 81%, 1) 3s 1 forwards,
-      colorPulse 15s linear 3s infinite;
+    box-shadow: 20px 20px 20px -20px rgba(0, 0, 0, 0.786);
 
-    @media (width > 47.5rem) {
-      position: relative;
-      width: clamp(15.6rem, 30vw, 23rem);
-      margin-block: 0;
-      left: 0;
-      /* prettier-ignore */
-      animation: 
-        rotate-diagonal-large-s 10s linear(0, 0.002 0.5%, 0.009 1%, 0.02 1.5%, 0.035 2%, 0.054 2.5%, 0.08 3.1%,0.138 4.2%, 0.199 5.2%, 0.274 6.3%, 0.585 10.5%, 0.71 12.3%, 0.775 13.3%,0.829 14.2%, 0.88 15.1%, 0.926 16%, 0.967 16.9%, 1.004 17.8%, 1.036 18.7%,1.067 19.7%, 1.09 20.6%, 1.111 21.6%, 1.125 22.5%, 1.137 23.5%, 1.146 24.7%,1.15 26%, 1.149 27.4%, 1.142 28.9%, 1.132 30.2%, 1.12 31.6%, 1.048 38.2%,1.03 40%, 1.017 41.6%, 1.003 43.5%, 0.993 45.4%, 0.985 47.3%, 0.98 49.3%,0.977 52%, 0.979 55.1%, 0.997 67.5%, 1.003 74.5%, 1.003 81%, 1) 1 forwards,
-        colorPulse 15s linear infinite;
+    /* prettier-ignore */
+    animation: rotate-diagonal-small-s 5s linear(0, 0.002 0.5%, 0.009 1%, 0.02 1.5%, 0.035 2%, 0.054 2.5%, 0.08 3.1%, 0.138 4.2%, 0.199 5.2%, 0.274 6.3%, 0.585 10.5%, 0.71 12.3%, 0.775 13.3%, 0.829 14.2%, 0.88 15.1%, 0.926 16%, 0.967 16.9%, 1.004 17.8%, 1.036 18.7%, 1.067 19.7%, 1.09 20.6%, 1.111 21.6%, 1.125 22.5%, 1.137 23.5%, 1.146 24.7%, 1.15 26%, 1.149 27.4%, 1.142 28.9%, 1.132 30.2%, 1.12 31.6%, 1.048 38.2%, 1.03 40%, 1.017 41.6%, 1.003 43.5%, 0.993 45.4%, 0.985 47.3%, 0.98 49.3%, 0.977 52%, 0.979 55.1%, 0.997 67.5%, 1.003 74.5%, 1.003 81%, 1) forwards;
+    animation-delay: 3s;
+
+    &.small-image {
+      display: block;
     }
 
-    @media (width > 81.25rem) {
-      left: 9rem;
+    @media (width > 47.5rem) {
+      max-width: unset;
+      margin-block: 0;
+      left: 0;
+      box-shadow: 0px 40px 20px -20px rgba(0, 0, 0, 0.786);
+
+      /* prettier-ignore */
+      animation: 
+      rotate-diagonal-large-s 10s linear(0, 0.002 0.5%, 0.009 1%, 0.02 1.5%, 0.035 2%, 0.054 2.5%, 0.08 3.1%,0.138 4.2%, 0.199 5.2%, 0.274 6.3%, 0.585 10.5%, 0.71 12.3%, 0.775 13.3%,0.829 14.2%, 0.88 15.1%, 0.926 16%, 0.967 16.9%, 1.004 17.8%, 1.036 18.7%,1.067 19.7%, 1.09 20.6%, 1.111 21.6%, 1.125 22.5%, 1.137 23.5%, 1.146 24.7%,1.15 26%, 1.149 27.4%, 1.142 28.9%, 1.132 30.2%, 1.12 31.6%, 1.048 38.2%,1.03 40%, 1.017 41.6%, 1.003 43.5%, 0.993 45.4%, 0.985 47.3%, 0.98 49.3%,0.977 52%, 0.979 55.1%, 0.997 67.5%, 1.003 74.5%, 1.003 81%, 1) forwards;
+      animation-delay: 1.5s;
+
+      &.large-image {
+        display: block;
+      }
+
+      &.small-image {
+        display: none;
+      }
+    }
+
+    @media (width > 83.5rem) {
+      left: 2rem;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -625,8 +805,9 @@
   }
 
   .hero__svg-page-decoration {
-    position: absolute;
+    position: relative;
     display: block;
+    top: 30px;
     bottom: -1px;
     transform: scaleX(-1);
     backface-visibility: hidden;
@@ -635,6 +816,52 @@
 }
 
 @layer animations {
+  @keyframes header-slide-across {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes headingSlideIn {
+    from {
+      transform: translateX(-500px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes tilt {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    93% {
+      transform: rotate(3deg);
+    }
+
+    94% {
+      transform: rotate(-3deg);
+    }
+
+    95% {
+      transform: rotate(2deg);
+    }
+
+    96% {
+      transform: rotate(-2deg);
+    }
+
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
   @keyframes circle-in-L {
     /* For larger screens */
     from {
@@ -661,6 +888,30 @@
     }
     to {
       translate: -100% 0;
+    }
+  }
+
+  @keyframes rotate-diagonal-small-s {
+    from {
+      transform: rotate3d(1, 10, 10, -180deg);
+      transform-origin: 100% 0%;
+    }
+    to {
+      opacity: 1;
+      transform: rotate3d(1, 1, 0, 0deg);
+      transform-origin: 100% 0%;
+    }
+  }
+
+  @keyframes rotate-diagonal-large-s {
+    from {
+      transform: rotate3d(1, 1, 0, -180deg);
+      transform-origin: 100% 0%;
+    }
+    to {
+      opacity: 1;
+      transform: rotate3d(1, 1, 0, 0deg);
+      transform-origin: 100% 0%;
     }
   }
 }

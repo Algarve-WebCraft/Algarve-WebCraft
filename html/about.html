@@ -14,29 +14,39 @@
           document.documentElement.classList.add("dark-mode");
         }
       })();
+
+      const repoName = "Algarve-WebCraft"; // Replace with your GitHub repo name
+      const pathPrefix = window.location.hostname === "Algarve-WebCraft" ? `/${repoName}` : "";
+
+      document.querySelectorAll('link[rel="stylesheet"], script[src], link[rel="preload"][as="style"]').forEach(el => {
+        const attr = el.tagName === "SCRIPT" ? "src" : "href";
+        if (el[attr] && el[attr].startsWith("/")) {
+          el[attr] = pathPrefix + el[attr];
+        }
+      });
     </script>
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="../assets/fonts/oswald-v53-latin-regular.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="../assets/fonts/oswald-v53-latin-500.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="../assets/fonts/oswald-v53-latin-600.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="../assets/fonts/oswald-v53-latin-700.woff2">
-    <link rel="preload" as="image" type="image/webp" href="../assets/logos/business-logo-light.webp">
-    <link rel="preload" as="image" type="image/webp" href="../assets/logos/business-logo-dark.webp">
-    <link rel="preload" href="../css/critical.css" as="style">
-    <link rel="stylesheet" href="../css/critical.css">
-    <link rel="preload" href="../css/style.css" as="style">
-    <link rel="stylesheet" href="../css/style.css" media="print" onload="this.media='all'">
-    <link rel="preload" href="../css/style-pages.css" as="style">
-    <link rel="stylesheet" href="../css/style-pages.css">
-    <link rel="preload" href="../css/glide.css" as="style">
-    <link rel="stylesheet" href="../css/glide.css" media="print" onload="this.media='all'">
-    <link rel="preload" href="../css/dark-mode.css" as="style">
-    <link rel="stylesheet" href="../css/dark-mode.css">
-    <script type="module" src="../js/glide.min.js" defer></script>
-    <script src="../js/swup.umd.js" defer></script>
-    <script type="module" src="../js/script.js" defer></script>
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/oswald-v53-latin-regular.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/oswald-v53-latin-500.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/oswald-v53-latin-600.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/oswald-v53-latin-700.woff2">
+    <link rel="preload" as="image" type="image/webp" href="/assets/logos/business-logo-light.webp">
+    <link rel="preload" as="image" type="image/webp" href="/assets/logos/business-logo-dark.webp">
+    <link rel="preload" href="/css/critical.css" as="style">
+    <link rel="stylesheet" href="/css/critical.css">
+    <link rel="preload" href="/css/style.css" as="style">
+    <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all'">
+    <link rel="preload" href="/css/style-pages.css" as="style">
+    <link rel="stylesheet" href="/css/style-pages.css">
+    <link rel="preload" href="/css/glide.css" as="style">
+    <link rel="stylesheet" href="/css/glide.css" media="print" onload="this.media='all'">
+    <link rel="preload" href="/css/dark-mode.css" as="style">
+    <link rel="stylesheet" href="/css/dark-mode.css">
+    <script type="module" src="/js/glide.min.js" defer></script>
+    <script src="/js/swup.js" defer></script>
+    <script type="module" src="/js/script.js" defer></script>
     <noscript>
-      <link rel="stylesheet" href="../css/style.css">
-      <link rel="stylesheet" href="../css/glide.css">
+      <link rel="stylesheet" href="/css/style.css">
+      <link rel="stylesheet" href="/css/glide.css">
     </noscript>
     <title>Algarve WebCraft | Small Business Website Specialist</title>
   </head>
@@ -48,9 +58,19 @@
         <div class="wrapper wrapper--wide wrapper--header">
 
           <div class="business-logo-container">
-            <img src="../assets/logos/business-logo-light.webp" class="business-logo logo-front" width="200" height="70" fetchpriority="high" decoding="async" loading="eager" alt="Algarve Webcraft's logo. Landscape scenary of beach-side cliffs on the left, with the business name on the right (Algarve Webcraft) and its slogan below it (Small business website creator.)">
-            <img src="../assets/logos/business-logo-dark.webp" class="business-logo logo-back" width="200" height="70" fetchpriority="high" decoding="async" loading="eager" alt="" aria-hidden="true">
+            <img src="/assets/logos/business-logo-light.webp" class="business-logo logo-front" width="200" height="70" fetchpriority="high" decoding="async" loading="eager" alt="Algarve Webcraft's logo. Landscape scenary of beach-side cliffs on the left, with the business name on the right (Algarve Webcraft) and its slogan below it (Small business website creator.)">
+            <img src="/assets/logos/business-logo-dark.webp" class="business-logo logo-back" width="200" height="70" fetchpriority="high" decoding="async" loading="eager" alt="" aria-hidden="true">
           </div>
+
+          <nav class="nav-bar">
+            <ul>
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/html/about.html">About Us</a></li>
+              <li><a href="/html/services.html">Services</a></li>
+              <li><a href="/html/pricing.html">Pricing</a></li>
+              <li><a href="/html/contact.html">Contact</a></li>
+            </ul>
+          </nav>
 
           <div class="hamburger-btn-box">
             <button id="dark-mode-toggle">
@@ -97,34 +117,24 @@
             </button>
           </div>
 
-          <nav class="nav-bar">
-            <ul>
-              <li><a href="../index.html">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="pricing.html">Pricing</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </nav>
-
         </div>
       </div>
     </header>
 
-    <main id="main">
+    <main id="swup">
 
       <!------------------------------------------------------------------------------------------------------------>
       <!--------------------------------------- PAGE 2 / SECTION-ONE / WHO ----------------------------------------->
       <!------------------------------------------------------------------------------------------------------------>
 
       <div class="cmp-svg-pages-decoration">
-        <h1 class="cmp-main-heading cmp-main-heading--other-pages">About us</h1>
+        <h1 class="cmp-main-heading cmp-main-heading--other-pages transition-slide">About us</h1>
         <svg viewBox="0 0 1440 160" class="cmp-svg-pages-decoration__svg">
           <path d="M0,80 C360,160 1080,0 1440,80 L1440,0 L0,0 Z" />
         </svg>
       </div>
 
-      <section class="pg2-s1-who" aria-labelledby="s1-who">
+      <section class="pg2-s1-who transition-reverse-slide" aria-labelledby="s1-who">
         <div class="wrapper wrapper--mobile-L">
 
           <div class="who-text-image-flex">
@@ -159,7 +169,7 @@
       <!--------------------------------------- PAGE 2 / SECTION-TWO / PORTFOLIO ----------------------------------->
       <!------------------------------------------------------------------------------------------------------------>
 
-      <section class="pg1-s4-portfolio" aria-labelledby="s2-portfolio">
+      <section class="pg1-s4-portfolio transition-reverse-slide" aria-labelledby="s2-portfolio">
         <div class="wrapper wrapper--mobile-L">
 
           <span class="cmp-topper-heading">Our Portfolio</span>
@@ -167,7 +177,6 @@
           <p class="cmp-main-text">Every project we take on is crafted with care, strategy, and a focus on long-term results. While we are still a growing business ourselves, we've had the opportunity to work with a few clients across Portugal, and our portfolio is steadily expanding. Here is a look at a few of our recent websites, each tailored to meet the unique needs of the businesses we serve.</p>
 
           <div class="banner">
-            <div class="banner-overlay"></div>
             <div class="slider" style="--quantity: 3">
               <div class="item" style="--position: 1"><a href="https://tis-ta.github.io/Mushroom-Guide/">
                 <picture>
@@ -198,7 +207,7 @@
       <!--------------------------------------- PAGE 2 / SECTION-THREE / TESTIMONIALS ------------------------------>
       <!------------------------------------------------------------------------------------------------------------>
 
-      <section class="pg1-s6-testimonials pg1-s6-testimonials--pg2-s3" aria-labelledby="s3-testimonials">
+      <section class="pg1-s6-testimonials pg1-s6-testimonials--pg2-s3 transition-reverse-slide" aria-labelledby="s3-testimonials">
         <div class="wrapper">
           <span class="cmp-topper-heading cmp-topper-heading--pg2-s2">Our Testimonials</span>
           <h2 class="cmp-sub-heading cmp-sub-heading--pg1-s6" id="s3-testimonials">Serving Small Businesses Across the Continent</h2>

@@ -1285,7 +1285,7 @@
     }
     constructor(t) {
       void 0 === t && (t = {}),
-        (this.version = "4.8.2"),
+        (this.version = "4.8.1"),
         (this.options = void 0),
         (this.defaults = W),
         (this.plugins = []),

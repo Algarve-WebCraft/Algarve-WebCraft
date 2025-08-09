@@ -15,30 +15,34 @@
         }
       })();
     </script>
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/oswald-v53-latin-regular.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/oswald-v53-latin-500.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/oswald-v53-latin-600.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/oswald-v53-latin-700.woff2">
-    <link rel="preload" as="image" type="image/webp" href="assets/logos/business-logo-light.webp">
-    <link rel="preload" as="image" type="image/webp" href="assets/logos/business-logo-dark.webp">
-    <link rel="preload" href="css/critical.css" as="style">
-    <link rel="stylesheet" href="css/critical.css">
-    <link rel="preload" href="css/style.css" as="style">
-    <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
-    <link rel="preload" href="css/glide.css" as="style">
-    <link rel="stylesheet" href="css/glide.css" media="print" onload="this.media='all'">
-    <link rel="preload" href="css/dark-mode.css" as="style">
-    <link rel="stylesheet" href="css/dark-mode.css">
-    <script type="module" src="js/glide.min.js" defer></script>
-    <script src="js/swup.umd.js" defer></script>
-    <script type="module" src="js/script.js" defer></script>
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/oswald-v53-latin-regular.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/oswald-v53-latin-500.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/oswald-v53-latin-600.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/oswald-v53-latin-700.woff2">
+    <link rel="preload" as="image" type="image/webp" href="/assets/logos/business-logo-light.webp">
+    <link rel="preload" as="image" type="image/webp" href="/assets/logos/business-logo-dark.webp">
+    <link rel="preload" as="image" type="image/webp" href="/assets/images/hero-laptop.webp">
+    <link rel="preload" as="image" type="image/webp" href="/assets/images/hero-phone.webp">
+    <link rel="preload" href="/css/critical.css" as="style">
+    <link rel="stylesheet" href="/css/critical.css">
+    <link rel="preload" href="/css/style.css" as="style">
+    <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all'">
+    <link rel="preload" href="/css/glide.css" as="style">
+    <link rel="stylesheet" href="/css/glide.css" media="print" onload="this.media='all'">
+    <link rel="preload" href="/css/style-pages.css" as="style">
+    <link rel="stylesheet" href="/css/style-pages.css">
+    <link rel="preload" href="/css/dark-mode.css" as="style">
+    <link rel="stylesheet" href="/css/dark-mode.css">
+    <script type="module" src="/js/glide.min.js" defer></script>
+    <script src="/js/swup.js" defer></script>
+    <script type="module" src="/js/script.js" defer></script>
     <noscript>
-      <link rel="stylesheet" href="css/style.css">
-      <link rel="stylesheet" href="css/glide.css">
+      <link rel="stylesheet" href="/css/style.css">
+      <link rel="stylesheet" href="/css/glide.css">
     </noscript>
     <title>Algarve WebCraft | Small Business Website Specialist</title>
   </head>
-  <body>
+  <body class="loading"> 
     <header id="header">
       <a href="#main" class="skip-to-content">Skip to main content</a>
 
@@ -46,9 +50,19 @@
         <div class="wrapper wrapper--wide wrapper--header">
 
           <div class="business-logo-container">
-            <img src="assets/logos/business-logo-light.webp" class="business-logo logo-front" width="200" height="70" fetchpriority="high" decoding="async" loading="eager" alt="Algarve Webcraft's logo. Landscape scenary of beach-side cliffs on the left, with the business name on the right (Algarve Webcraft) and its slogan below it (Small business website creator.)">
-            <img src="assets/logos/business-logo-dark.webp" class="business-logo logo-back" width="200" height="70" fetchpriority="high" decoding="async" loading="eager" alt="" aria-hidden="true">
+            <img src="/assets/logos/business-logo-light.webp" class="business-logo logo-front" width="200" height="70" fetchpriority="high" decoding="async" loading="eager" alt="Algarve Webcraft's logo. Landscape scenary of beach-side cliffs on the left, with the business name on the right (Algarve Webcraft) and its slogan below it (Small business website creator.)">
+            <img src="/assets/logos/business-logo-dark.webp" class="business-logo logo-back" width="200" height="70" fetchpriority="high" decoding="async" loading="eager" alt="" aria-hidden="true">
           </div>
+
+          <nav class="nav-bar">
+            <ul>
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/html/about.html">About Us</a></li>
+              <li><a href="/html/services.html">Services</a></li>
+              <li><a href="/html/pricing.html">Pricing</a></li>
+              <li><a href="/html/contact.html">Contact</a></li>
+            </ul>
+          </nav>
 
           <div class="hamburger-btn-box">
             <button id="dark-mode-toggle" aria-label="Toggle Dark Mode" aria-pressed="false">
@@ -95,42 +109,30 @@
             </button>
           </div>
 
-          <nav class="nav-bar">
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="html/about.html">About Us</a></li>
-              <li><a href="html/services.html">Services</a></li>
-              <li><a href="html/pricing.html">Pricing</a></li>
-              <li><a href="html/contact.html">Contact</a></li>
-            </ul>
-          </nav>
-
         </div>
       </div>
     </header>
 
-    <main id="main">
+    <main id="swup">
 
       <!------------------------------------------------------------------------------------------------------------>
       <!--------------------------------------- PAGE 1 / HERO-SECTION ---------------------------------------------->
       <!------------------------------------------------------------------------------------------------------------>
 
-      <section id="pg1-hero" aria-labelledby="hero-heading">
+      <section id="pg1-hero" class="transition-reverse-slide-main" aria-labelledby="hero-heading">
         <div class="wrapper pg1-hero__flex">
 
-          <div>
-            <span class="cmp-topper-heading topper-heading--pg1-hero">Tailored Designs. Hand-crafted Code.</span>
-            <h1 class="cmp-main-heading" id="hero-heading">Small Business Website Specialist</h1>
+          <div class="hero__text-container transition-fade"> 
+            <span class="cmp-topper-heading topper-heading--pg1-hero">Tailored Designs. Hand-crafted Code.</span> 
+            <h1 id="hero-heading" class="cmp-main-heading">Small Business Website Specialist</h1>
             <p class="hero-text">100% hand-crafted websites with guaranteed superior results – from only €85 /month with optional social media management. No Ai, WordPress, Wix (or any other page builders) are used.</p>
             <a class="cmp-main-btn main-btn--pg1-hero cmp-main-btn--light" href="html/contact.html">Start Now</a>
-            <a class="cmp-main-btn main-btn--pg1-hero" href="html/about.html">ABOUT US</a>
+            <a class="cmp-main-btn main-btn--pg1-hero" href="html/about.html">ABOUT US</a>  
           </div>
 
-          <div class="hero__svg-main-container">
-            <svg class="hero__svg-main" viewBox="0 0 512 512" aria-hidden="true">
-              <path class="st0" d="M486.562,115.434c-3.104-6.72-8.323-12.041-14.634-15.546c-6.311-3.506-13.684-5.282-21.464-5.282 c-13.637,0-28.586,5.462-41.813,17.15c-11.02,9.722-20.75,23.791-27.784,42.504V16.356C380.866,7.334,373.525,0,364.51,0H134.97 c-9.031,0-16.356,7.334-16.356,16.356v134.007l-34.638-13.047c-5.273-1.981-10.712-2.924-16.064-2.924 c-9.244,0-18.18,2.798-25.678,7.907c-7.506,5.093-13.581,12.512-17.016,21.63c-1.989,5.266-2.932,10.72-2.932,16.057 c0,9.235,2.814,18.171,7.907,25.678c5.093,7.49,12.52,13.573,21.638,17.007l30.723,11.57c-1.886,0.912-3.709,1.965-5.454,3.152 c-7.09,4.834-12.882,11.868-16.121,20.506c-1.894,4.975-2.782,10.139-2.782,15.208c0,8.764,2.64,17.213,7.49,24.341 c4.842,7.098,11.868,12.844,20.513,16.129l2.279,0.848c-0.841,0.495-1.674,1.022-2.476,1.564 c-7.136,4.818-12.897,11.844-16.136,20.514c-1.894,4.975-2.782,10.131-2.782,15.208c0,8.772,2.648,17.205,7.506,24.303 c4.794,7.136,11.829,12.889,20.459,16.128l2.272,0.864c-0.88,0.495-1.722,1.03-2.554,1.603 c-7.105,4.802-12.89,11.837-16.136,20.467c-1.895,5.007-2.774,10.171-2.774,15.248c0,8.724,2.649,17.213,7.49,24.302 c4.842,7.106,11.876,12.89,20.514,16.129l29.505,11.113c4.975,1.87,10.146,2.782,15.216,2.782c7.082,0,13.943-1.776,20.073-4.983 c9.346,6.382,20.129,12.418,32.578,17.496c20.38,8.315,45.044,14.092,74.446,14.776c1.862,0.048,3.694,0.064,5.517,0.064 c28.632,0.015,52.549-5.455,72.411-15.39c14.894-7.45,27.446-17.385,37.946-29.119c15.782-17.598,26.99-39.118,35.455-62.657 c8.434-23.477,14.156-49.02,18.785-74.989c0.118-0.55,0.715-3.223,1.682-7.584c3.812-17.158,13.369-60.174,22.266-99.943 c4.448-19.877,8.732-38.945,12.056-53.547c1.651-7.294,3.066-13.479,4.142-18.077c0.534-2.296,0.983-4.197,1.336-5.644 c0.33-1.415,0.597-2.436,0.668-2.68c1.188-4.158,1.768-8.221,1.768-12.143C489.722,124.929,488.63,119.899,486.562,115.434z M57.584,207.361c-5.887-2.216-10.571-6.084-13.857-10.893c-3.278-4.826-5.086-10.58-5.086-16.482 c0-3.419,0.598-6.877,1.887-10.304c2.224-5.878,6.076-10.578,10.901-13.864c4.81-3.27,10.579-5.085,16.482-5.085 c3.403,0,6.876,0.605,10.288,1.886l40.414,15.209v62.516L57.584,207.361z M79.23,288.252c-3.01-4.449-4.676-9.715-4.676-15.146 c0-3.136,0.558-6.31,1.728-9.455c2.028-5.392,5.596-9.714,10.013-12.732c4.418-3.002,9.715-4.669,15.115-4.669 c3.136,0,6.311,0.566,9.447,1.73h0.031l7.726,2.923l21.786,8.206c4.024,1.501,7.42,3.859,10.171,6.806 c0.911,0.974,1.768,2.058,2.554,3.206c3.003,4.41,4.646,9.714,4.646,15.106c0,3.144-0.558,6.319-1.737,9.494 c-1.273,3.403-3.144,6.335-5.462,8.819c-1.376,1.485-2.877,2.751-4.551,3.898c-4.417,3.011-9.675,4.654-15.106,4.654 c-3.144,0-6.319-0.559-9.455-1.745l-2.845-1.085l-26.66-9.998C86.555,296.206,82.232,292.669,79.23,288.252z M88.087,366.832 c-2.995-4.425-4.637-9.722-4.637-15.122c0-3.144,0.55-6.318,1.737-9.447c2.02-5.431,5.549-9.714,10.006-12.764 c4.41-3.003,9.714-4.654,15.114-4.654c2.751,0,5.533,0.409,8.308,1.352c0.393,0.094,0.754,0.267,1.147,0.393l29.506,11.114 c0.456,0.165,0.88,0.33,1.305,0.534c4.81,2.091,8.669,5.391,11.412,9.447c3.018,4.449,4.677,9.722,4.677,15.153 c0,3.144-0.55,6.304-1.722,9.448c0,0.031-0.039,0.063-0.039,0.094c-2.028,5.376-5.596,9.66-9.974,12.638 c-4.417,3.01-9.722,4.669-15.122,4.669c-3.136,0-6.303-0.551-9.448-1.722l-11.742-4.425l-17.763-6.712 C95.42,374.802,91.129,371.265,88.087,366.832z M174.056,449.783c-0.102,0.362-0.228,0.754-0.353,1.116 c-2.036,5.392-5.573,9.706-10.006,12.716c-4.425,3.011-9.683,4.692-15.114,4.692c-3.144,0-6.32-0.558-9.455-1.745l-29.513-11.121 c-5.431-2.027-9.714-5.596-12.725-10.013c-3.01-4.41-4.676-9.699-4.676-15.106c0-3.144,0.55-6.35,1.737-9.455 c2.028-5.423,5.588-9.754,10.006-12.756c4.283-2.923,9.424-4.55,14.658-4.645h0.456c3.136,0,6.311,0.526,9.455,1.722l1.282,0.472 l28.216,10.633c5.431,2.052,9.723,5.597,12.764,10.014c3.01,4.44,4.653,9.706,4.653,15.145 C175.439,444.194,175.015,447.001,174.056,449.783z M155.059,322.402l-2.35-0.888c0.849-0.488,1.674-1.014,2.507-1.556 c7.129-4.81,12.882-11.852,16.128-20.482c1.895-5.007,2.782-10.186,2.782-15.248c0-8.756-2.649-17.197-7.498-24.302 c-3.954-5.847-9.416-10.799-16.057-14.162V49.068h198.982v321.679H182.222c0.487-2.642,0.794-5.282,0.794-7.908 c0-8.771-2.64-17.212-7.482-24.348C170.692,331.401,163.657,325.632,155.059,322.402z M261.196,404.322 c0,6.32-5.132,11.46-11.452,11.46c-6.327,0-11.451-5.14-11.451-11.46c0-6.311,5.124-11.443,11.451-11.443 C256.063,392.88,261.196,398.012,261.196,404.322z M472.218,137.89c-0.259,0.88-0.558,2.113-1.014,4 c-1.658,6.94-5.07,21.882-9.259,40.477c-12.559,55.741-32.138,144.052-32.138,144.052l-0.039,0.172l-0.032,0.173 c-4.04,22.73-8.905,44.824-15.547,65.038c-4.975,15.177-10.948,29.277-18.274,41.828c-11.003,18.848-24.915,34.166-43.306,44.934 c-18.415,10.744-41.499,17.07-71.413,17.086c-1.682,0-3.395-0.032-5.14-0.063c-27.478-0.653-50.09-5.99-68.639-13.558 c-9.533-3.906-17.982-8.402-25.473-13.165c2.932-3.576,5.36-7.655,7.058-12.214c0.856-2.248,1.509-4.574,1.933-6.869 c0.338-1.603,0.55-3.214,0.676-4.81l172.896,1.54c9.015,0,16.356-7.324,16.356-16.348V211.927 c2.971-10.446,6.798-23.917,11.758-41.334c6.374-22.352,16.324-37.278,26.856-46.591c10.539-9.306,21.732-13.047,30.983-13.047 c7.057,0,12.897,2.169,16.772,5.486c1.933,1.666,3.426,3.592,4.472,5.856c1.038,2.255,1.643,4.849,1.651,7.93 C473.358,132.514,473.02,135.06,472.218,137.89z"></path>
-              <path class="st0" d="M249.744,295.216c36.893,0,66.799-29.906,66.799-66.807c0-36.9-29.906-66.807-66.799-66.807 c-36.908,0-66.807,29.906-66.814,66.807C182.937,265.31,212.835,295.216,249.744,295.216z M288.862,267.518 c-5.777,5.769-12.788,10.248-20.616,13.024c3.757-4.535,6.869-10.344,9.313-17.064h14.965 C291.368,264.878,290.143,266.237,288.862,267.518z M296.752,257.552h-17.275c2.216-7.891,3.544-16.756,3.788-26.18h21.708 C304.478,240.952,301.515,249.881,296.752,257.552z M304.973,225.453h-21.732c-0.228-9.424-1.524-18.297-3.749-26.18h17.26 C301.515,206.944,304.478,215.864,304.973,225.453z M288.862,189.307c1.281,1.282,2.507,2.634,3.662,4.032h-14.965 c-1.053-2.908-2.232-5.659-3.544-8.198c-1.698-3.309-3.639-6.295-5.754-8.857C276.082,179.066,283.092,183.546,288.862,189.307z M252.707,173.179c0.927,0.055,1.839,0.118,2.759,0.212c1.438,0.66,2.892,1.54,4.315,2.703c4.354,3.545,8.394,9.549,11.459,17.244 h-18.532V173.179z M252.707,199.273h20.584c2.366,7.695,3.796,16.623,4.056,26.18h-24.64V199.273z M252.707,231.372h24.616 c-0.267,9.565-1.706,18.486-4.04,26.18h-20.576V231.372z M252.707,263.478H271.2c-0.754,1.926-1.564,3.796-2.444,5.478 c-2.624,5.085-5.722,9.109-8.975,11.766c-1.423,1.171-2.876,2.06-4.315,2.72c-0.92,0.079-1.832,0.157-2.759,0.204V263.478z M210.635,267.518c-1.289-1.282-2.531-2.641-3.663-4.04h14.941c1.069,2.916,2.233,5.66,3.545,8.198 c1.713,3.333,3.631,6.295,5.761,8.866C223.398,277.767,216.388,273.287,210.635,267.518z M246.781,283.646 c-0.928-0.047-1.847-0.126-2.775-0.204c-1.438-0.66-2.892-1.548-4.323-2.72c-4.346-3.552-8.37-9.557-11.451-17.244h18.549V283.646z M246.781,257.552h-20.6c-2.35-7.694-3.796-16.631-4.04-26.18h24.64V257.552z M246.781,225.453h-24.632 c0.244-9.557,1.706-18.485,4.056-26.18h20.577V225.453z M239.683,176.095c1.431-1.163,2.885-2.043,4.323-2.703 c0.928-0.094,1.847-0.157,2.775-0.212v20.16h-18.51c0.754-1.918,1.572-3.772,2.452-5.47 C233.349,182.776,236.438,178.752,239.683,176.095z M210.635,189.307c5.753-5.761,12.779-10.256,20.592-13.023 c-3.733,4.527-6.869,10.351-9.314,17.055h-14.941C208.104,191.94,209.346,190.588,210.635,189.307z M202.72,199.273h17.275 c-2.216,7.883-3.544,16.756-3.788,26.18h-21.708C195.002,215.864,197.957,206.944,202.72,199.273z M216.231,231.372 c0.243,9.424,1.524,18.289,3.764,26.18H202.72c-4.763-7.671-7.718-16.6-8.221-26.18H216.231z"></path>>
-            </svg>
+          <div class="hero__image-main-container">
+            <img class="hero__image-main large-image" src="/assets/images/hero-laptop.webp" width="530px" height="360px" alt="an open laptop displaying the Algarve Webcraft website." loading="eager">
+            <img class="hero__image-main small-image" src="/assets/images/hero-phone.webp" width="230px" height="115px" alt="" loading="eager" aria-hidden="true">
           </div>
         </div>
 
@@ -143,7 +145,7 @@
       <!--------------------------------------- PAGE 1 / SECTION-ONE / APPROACH ------------------------------------>
       <!------------------------------------------------------------------------------------------------------------>
 
-      <section class="pg1-s1-approach" aria-labelledby="s1-approach">
+      <section class="pg1-s1-approach transition-reverse-slide" aria-labelledby="s1-approach">
         <div class="wrapper wrapper--mobile-L">
 
           <svg class="ufo-decorative-svg dark-mode-show" viewBox="0 0 511.996 511.996" aria-hidden="true">
@@ -256,7 +258,7 @@
       <!--------------------------------------- PAGE 1 / SECTION-TWO / MISSION ------------------------------------->
       <!------------------------------------------------------------------------------------------------------------>
 
-      <section class="pg1-s2-mission" aria-labelledby="s2-mission">
+      <section class="pg1-s2-mission transition-reverse-slide" aria-labelledby="s2-mission">
         <div class="wrapper wrapper--mobile-S">
 
           <svg class="decorative-side-svg" viewBox="0 0 512 512" aria-hidden="true">
@@ -380,7 +382,7 @@
       <!--------------------------------------- PAGE 1 / SECTION-THREE / PERFORMANCE ------------------------------->
       <!------------------------------------------------------------------------------------------------------------>
 
-      <section class="pg1-s3-performance" aria-labelledby="s3-performance">
+      <section class="pg1-s3-performance transition-reverse-slide" aria-labelledby="s3-performance">
         <div class="wrapper wrapper--mobile-S performance-text-block__flex-container">
 
           <div class="performance-text-block__text-block">
@@ -436,7 +438,7 @@
       <!--------------------------------------- PAGE 1 / SECTION-FOUR / PORTFOLIO ---------------------------------->
       <!------------------------------------------------------------------------------------------------------------>
 
-      <section class="pg1-s4-portfolio" aria-labelledby="s4-portfolio">
+      <section class="pg1-s4-portfolio transition-reverse-slide" aria-labelledby="s4-portfolio">
         <div class="wrapper wrapper--mobile-L">
 
           <span class="cmp-topper-heading">Our Portfolio</span>
@@ -444,7 +446,6 @@
           <p class="cmp-main-text">Every project we take on is crafted with care, strategy, and a focus on long-term results. While we are still a growing business ourselves, we've had the opportunity to work with a few clients across Portugal, and our portfolio is steadily expanding. Here is a look at a few of our recent websites, each tailored to meet the unique needs of the businesses we serve.</p>
 
           <div class="banner">
-            <div class="banner-overlay"></div>
             <div class="slider" style="--quantity: 3">
               <div class="item" style="--position: 1"><a href="https://tis-ta.github.io/Mushroom-Guide/">
                 <picture>
@@ -475,7 +476,7 @@
       <!--------------------------------------- PAGE 1 / SECTION-FIVE / PRICING ------------------------------------>
       <!------------------------------------------------------------------------------------------------------------>
 
-      <section class="pg1-s5-pricing" aria-labelledby="s5-pricing">
+      <section class="pg1-s5-pricing transition-reverse-slide" aria-labelledby="s5-pricing">
         <div class="wrapper wrapper--mobile-L">
           <span class="cmp-topper-heading cmp-topper-heading--pg1-s5">Our Pricing</span>
           <h2 class="cmp-sub-heading cmp-sub-heading--pg1-s5" id="s5-pricing">Affordable Packages for Any Business</h2>
@@ -634,7 +635,7 @@
       <!--------------------------------------- PAGE 1 / SECTION-SIX / TESTIMONIALS -------------------------------->
       <!------------------------------------------------------------------------------------------------------------>
 
-      <section class="pg1-s6-testimonials" aria-labelledby="s6-testimonials">
+      <section class="pg1-s6-testimonials transition-reverse-slide" aria-labelledby="s6-testimonials">
         <div class="wrapper">
           <span class="cmp-topper-heading">Our Testimonials</span>
           <h2 class="cmp-sub-heading cmp-sub-heading--pg1-s6" id="s6-testimonials">Serving Small Businesses Across the Continent</h2>

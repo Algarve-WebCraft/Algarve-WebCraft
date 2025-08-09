@@ -15,24 +15,25 @@
         }
       })();
     </script>
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="../assets/fonts/oswald-v53-latin-regular.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="../assets/fonts/oswald-v53-latin-500.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="../assets/fonts/oswald-v53-latin-600.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="../assets/fonts/oswald-v53-latin-700.woff2">
-    <link rel="preload" as="image" type="image/webp" href="../assets/logos/business-logo-light.webp">
-    <link rel="preload" as="image" type="image/webp" href="../assets/logos/business-logo-dark.webp">
-    <link rel="preload" href="../css/critical.css" as="style">
-    <link rel="stylesheet" href="../css/critical.css">
-    <link rel="preload" href="../css/style.css" as="style">
-    <link rel="stylesheet" href="../css/style.css" media="print" onload="this.media='all'">
-    <link rel="preload" href="../css/style-pages.css" as="style">
-    <link rel="stylesheet" href="../css/style-pages.css">
-    <link rel="preload" href="../css/dark-mode.css" as="style">
-    <link rel="stylesheet" href="../css/dark-mode.css">
-    <script src="../js/swup.umd.js" defer></script>
-    <script type="module" src="../js/script.js" defer></script>
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/oswald-v53-latin-regular.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/oswald-v53-latin-500.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/oswald-v53-latin-600.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/oswald-v53-latin-700.woff2">
+    <link rel="preload" as="image" type="image/webp" href="/assets/logos/business-logo-light.webp">
+    <link rel="preload" as="image" type="image/webp" href="/assets/logos/business-logo-dark.webp">
+    <link rel="preload" href="/css/critical.css" as="style">
+    <link rel="stylesheet" href="/css/critical.css">
+    <link rel="preload" href="/css/style.css" as="style">
+    <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all'">
+    <link rel="preload" href="/css/style-pages.css" as="style">
+    <link rel="stylesheet" href="/css/style-pages.css">
+    <link rel="preload" href="/css/dark-mode.css" as="style">
+    <link rel="stylesheet" href="/css/dark-mode.css">
+    <script type="module" src="/js/glide.min.js" defer></script>
+    <script src="/js/swup.js" defer></script>
+    <script type="module" src="/js/script.js" defer></script>
     <noscript>
-      <link rel="stylesheet" href="../css/style.css">
+      <link rel="stylesheet" href="/css/style.css">
     </noscript>
     <title>Algarve WebCraft | Small Business Website Specialist</title>
   </head>
@@ -44,9 +45,19 @@
         <div class="wrapper wrapper--wide wrapper--header">
 
           <div class="business-logo-container">
-            <img src="../assets/logos/business-logo-light.webp" class="business-logo logo-front" width="200" height="70" fetchpriority="high" decoding="async" loading="eager" alt="Algarve Webcraft's logo. Landscape scenary of beach-side cliffs on the left, with the business name on the right (Algarve Webcraft) and its slogan below it (Small business website creator.)">
-            <img src="../assets/logos/business-logo-dark.webp" class="business-logo logo-back" width="200" height="70" fetchpriority="high" decoding="async" loading="eager" alt="" aria-hidden="true">
+            <img src="/assets/logos/business-logo-light.webp" class="business-logo logo-front" width="200" height="70" fetchpriority="high" decoding="async" loading="eager" alt="Algarve Webcraft's logo. Landscape scenary of beach-side cliffs on the left, with the business name on the right (Algarve Webcraft) and its slogan below it (Small business website creator.)">
+            <img src="/assets/logos/business-logo-dark.webp" class="business-logo logo-back" width="200" height="70" fetchpriority="high" decoding="async" loading="eager" alt="" aria-hidden="true">
           </div>
+
+          <nav class="nav-bar">
+            <ul>
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/html/about.html">About Us</a></li>
+              <li><a href="/html/services.html">Services</a></li>
+              <li><a href="/html/pricing.html">Pricing</a></li>
+              <li><a href="/html/contact.html">Contact</a></li>
+            </ul>
+          </nav>
 
           <div class="hamburger-btn-box">
             <button id="dark-mode-toggle">
@@ -93,30 +104,20 @@
             </button>
           </div>
 
-          <nav class="nav-bar">
-            <ul>
-              <li><a href="../index.html">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="pricing.html">Pricing</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </nav>
-
         </div>
       </div>
     </header>
 
-    <main id="main">
+    <main id="swup">
 
       <div class="cmp-svg-pages-decoration">
-        <h1 class="cmp-main-heading cmp-main-heading--other-pages">Terms of use</h1>
+        <h1 class="cmp-main-heading cmp-main-heading--other-pages transition-slide">Terms of use</h1>
         <svg viewBox="0 0 1440 160" class="cmp-svg-pages-decoration__svg">
           <path d="M0,80 C360,160 1080,0 1440,80 L1440,0 L0,0 Z" />
         </svg>
       </div>
 
-      <section id="terms-page" aria-labelledby="terms-heading">
+      <section id="terms-page" class="transition-reverse-slide" aria-labelledby="terms-heading">
         <div class="wrapper wrapper--mobile-L terms-privacy-pages-flex">
           <p><strong>Last Updated:</strong> July 19, 2025</p>
 

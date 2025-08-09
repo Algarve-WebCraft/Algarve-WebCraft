@@ -178,6 +178,10 @@ html.dark-mode .glide__track {
   .glide__bullet {
     background-color: #ffffff76;
   }
+
+  ul li span {
+    color: var(--clr-blue-100);
+  }
 }
 
 html.dark-mode .pg2-s1-who {

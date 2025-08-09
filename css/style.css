@@ -1,9 +1,3 @@
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
-
 @layer base {
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
   /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 1 / SECTION-ONE / APPROACH ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
@@ -415,10 +409,6 @@
           margin-bottom: 6rem;
         }
       }
-
-      .banner-overlay {
-        display: none;
-      }
     }
   }
 
@@ -470,26 +460,7 @@
       }
     }
   }
-
-  .banner-overlay {
-    position: absolute;
-    top: -4.37rem;
-    max-height: 37.5rem;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #fff;
-    opacity: 0;
-    pointer-events: none;
-    z-index: 10;
-    transition: opacity 0.75s ease-in-out;
-  }
-
-  .banner-overlay.active {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
+     
   .portfolio-images {
     border-radius: 1rem;
   }
@@ -885,8 +856,9 @@
     font-size: 1.5rem;
     font-weight: 700;
     left: 1rem;
-    top: 5rem;
-    transition: transform 0.5s ease-out;
+    top: 7rem;
+    transition: transform 1s ease-out;
+    transition-timing-function: linear(0, 0.544 5.5%, 0.947 11.5%, 1.213 18.1%, 1.298 21.7%, 1.352 25.5%, 1.372 28.2%, 1.379 31.1%, 1.374 34.2%, 1.357 37.6%, 1.307 43.7%, 1.121 61.8%, 1.074 67.8%, 1.04 73.7%, 1.007 84.7%, 1);
   }
 }
 
@@ -920,54 +892,6 @@
     }
     100% {
       transform: translate(0px, 0px);
-    }
-  }
-
-  @keyframes rotate-diagonal-small-s {
-    from {
-      transform: rotate3d(1, 10, 10, -180deg);
-      transform-origin: 100% 0%;
-    }
-    to {
-      opacity: 1;
-      transform: rotate3d(1, 1, 0, 0deg);
-      transform-origin: 100% 0%;
-    }
-  }
-
-  @keyframes rotate-diagonal-large-s {
-    from {
-      transform: rotate3d(1, 1, 0, -180deg);
-      transform-origin: 100% 0%;
-    }
-    to {
-      opacity: 1;
-      transform: rotate3d(1, 1, 0, 0deg);
-      transform-origin: 100% 0%;
-    }
-  }
-
-  @keyframes colorPulse {
-    0% {
-      fill: #a3b3d3;
-    }
-    10% {
-      fill: #43b7ffc3;
-    }
-    20% {
-      fill: #2fa6f0;
-    }
-    50% {
-      fill: #447df0;
-    }
-    70% {
-      fill: #2fa6f0;
-    }
-    90% {
-      fill: #43b7ffc3;
-    }
-    100% {
-      fill: #a3b3d3;
     }
   }
 
