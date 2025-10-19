@@ -215,7 +215,7 @@
     -ms-text-size-adjust: none;
 
     --fs-sub-text: 0.8rem;
-    --fs-body-text: clamp(1rem, 1.5vw, 1.1rem);
+    --fs-body-text: clamp(1.1rem, 1.5vw, 1.2rem);
     --fs-text-heading: clamp(1.25rem, 1.5vw, 1.5rem);
     --fs-topper-heading: clamp(0.8rem, 1.5vw, 1rem);
     --fs-sub-heading: clamp(2rem, 3.5vw, 3rem);
@@ -665,8 +665,12 @@
     color: var(--clr-blue-100);
   }
 
+  #hero-heading {
+    font-size: clamp(2.75rem, 5vw, 4.5rem);
+  }
+
   .hero-text {
-    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-size: clamp(1rem, 2vw, 1.5rem);
     color: var(--text-body-white);
     max-width: 45ch;
     margin-inline: auto;
