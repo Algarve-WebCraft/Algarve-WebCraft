@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="My Site">
+    <meta name="description" content="A web design business specializing in creating websites for small business.">
     <script>
       (function () {
         let theme = localStorage.getItem("theme");
@@ -15,52 +15,55 @@
         }
       })();
     </script>
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/oswald-v53-latin-regular.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/oswald-v53-latin-500.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/oswald-v53-latin-600.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/oswald-v53-latin-700.woff2">
-    <link rel="preload" as="image" type="image/webp" href="/assets/logos/business-logo-light.webp">
-    <link rel="preload" as="image" type="image/webp" href="/assets/logos/business-logo-dark.webp">
-    <link rel="preload" as="image" type="image/webp" href="/assets/images/hero-laptop.webp">
-    <link rel="preload" as="image" type="image/webp" href="/assets/images/hero-phone.webp">
-    <link rel="preload" href="/css/critical.css" as="style">
-    <link rel="stylesheet" href="/css/critical.css">
-    <link rel="preload" href="/css/style.css" as="style">
-    <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all'">
-    <link rel="preload" href="/css/glide.css" as="style">
-    <link rel="stylesheet" href="/css/glide.css" media="print" onload="this.media='all'">
-    <link rel="preload" href="/css/style-pages.css" as="style">
-    <link rel="stylesheet" href="/css/style-pages.css">
-    <link rel="preload" href="/css/dark-mode.css" as="style">
-    <link rel="stylesheet" href="/css/dark-mode.css">
-    <script type="module" src="/js/glide.min.js" defer></script>
-    <script src="/js/swup.js" defer></script>
-    <script type="module" src="/js/script.js" defer></script>
+    <base href="/Algarve-WebCraft/">
+    <link rel="icon" href="/Algarve-Webcraft/assets/logos/favicon-logo.ico" type="image/x-icon">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/Algarve-Webcraft/assets/fonts/oswald-v53-latin-regular.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/Algarve-Webcraft/assets/fonts/oswald-v53-latin-500.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/Algarve-Webcraft/assets/fonts/oswald-v53-latin-600.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/Algarve-Webcraft/assets/fonts/oswald-v53-latin-700.woff2">
+    <link rel="preload" as="image" type="image/webp" href="/Algarve-Webcraft/assets/logos/business-logo-light.webp">
+    <link rel="preload" as="image" type="image/webp" href="/Algarve-Webcraft/assets/logos/business-logo-dark.webp">
+    <link rel="preload" as="image" type="image/webp" href="/Algarve-Webcraft/assets/images/hero-laptop.webp">
+    <link rel="preload" as="image" type="image/webp" href="/Algarve-Webcraft/assets/images/hero-phone.webp">
+    <link rel="preload" href="/Algarve-Webcraft/css/critical.css" as="style">
+    <link rel="stylesheet" href="/Algarve-Webcraft/css/critical.css">
+    <link rel="preload" href="/Algarve-Webcraft/css/style.css" as="style">
+    <link rel="stylesheet" href="/Algarve-Webcraft/css/style.css" media="print" onload="this.media='all'">
+    <link rel="preload" href="/Algarve-Webcraft/css/glide.css" as="style">
+    <link rel="stylesheet" href="/Algarve-Webcraft/css/glide.css" media="print" onload="this.media='all'">
+    <link rel="preload" href="/Algarve-Webcraft/css/style-pages.css" as="style">
+    <link rel="stylesheet" href="/Algarve-Webcraft/css/style-pages.css">
+    <link rel="preload" href="/Algarve-Webcraft/css/dark-mode.css" as="style">
+    <link rel="stylesheet" href="/Algarve-Webcraft/css/dark-mode.css">
+    <script type="module" src="/Algarve-Webcraft/js/glide.min.js" defer></script>
+    <script src="/Algarve-Webcraft/js/swup.js" defer></script>
+    <script src="/Algarve-Webcraft/js/gsap.min.js"></script>
+    <script type="module" src="/Algarve-Webcraft/js/script.js" defer></script>
     <noscript>
-      <link rel="stylesheet" href="/css/style.css">
-      <link rel="stylesheet" href="/css/glide.css">
+      <link rel="stylesheet" href="/Algarve-Webcraft/css/style.css">
+      <link rel="stylesheet" href="/Algarve-Webcraft/css/glide.css">
     </noscript>
     <title>Algarve WebCraft | Small Business Website Specialist</title>
   </head>
-  <body class="loading"> 
-    <header id="header">
+  <body class="home loading">
+    <header id="header" class="home-header">
       <a href="#main" class="skip-to-content">Skip to main content</a>
 
       <div class="header__container">
         <div class="wrapper wrapper--wide wrapper--header">
 
           <div class="business-logo-container">
-            <img src="/assets/logos/business-logo-light.webp" class="business-logo logo-front" width="200" height="70" fetchpriority="high" decoding="async" loading="eager" alt="Algarve Webcraft's logo. Landscape scenary of beach-side cliffs on the left, with the business name on the right (Algarve Webcraft) and its slogan below it (Small business website creator.)">
-            <img src="/assets/logos/business-logo-dark.webp" class="business-logo logo-back" width="200" height="70" fetchpriority="high" decoding="async" loading="eager" alt="" aria-hidden="true">
+            <img src="/Algarve-Webcraft/assets/logos/business-logo-light.webp" class="business-logo logo-front" width="200" height="70" fetchpriority="high" decoding="async" loading="eager" alt="Algarve Webcraft's logo. Landscape scenary of beach-side cliffs on the left, with the business name on the right (Algarve Webcraft) and its slogan below it (Small business website creator.)">
+            <img src="/Algarve-Webcraft/assets/logos/business-logo-dark.webp" class="business-logo logo-back" width="200" height="70" fetchpriority="high" decoding="async" loading="eager" alt="" aria-hidden="true">
           </div>
 
           <nav class="nav-bar">
             <ul>
-              <li><a href="/index.html">Home</a></li>
-              <li><a href="/html/about.html">About Us</a></li>
-              <li><a href="/html/services.html">Services</a></li>
-              <li><a href="/html/pricing.html">Pricing</a></li>
-              <li><a href="/html/contact.html">Contact</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="html/about.html">About Us</a></li>
+              <li><a href="html/services.html">Services</a></li>
+              <li><a href="html/pricing.html">Pricing</a></li>
+              <li><a href="html/contact.html">Contact</a></li>
             </ul>
           </nav>
 
@@ -122,17 +125,17 @@
       <section id="pg1-hero" class="transition-reverse-slide-main" aria-labelledby="hero-heading">
         <div class="wrapper pg1-hero__flex">
 
-          <div class="hero__text-container transition-fade"> 
-            <span class="cmp-topper-heading topper-heading--pg1-hero">Tailored Designs. Hand-crafted Code.</span> 
+          <div class="hero__text-container transition-reverse-slide">
+            <span class="cmp-topper-heading topper-heading--pg1-hero">Tailored Designs. Hand-crafted Code.</span>
             <h1 id="hero-heading" class="cmp-main-heading">Small Business Website Specialist</h1>
             <p class="hero-text">100% hand-crafted websites with guaranteed superior results – from only €85 /month with optional social media management. No Ai, WordPress, Wix (or any other page builders) are used.</p>
             <a class="cmp-main-btn main-btn--pg1-hero cmp-main-btn--light" href="html/contact.html">Start Now</a>
-            <a class="cmp-main-btn main-btn--pg1-hero" href="html/about.html">ABOUT US</a>  
+            <a class="cmp-main-btn main-btn--pg1-hero" href="html/about.html">ABOUT US</a>
           </div>
 
           <div class="hero__image-main-container">
-            <img class="hero__image-main large-image" src="/assets/images/hero-laptop.webp" width="530px" height="360px" alt="an open laptop displaying the Algarve Webcraft website." loading="eager">
-            <img class="hero__image-main small-image" src="/assets/images/hero-phone.webp" width="230px" height="115px" alt="" loading="eager" aria-hidden="true">
+            <img class="hero__image-main large-image" src="/Algarve-Webcraft/assets/images/hero-laptop.webp" width="530px" height="360px" alt="an open laptop displaying the Algarve Webcraft website." loading="eager">
+            <img class="hero__image-main small-image" src="/Algarve-Webcraft/assets/images/hero-phone.webp" width="230px" height="115px" alt="" loading="eager" aria-hidden="true">
           </div>
         </div>
 
@@ -239,9 +242,9 @@
 
             <div class="owner-image-box">
               <picture>
-                <source srcset="./assets/images/man-l.webp" media="(min-width: 768px)" type="image/webp">
-                <source srcset="./assets/images/man-s.webp" media="(max-width: 767px)" type="image/webp">
-                <img src="./assets/images/man.jpg" alt="Tayler Batista, the owner of Algarve Webcraft" width="506px" height="674px" loading="lazy" decoding="async">
+                <source srcset="/Algarve-Webcraft/assets/images/man-l.webp" media="(min-width: 768px)" type="image/webp">
+                <source srcset="/Algarve-Webcraft/assets/images/man-s.webp" media="(max-width: 767px)" type="image/webp">
+                <img src="/Algarve-Webcraft/assets/images/man.jpg" alt="Tayler Batista, the owner of Algarve Webcraft" width="506px" height="674px" loading="lazy" decoding="async">
               </picture>
 
               <div class="owner-image-box__text-box">
@@ -425,9 +428,9 @@
 
           <div class="performance-text-block__image-block">
             <picture>
-              <source srcset="./assets/images/page-score-l.webp" media="(min-width: 768px)" type="image/webp">
-              <source srcset="./assets/images/page-score-s.webp" media="(max-width: 767px)" type="image/webp">
-              <img src="./assets/images/page-score.jpg" alt="A screenshot of a performance chart for a website showing 100% score across all website metrics (Performance, Accessiblity, Best Practices and SEO)." width="506px" height="674px" loading="lazy" decoding="async">
+              <source srcset="/Algarve-Webcraft/assets/images/page-score-l.webp" media="(min-width: 768px)" type="image/webp">
+              <source srcset="/Algarve-Webcraft/assets/images/page-score-s.webp" media="(max-width: 767px)" type="image/webp">
+              <img src="/Algarve-Webcraft/assets/images/page-score.jpg" alt="A screenshot of a performance chart for a website showing 100% score across all website metrics (Performance, Accessiblity, Best Practices and SEO)." width="506px" height="674px" loading="lazy" decoding="async">
             </picture>
           </div>
 
@@ -447,23 +450,23 @@
 
           <div class="banner">
             <div class="slider" style="--quantity: 3">
-              <div class="item" style="--position: 1"><a href="https://tis-ta.github.io/Mushroom-Guide/">
+              <div class="item" style="--position: 1"><a href="https://Algarve-WebCraft.github.io/The-Garden-Bar-and-Grill/index.html">
                 <picture>
-                  <source srcset="assets/images/mushroom-foraging-l.webp" media="(min-width: 768px)" type="image/webp">
-                  <source srcset="assets/images/mushroom-foraging-s.webp" media="(max-width: 767px)" type="image/webp">
-                  <img src="assets/images/mushroom-foraging.jpg" class="portfolio-images" width="500px" height="300px" alt="A screenshot of a website called 'Mushroom Foraging', created by Algarve Webcraft" decoding="async" loading="lazy"></a></div>
+                  <source srcset="/Algarve-WebCraft/assets/images/the-garden-l.webp" media="(min-width: 768px)" type="image/webp">
+                  <source srcset="/Algarve-WebCraft/assets/images/the-garden-s.webp" media="(max-width: 767px)" type="image/webp">
+                  <img src="/Algarve-WebCraft/assets/images/the-garden.jpg" class="portfolio-images" width="500px" height="300px" alt="A screenshot of a website called 'Mushroom Foraging', created by Algarve Webcraft" decoding="async" loading="lazy"></a></div>
               </picture>
-              <div class="item" style="--position: 2"><a href="https://tis-ta.github.io/Freelance-Portfolio/">
+              <div class="item" style="--position: 2"><a href="https://Algarve-WebCraft.github.io/Freelance-Portfolio/">
                 <picture>
-                  <source srcset="assets/images/designer-portfolio-l.webp" media="(min-width: 768px)" type="image/webp">
-                  <source srcset="assets/images/designer-portfolio-s.webp" media="(max-width: 767px)" type="image/webp">
-                  <img src="assets/images/designer-portfolio.jpg" class="portfolio-images" width="500px" height="300px" alt="A screenshot of a website called 'Designer Profile', created by Algarve Webcraft" decoding="async" loading="lazy"></a></div>
+                  <source srcset="/Algarve-WebCraft/assets/images/designer-portfolio-l.webp" media="(min-width: 768px)" type="image/webp">
+                  <source srcset="/Algarve-WebCraft/assets/images/designer-portfolio-s.webp" media="(max-width: 767px)" type="image/webp">
+                  <img src="/Algarve-WebCraft/assets/images/designer-portfolio.jpg" class="portfolio-images" width="500px" height="300px" alt="A screenshot of a website called 'Designer Profile', created by Algarve Webcraft" decoding="async" loading="lazy"></a></div>
               </picture>
-              <div class="item" style="--position: 3"><a href="https://tis-ta.github.io/Mushroom-Guide/">
+              <div class="item" style="--position: 3"><a href="https://Algarve-WebCraft.github.io/Mushroom-Guide/">
                 <picture>
-                  <source srcset="assets/images/mushroom-foraging-l.webp" media="(min-width: 768px)" type="image/webp">
-                  <source srcset="assets/images/mushroom-foraging-s.webp" media="(max-width: 767px)" type="image/webp">
-                  <img src="assets/images/mushroom-foraging.jpg" class="portfolio-images" width="500px" height="300px" alt="A screenshot of a website called 'Mushroom Foraging', created by Algarve Webcraft" decoding="async" loading="lazy"></a></div>
+                  <source srcset="/Algarve-WebCraft/assets/images/mushroom-foraging-l.webp" media="(min-width: 768px)" type="image/webp">
+                  <source srcset="/Algarve-WebCraft/assets/images/mushroom-foraging-s.webp" media="(max-width: 767px)" type="image/webp">
+                  <img src="/Algarve-WebCraft/assets/images/mushroom-foraging.jpg" class="portfolio-images" width="500px" height="300px" alt="A screenshot of a website called 'Mushroom Foraging', created by Algarve Webcraft" decoding="async" loading="lazy"></a></div>
               </picture>
             </div>
           </div>
@@ -551,7 +554,7 @@
               </ul>
 
               <span class="pricing-card__main-price-span">€1200</span>
-              <span>+€15/mo Hosting</span>
+              <span>+ €15/mo Hosting</span>
               <a class="cmp-main-btn" href="./html/contact.html">Start Now</a>
             </div>
 
@@ -675,7 +678,7 @@
       <!------------------------------------------------ FOOTER ---------------------------------------------------->
       <!------------------------------------------------------------------------------------------------------------>
 
-      <footer id="footer">
+      <footer id="footer" class="transition-reverse-slide">
         <svg class="footer__svg-page-decoration" viewBox="0 0 1440 150" aria-hidden="true">
           <path d="M0,0 C300,100 600,0 900,100 C1200,200 1440,0 1440,0 L1440,150 L0,150 Z" />
         </svg>
@@ -684,7 +687,7 @@
 
           <div class="footer-flex-container">
             <div class="footer__image-text-block">
-              <img src="assets/logos/business-logo-light.webp" class="footer-business-logo" width="310" height="110" alt="" decoding="async" loading="lazy" aria-hidden="true">
+              <img src="/Algarve-WebCraft/assets/logos/business-logo-light.webp" class="footer-business-logo" width="310" height="110" alt="" decoding="async" loading="lazy" aria-hidden="true">
               <p>Our philosophy is that every small business deserves a website they can be proud of. No matter your size, your online presence should be built to grow with you. We are here to help make it happen!</p>
               <a class="cmp-main-btn-footer" href="./html/contact.html">Get Started Now</a>
             </div>

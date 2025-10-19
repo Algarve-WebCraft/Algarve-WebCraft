@@ -1,6 +1,6 @@
 "use strict";
 
-/* Swup page navigation */
+////////////////////////////////////////////////////////* Swup page navigation *////////////////////////////////////////////////////////////////////////*
 
 const swup = new Swup();
 
@@ -11,28 +11,82 @@ swup.hooks.on("page:view", () => {
   initServicesHeadingObserver();
 });
 
-/* Change beginning body hero animation classes */
+////////////////////////////////////////////////////////* Change beginning body hero animation classes *////////////////////////////////////////////////////////////////////////*
 
 document.addEventListener("DOMContentLoaded", () => {
+  const tl = gsap.timeline({
+    defaults: { ease: "power3.out" },
+    delay: 0.5,
+  });
+
+  tl.fromTo("#pg1-hero", { opacity: 0 }, { opacity: 1, duration: 0.3 })
+
+    // Hero heading slides in from left
+    .from("#hero-heading", { x: -230, opacity: 0, duration: 1.5 }, "+=0.3")
+
+    // Hero text follows quickly
+    .from(".hero-text", { x: 230, opacity: 0, duration: 1.5 }, "-=0.8")
+
+    // Topper heading from the right
+    .from(".cmp-topper-heading", { opacity: 0, duration: 2.5 }, "-=0.4")
+
+    // Buttons fade in together
+    .from(".cmp-main-btn", { opacity: 0, duration: 3 }, "-=2")
+
+    // Header slides in from the right at the end
+    .from(".home-header", { x: 1200, opacity: 0, duration: 2.75 }, "-=4");
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (!document.body.classList.contains("home")) {
+    document.body.classList.add("loaded");
+    return;
+  }
+
   setTimeout(() => {
     document.body.classList.remove("loading");
     document.body.classList.add("loaded");
-  }, 2000);
+  }, 6000);
 });
 
-/* Navigation links and hamburger menu */
+////////////////////////////////////////////////////////* Navigation links and hamburger menu *////////////////////////////////////////////////////////////////////////*
 
 const hamburgerBtn = document.querySelector(".hamburger-btn");
 const navBar = document.querySelector(".nav-bar");
 const navBarList = document.querySelector(".nav-bar ul");
 const navBarLinks = document.querySelectorAll(".nav-bar a");
-const currentPage = window.location.pathname;
+
+let isAnimating = false;
 
 hamburgerBtn.addEventListener("click", () => {
-  hamburgerBtn.classList.toggle("active");
-  navBar.classList.toggle("hamburger-btn__open");
+  if (isAnimating) return;
+
+  const isOpen = navBar.classList.contains("hamburger-btn__open");
+
+  if (isOpen) {
+    isAnimating = true;
+    hamburgerBtn.classList.remove("active");
+    navBar.classList.remove("hamburger-btn__open");
+  } else {
+    navBar.style.display = "block";
+    requestAnimationFrame(() => {
+      isAnimating = true;
+      hamburgerBtn.classList.add("active");
+      navBar.classList.add("hamburger-btn__open");
+    });
+  }
 
   setNavAttributes();
+
+  setTimeout(() => {
+    isAnimating = false;
+  }, 400);
+});
+
+navBar.addEventListener("transitionend", (e) => {
+  if (e.propertyName !== "transform") return;
+
+  isAnimating = false;
 });
 
 document.addEventListener("click", (e) => {
@@ -44,6 +98,7 @@ document.addEventListener("click", (e) => {
   )
     return;
 
+  isAnimating = true;
   navBar.classList.remove("hamburger-btn__open");
   hamburgerBtn.classList.remove("active");
 
@@ -51,11 +106,10 @@ document.addEventListener("click", (e) => {
 });
 
 function setNavAttributes() {
-  const navBarLinks = document.querySelectorAll(".nav-bar a");
   const navBarHasActiveClass = navBar.classList.contains("hamburger-btn__open");
 
   if (!navBarHasActiveClass && navBar.contains(document.activeElement)) {
-    document.activeElement.blur(); 
+    document.activeElement.blur();
   }
 
   navBar.setAttribute("aria-hidden", String(!navBarHasActiveClass));
@@ -66,7 +120,7 @@ function setNavAttributes() {
   });
 }
 
-/* Show the current page */
+////////////////////////////////////////////////////////* Show the current page *////////////////////////////////////////////////////////////////////////*
 
 function updateActiveNavLink() {
   const navBarLinks = document.querySelectorAll(".nav-bar a");
@@ -89,7 +143,7 @@ function updateActiveNavLink() {
 
 updateActiveNavLink();
 
-/* Prevent navigation transitions happening on resize */
+////////////////////////////////////////////////////////* Prevent navigation transitions happening on resize *////////////////////////////////////////////////////////////////////////*
 
 let resizeTimeout;
 
@@ -102,7 +156,7 @@ window.addEventListener("resize", () => {
   }, 1);
 });
 
-/* Sticky navigation bar */
+////////////////////////////////////////////////////////* Sticky navigation bar *////////////////////////////////////////////////////////////////////////*
 
 const primaryHeader = document.querySelector("#header");
 
@@ -114,7 +168,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-/* Performance section scroll animation */
+////////////////////////////////////////////////////////* Performance section scroll animation *////////////////////////////////////////////////////////////////////////*
 
 function initPerformanceObservers() {
   const blocks = document.querySelectorAll(
@@ -140,7 +194,7 @@ function initPerformanceObservers() {
 
 initPerformanceObservers();
 
-/* Testimonial Carousel */
+////////////////////////////////////////////////////////* Testimonial Carousel *////////////////////////////////////////////////////////////////////////*
 
 const glideElement = document?.querySelector(".glide");
 
@@ -179,16 +233,7 @@ function initGlide() {
 
 initGlide();
 
-/* Footer copyright-year update */
-
-const currentYear = new Date().getFullYear();
-const copyrightSymbol = "\u00A9";
-
-document.getElementById(
-  "year"
-).innerHTML = `<strong>${copyrightSymbol} Copyright ${currentYear}</strong>`;
-
-/* Our services page heading underline draw */
+////////////////////////////////////////////////////////* Our services page heading underline draw *////////////////////////////////////////////////////////////////////////*
 
 function initServicesHeadingObserver() {
   const headings = document?.querySelectorAll(".services-page-sub-heading");
@@ -211,7 +256,16 @@ function initServicesHeadingObserver() {
 
 initServicesHeadingObserver();
 
-/* Dark-mode change */
+////////////////////////////////////////////////////////* Footer copyright-year update *////////////////////////////////////////////////////////////////////////*
+
+const currentYear = new Date().getFullYear();
+const copyrightSymbol = "\u00A9";
+
+document.getElementById(
+  "year"
+).innerHTML = `<strong>${copyrightSymbol} Copyright ${currentYear}</strong>`;
+
+///////////////////////////////////////////////////////* Dark-mode change *////////////////////////////////////////////////////////////////////////*
 
 const darkModeButton = document.getElementById("dark-mode-toggle");
 
