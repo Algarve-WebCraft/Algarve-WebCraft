@@ -397,20 +397,28 @@
 
   @media (prefers-reduced-motion: no-preference) {
     .banner {
+      --max-viewport: 70;
+
       position: relative;
       width: 100%;
-      height: clamp(20.31rem, 60vw, 43.75rem);
-      margin-top: 8rem;
-      margin-bottom: -8rem;
+      height: 10rem;
+      margin-top: clamp(4rem, 10vw, 8rem);
+      margin-bottom: clamp(
+        /* Between 30rem and 100rem width, the margin will change from 4rem to 20rem */
+          4rem,
+        calc(4rem + (20 - 4) * ((100vw - 25rem) / (var(--max-viewport) - 25))),
+        /* stop scaling after viewport reaches the max rem level at '--max-viewport' */
+          20rem
+      );
+
       text-align: center;
       user-select: none;
 
       .slider {
         position: absolute;
-        width: clamp(10.94rem, 35vw, 18.75rem);
-        left: calc(50% - clamp(5.47rem, 17.5vw, 9.37rem));
+        width: clamp(11rem, 35vw, 18.75rem);
+        left: calc(50% - clamp(5.5rem, 17.5vw, 9.4rem));
         will-change: transform;
-
         transform: translateZ(0);
         transform-style: preserve-3d;
         animation: autoRun 20s linear infinite;
@@ -445,16 +453,27 @@
   }
 
   .portfolio-images {
-    border-radius: 1rem;
+    border-radius: 10%;
+    border-bottom-left-radius: 40%;
+    border-bottom-right-radius: 40%;
   }
 
   .cmp-topper-heading--pg1-s4 {
     font-size: clamp(0.75rem, 2vw, 1.75rem);
-    bottom: -30px;
+    margin-bottom: var(--padd-60-100); 
+  }
 
-    @media (width > 62.5rem) {
-      bottom: 20px;
-    }
+  .cmp-topper-heading--pg1-s4::after {
+    position: relative;
+    content: "";
+    display: block;
+    margin-inline: auto;
+    background: var(--clr-gray-100);
+    height: 1px;
+    width: 19em;
+    margin-top: 0.25rem;
+    opacity: 0.3;
+    z-index: 999;
   }
 
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
@@ -462,28 +481,7 @@
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
   .pg1-s5-pricing {
-    padding-block: var(--padd-60-100);
-
-    @media (width > 62.5rem) {
-      padding-top: 0;
-    }
-  }
-
-  .cmp-topper-heading--pg1-s5::before {
-    position: relative;
-    content: "";
-    display: block;
-    margin-inline: auto;
-    background: var(--clr-gray-100);
-    height: 0px;
-    width: 50%;
-    margin-bottom: 3.5rem;
-    opacity: 0.3;
-
-    @media (width > 62.5rem) {
-      height: 1px;
-      margin-bottom: 5.5rem;
-    }
+    padding-bottom: var(--padd-60-100);
   }
 
   .cmp-topper-heading--pg1-s5,

@@ -7,8 +7,37 @@
   --clr-dark-theme-400: #111111;
 }
 
+html.dark-mode .cmp-main-btn--light,
+html.dark-mode .cmp-main-btn-footer {
+  background-color: var(--clr-dark-theme-50);
+}
+
+html.dark-mode .header__container,
+html.dark-mode .hamburger-btn,
+html.dark-mode .cmp-main-btn {
+  box-shadow: 1px 1px 30px var(--clr-dark-theme-200);
+}
+
+html.dark-mode .banner-overlay,
+html.dark-mode #footer,
+html.dark-mode .main-btn--pg1-hero:last-of-type,
+html.dark-mode .pricing-card:last-of-type,
+html.dark-mode .glide__track,
+html.dark-mode #pg1-hero,
+html.dark-mode .pg1-s2-mission,
+html.dark-mode .pg1-s5-pricing,
+html.dark-mode .cmp-svg-pages-decoration,
+html.dark-mode .pg2-s2-portfolio {
+  background-color: var(--clr-dark-theme-300);
+}
+
 html.dark-mode body,
-html.dark-mode .pg1-s3-performance {
+html.dark-mode .header__container,
+html.dark-mode .nav-bar,
+html.dark-mode .services-card,
+html.dark-mode .pricing-card,
+html.dark-mode .pg1-s3-performance,
+html.dark-mode .pg1-s5-pricing--pg4-s1 {
   background-color: var(--clr-dark-theme-400);
 }
 
@@ -40,35 +69,12 @@ html.dark-mode .nav-bar .active-link {
   }
 }
 
-html.dark-mode .who-image-block__image {
-  box-shadow: 0 0 1rem #ffffff9b;
-}
-
 html.dark-mode .cmp-topper-heading {
-  color: var(--clr-dark-theme-50);
+  color: var(--clr-dark-theme-50) !important;
 }
 
-html.dark-mode #pg1-hero,
-html.dark-mode .pg1-s2-mission,
-html.dark-mode .pg1-s4-portfolio,
-html.dark-mode .pg1-s5-pricing,
-html.dark-mode #footer,
-html.dark-mode .cmp-svg-pages-decoration {
-  background-color: var(--clr-dark-theme-300);
-}
-
-html.dark-mode .header__container,
-html.dark-mode .nav-bar,
-html.dark-mode .pg1-s5-pricing--pg4-s1 {
-  background-color: var(--clr-dark-theme-400);
-}
-
-html.dark-mode .pg1-s2-mission {
-  padding-top: var(--padd-60-100);
-}
-
-html.dark-mode .header__container {
-  box-shadow: 1px 1px 30px var(--clr-dark-theme-200);
+html.dark-mode .cmp-svg-pages-decoration__svg {
+  fill: var(--clr-dark-theme-300);
 }
 
 html.dark-mode .hero__svg-page-decoration,
@@ -76,31 +82,16 @@ html.dark-mode .footer__svg-page-decoration {
   fill: var(--clr-dark-theme-400);
 }
 
-html.dark-mode .cmp-svg-pages-decoration__svg {
-  fill: var(--clr-dark-theme-300);
-}
-
-html.dark-mode .hamburger-btn,
-html.dark-mode .cmp-main-btn {
-  background-color: var(--clr-dark-theme-200);
-}
-
-html.dark-mode .cmp-main-btn--light,
-html.dark-mode .cmp-main-btn-footer {
-  background-color: var(--clr-dark-theme-50);
-}
-
 html.dark-mode .decorative-side-svg {
-  fill: var(--clr-dark-theme-200);
+  fill: var(--clr-dark-theme-100);
   opacity: 0.55;
 }
 
-html.dark-mode .main-btn--pg1-hero:last-of-type {
-  background-color: var(--clr-dark-theme-300);
+html.dark-mode .who-image-block__image {
+  box-shadow: 0 0 1rem #ffffff9b;
 }
 
 html.dark-mode .services-card {
-  background-color: var(--clr-dark-theme-400);
   box-shadow: -5px 5px 20px var(--clr-dark-theme-100);
 
   .services-card__svg-box {
@@ -145,16 +136,12 @@ html.dark-mode .services-page-list strong {
   color: var(--clr-blue-100);
 }
 
-html.dark-mode .banner-overlay {
-  background-color: var(--clr-dark-theme-300);
-}
-
-html.dark-mode .pricing-page-svg-decoration {
+html.dark-mode .pricing-page-svg-decoration,
+html.dark-mode .contact-page-contact-box__list-flex {
   fill: var(--clr-dark-theme-200);
 }
 
 html.dark-mode .pricing-card {
-  background-color: var(--clr-dark-theme-400);
   box-shadow: 0 0 10px var(--clr-dark-theme-200);
 }
 
@@ -165,13 +152,11 @@ html.dark-mode .pricing-card:first-of-type {
 }
 
 html.dark-mode .pricing-card:last-of-type {
-  background-color: var(--clr-dark-theme-300);
   border: 1px solid var(--clr-dark-theme-200);
   box-shadow: 0 0 50px var(--clr-dark-theme-100);
 }
 
 html.dark-mode .glide__track {
-  background-color: var(--clr-dark-theme-300);
   border: 1px solid var(--clr-dark-theme-200);
   box-shadow: -2px 0 5px var(--clr-dark-theme-50);
 
@@ -184,14 +169,15 @@ html.dark-mode .glide__track {
   }
 }
 
-html.dark-mode .pg2-s1-who {
-  padding-bottom: var(--padd-60-100);
+html.dark-mode .pg1-s5-pricing,
+html.dark-mode .pg1-s2-mission {
+  padding-top: var(--padd-60-100);
 }
 
-html.dark-mode .contact-page-contact-box__list-flex {
-  svg {
-    fill: var(--clr-dark-theme-200);
-  }
+html.dark-mode .pg2-s1-who,
+html.dark-mode .cmp-topper-heading--pg2-s2 {
+  padding-bottom: var(--padd-60-100);
+  color: var(--clr-dark-theme-50) !important;
 }
 
 html.dark-mode .dark-mode-hidden {

@@ -14,6 +14,7 @@ swup.hooks.on("page:view", () => {
 ////////////////////////////////////////////////////////* Change beginning body hero animation classes *////////////////////////////////////////////////////////////////////////*
 
 document.addEventListener("DOMContentLoaded", () => {
+  /* return; */
   const tl = gsap.timeline({
     defaults: { ease: "power3.out" },
     delay: 0.5,
@@ -28,13 +29,13 @@ document.addEventListener("DOMContentLoaded", () => {
     .from(".hero-text", { x: 230, opacity: 0, duration: 1.5 }, "-=0.8")
 
     // Topper heading from the right
-    .from(".cmp-topper-heading", { opacity: 0, duration: 2.5 }, "-=0.4")
+    .from(".cmp-topper-heading--pg1-hero", { opacity: 0, duration: 2.5 }, "-=0.4")
 
     // Buttons fade in together
-    .from(".cmp-main-btn", { opacity: 0, duration: 3 }, "-=2")
+    .from(".cmp-main-btn--pg1-hero", { opacity: 0, duration: 3 }, "-=2")
 
     // Header slides in from the right at the end
-    .from(".home-header", { x: 1200, opacity: 0, duration: 2.75 }, "-=4");
+    .from(".home-header", { x: 1600, opacity: 0, duration: 4 }, "-=5");
 });
 
 document.addEventListener("DOMContentLoaded", () => {

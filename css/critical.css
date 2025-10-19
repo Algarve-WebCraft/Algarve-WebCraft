@@ -115,7 +115,7 @@
   .transition-reverse-slide-main {
     transform: translateY(0);
     transform-origin: left;
-    transition: 0.3s;
+    transition: 0.6s;
     position: relative;
   }
 
@@ -219,7 +219,7 @@
     --fs-text-heading: clamp(1.25rem, 1.5vw, 1.5rem);
     --fs-topper-heading: clamp(0.8rem, 1.5vw, 1rem);
     --fs-sub-heading: clamp(2rem, 3.5vw, 3rem);
-    --fs-heading: clamp(2.7rem, 5vw, 4rem);
+    --fs-heading: clamp(3rem, 5vw, 4.5rem);
     --fs-card-heading: clamp(1.56rem, 3vw, 2.25rem);
     --fs-card-text: clamp(0.875rem, 1.5vw, 1rem);
     --fs-nav-L-screen: clamp(0.8rem, 1.2vw, 1.1rem);
@@ -228,7 +228,7 @@
     --ff-headings-oswald: "Oswald", Arial, sans-serif;
     --ff-body-source: "Source Sans 3", Arial, sans-serif;
 
-    --padd-60-100: clamp(3.75rem, 8vw, 6.25rem);
+    --padd-60-100: clamp(4rem, 8vw, 6.5rem);
 
     --clr-lighter-white: #fafbfc;
     --clr-lighter-black: #1a1a1a;
@@ -431,11 +431,12 @@
     max-width: 10rem;
     height: auto;
     backface-visibility: hidden;
-    transition: transform 1.5s;
+    transition: transform 0.75s;
 
     @media (width > 62.5rem) {
       width: 100%;
       max-width: 12rem;
+      transition: transform 1.5s;
     }
   }
 
@@ -468,17 +469,21 @@
     z-index: 10;
     padding: 0.75rem;
     border-radius: 20%;
+    background-clip: padding-box;
     box-sizing: content-box;
+    touch-action: manipulation;
     transition: transform 1.2s;
     /* prettier-ignore */
     transition-timing-function: linear(0, -0.001 6.9%, -0.004 9.1%, -0.008 11%, -0.016 12.9%, -0.025 14.6%, -0.038 16.3%, -0.054 17.9%, -0.073 19.5%, -0.095 21%, -0.152 24.1%, -0.217 27%, -0.358 32.6%, -0.408 35%, -0.428 36.3%, -0.439 37.5%, -0.441 38.6%, -0.436 39.6%, -0.423 40.5%, -0.405 41.3%, -0.35 42.8%, -0.27 44.2%, -0.156 45.6%, -0.014 46.9%, 0.153 48.1%, 0.766 51.4%, 1.05 53.4%, 1.184 54.7%, 1.284 56%, 1.359 57.4%, 1.39 58.2%, 1.413 59%, 1.434 60.2%, 1.439 60.8%, 1.441 61.5%, 1.44 62.2%, 1.436 62.9%, 1.418 64.4%, 1.395 65.7%, 1.365 67.1%, 1.212 73.2%, 1.146 76.2%, 1.089 79.4%, 1.067 81%, 1.047 82.7%, 1.034 84.2%, 1.023 85.8%, 1.014 87.5%, 1.008 89.3%, 1.004 91.2%, 1.001 93.3%, 1);
 
     span {
+      display: block;
+      width: 100%;
       height: 2.5px;
       background: #c5c3c3;
       border-radius: 3px;
       opacity: 1;
-      pointer-events: none;
+      pointer-events: none !important;
       transition: transform 0.6s ease, opacity 0.3s;
     }
 
@@ -531,7 +536,7 @@
     -ms-user-select: none;
     transform: translateY(-150%);
     /* prettier-ignore */
-    transition: transform 1.2s linear(0, 1 44.7%, 0.898 51.8%, 0.874 55.1%, 0.866 58.4%, 0.888 64.3%, 1 77.4%, 0.98 84.5%, 1);
+    transition: transform 0.85s linear(0, 1 44.7%, 0.898 51.8%, 0.874 55.1%, 0.866 58.4%, 0.888 64.3%, 1 77.4%, 0.98 84.5%, 1);
 
     ul {
       color: var(--clr-lighter-black);
@@ -655,9 +660,9 @@
     min-width: 50%;
   }
 
-  .topper-heading--pg1-hero {
+  .cmp-topper-heading--pg1-hero {
     font-size: clamp(0.875rem, 1.5vw, 1rem);
-    color: var(--text-body-white);
+    color: var(--clr-blue-100);
   }
 
   .hero-text {
@@ -731,7 +736,7 @@
     animation-delay: 0.5s !important;
   }
 
-  .main-btn--pg1-hero:first-of-type {
+  .cmp-main-btn--pg1-hero:first-of-type {
     margin-right: 1rem;
     color: var(--text-primary-dark);
 
@@ -741,7 +746,7 @@
     }
   }
 
-  .main-btn--pg1-hero:last-of-type {
+  .cmp-main-btn--pg1-hero:last-of-type {
     background-color: var(--bg-primary-blue);
     color: var(--text-body-white);
     padding: 0.75em 1.5em;
