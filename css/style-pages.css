@@ -289,9 +289,9 @@
   /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 4 / SECTION-ONE / PRICING ***       \\\\\\\\\\\\\\\\\\\\\\\\ */
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
-  .pg1-s5-pricing--pg4-s1 {
+  .pg4-s1-pricing {
     position: relative;
-    /* padding-block: var(--padd-60-100) !important; */
+    padding-block: var(--padd-60-100);
   }
 
   .cmp-topper-heading--pg4-s1::before {

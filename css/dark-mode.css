@@ -169,7 +169,14 @@ html.dark-mode .glide__track {
   }
 }
 
-html.dark-mode .pg1-s5-pricing,
+html.dark-mode .pg1-s3-performance {
+  padding-bottom: 0;
+}
+
+html.dark-mode .pg1-s5-pricing {
+  padding-block: var(--padd-60-100);
+}
+
 html.dark-mode .pg1-s2-mission {
   padding-top: var(--padd-60-100);
 }

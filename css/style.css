@@ -480,10 +480,6 @@
   /* \\\\\\\\\\\\\\\\\\\\\\\      *** PAGE 1 / SECTION-FIVE / PRICING ***       \\\\\\\\\\\\\\\\\\\\\ */
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
-  .pg1-s5-pricing {
-    padding-bottom: var(--padd-60-100);
-  }
-
   .cmp-topper-heading--pg1-s5,
   .cmp-sub-heading--pg1-s5 {
     position: relative;
