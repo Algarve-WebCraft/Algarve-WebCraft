@@ -14,7 +14,7 @@ swup.hooks.on("page:view", () => {
 ////////////////////////////////////////////////////////* Change beginning body hero animation classes *////////////////////////////////////////////////////////////////////////*
 
 document.addEventListener("DOMContentLoaded", () => {
-  /* return; */
+  return;
   const tl = gsap.timeline({
     defaults: { ease: "power3.out" },
     delay: 0.5,
@@ -56,7 +56,6 @@ const hamburgerBtn = document.querySelector(".hamburger-btn");
 const navBar = document.querySelector(".nav-bar");
 const navBarList = document.querySelector(".nav-bar ul");
 const navBarLinks = document.querySelectorAll(".nav-bar a");
-
 let isAnimating = false;
 
 hamburgerBtn.addEventListener("click", () => {
@@ -81,7 +80,7 @@ hamburgerBtn.addEventListener("click", () => {
 
   setTimeout(() => {
     isAnimating = false;
-  }, 400);
+  }, 800);
 });
 
 navBar.addEventListener("transitionend", (e) => {

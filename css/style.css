@@ -67,7 +67,7 @@
 
   .text-block {
     p {
-      font-size: clamp(0.875rem, 2vw, 1rem);
+      font-size: clamp(1rem, 2vw, 1.1rem);
     }
   }
 
@@ -212,7 +212,7 @@
     }
 
     h3 {
-      font-size: clamp(1.25rem, 2vw, 1.5625rem);
+      font-size: var(--fs-text-heading);    
       margin-top: 3rem;
       margin-bottom: 0.75rem;
     }
@@ -525,7 +525,7 @@
     }
 
     ul {
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
 
     li {

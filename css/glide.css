@@ -52,7 +52,7 @@
 
   span {
     font-style: normal;
-    color: var(--clr-blue-150); 
+    color: var(--clr-blue-150);
   }
 
   a {
@@ -91,7 +91,15 @@
     opacity: 0.8;
   }
 
-  &:active { 
+  &:active {
     opacity: 1;
   }
+}
+
+.glide__bullet[aria-selected="true"] {
+  background: #000000bb; 
+  transform: scale(1.1);
+  opacity: 1;
+  border: 1px solid #000;
+  transition: transform 0.3s ease;
 }
