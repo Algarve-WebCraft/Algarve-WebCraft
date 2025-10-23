@@ -72,7 +72,7 @@ function gsapScrollAnimations() {
   gsap.registerPlugin(ScrollTrigger);
 
   ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-  ScrollTrigger.normalizeScroll(true);
+  /* ScrollTrigger.normalizeScroll(true); */
 
   const animatedElements = document.querySelectorAll("[data-animate]");
 
