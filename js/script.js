@@ -72,6 +72,7 @@ function gsapScrollAnimations() {
   gsap.registerPlugin(ScrollTrigger);
 
   ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  ScrollTrigger.normalizeScroll(true);
 
   const animatedElements = document.querySelectorAll("[data-animate]");
 
@@ -361,12 +362,10 @@ window.addEventListener("scroll", () => {
 });
 
 function closeMenuSafely() {
-  if (navBar.classList.contains("hamburger-btn__open")) {
-    navBar.classList.remove("hamburger-btn__open");
-    hamburgerBtn.classList.remove("active");
-    setNavAttributes();
-    isAnimating = false;
-  }
+  navBar.classList.remove("hamburger-btn__open");
+  hamburgerBtn.classList.remove("active");
+  setNavAttributes();
+  isAnimating = false;
 }
 
 /////////////////////////////////////////////////////////////////* Dark-mode change */////////////////////////////////////////////////////////////////////////////////*
