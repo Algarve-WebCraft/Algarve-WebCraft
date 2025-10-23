@@ -758,7 +758,7 @@
     position: relative;
     display: block;
     transform: scaleX(-1);
-    margin-bottom: -1px;
+    margin-bottom: -3px;
     backface-visibility: hidden;
     fill: #fff;
   }

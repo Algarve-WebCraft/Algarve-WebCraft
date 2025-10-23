@@ -28,7 +28,7 @@ swup.hooks.on("page:view", () => {
 //////////////////////////////////////////////////////* Change opening hero animation classes *////////////////////////////////////////////////////////////////////////*
 
 function gsapOpeningHomeAnimations() {
-  /* return; */
+  return;
   const tl = gsap.timeline({
     defaults: { ease: "power3.out" },
     delay: 0.5,
@@ -118,8 +118,8 @@ function gsapScrollAnimations() {
       ...animProps,
       scrollTrigger: {
         trigger: el,
-        start: "top 85%",
-        end: "top 40%",
+        start: "top 75%",
+        end: "top 35%",
         scrub: noScrub ? false : 0.5,
         once: isReversible ? false : true,
         toggleActions: isReversible
