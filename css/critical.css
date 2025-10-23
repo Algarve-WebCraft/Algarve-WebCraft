@@ -369,10 +369,10 @@
 }
 
 @layer base {
-  html {
+  /* html {
     overflow-x: hidden !important;
     overflow-x: clip !important;
-  }
+  } */
 
   body {
     background-color: #fff;
@@ -380,7 +380,7 @@
     font-family: var(--ff-body-source);
     font-weight: 400;
     color: var(--text-primary);
-    overflow-x: clip;
+    /* overflow-x: clip; */
   }
 
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
@@ -756,6 +756,7 @@
     position: relative;
     display: block;
     transform: scaleX(-1);
+    margin-bottom: -1px;
     backface-visibility: hidden;
     fill: #fff;
   }

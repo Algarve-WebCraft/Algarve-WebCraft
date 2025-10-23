@@ -336,15 +336,38 @@ window.addEventListener("resize", () => {
 
 ///////////////////////////////////////////////////////////////* Sticky navigation bar *//////////////////////////////////////////////////////////////////////////////*
 
-const primaryHeader = document.querySelector("#header");
+/* const header = document.querySelector("#header");
 
 window.addEventListener("scroll", () => {
   if (window.scrollY > 400) {
-    primaryHeader.classList.add("sticking");
+    header.classList.add("sticking");
   } else if (window.scrollY === 0) {
-    primaryHeader.classList.remove("sticking");
+    header.classList.remove("sticking");
+  }
+}); */
+
+window.addEventListener("scroll", () => {
+  const header = document.querySelector("#header");
+  const isScrolled = window.scrollY > 400;
+  const headerWasSticking = header.classList.contains("sticking");
+
+  if (isScrolled && !headerWasSticking) {
+    header.classList.add("sticking");
+    closeMenuSafely();
+  } else if (window.scrollY === 0 && headerWasSticking) {
+    header.classList.remove("sticking");
+    closeMenuSafely();
   }
 });
+
+function closeMenuSafely() {
+  if (navBar.classList.contains("hamburger-btn__open")) {
+    navBar.classList.remove("hamburger-btn__open");
+    hamburgerBtn.classList.remove("active");
+    setNavAttributes();
+    isAnimating = false;
+  }
+}
 
 /////////////////////////////////////////////////////////////////* Dark-mode change */////////////////////////////////////////////////////////////////////////////////*
 
