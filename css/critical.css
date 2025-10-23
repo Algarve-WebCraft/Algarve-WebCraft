@@ -73,7 +73,7 @@
       scroll-behavior: smooth;
     }
   } */
-   
+
   /* Animation change for dark-mode */
 
   @media (prefers-reduced-motion: no-preference) {
@@ -369,9 +369,11 @@
 }
 
 @layer base {
-  html {
-    overflow-x: hidden !important;
-    overflow-x: clip !important;
+  html,
+  body {
+    height: 100%;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
   }
 
   body {

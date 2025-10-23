@@ -18,6 +18,7 @@ swup.hooks.on("page:view", () => {
   initGlide();
   initPerformanceObservers();
   initServicesHeadingObserver();
+  setTimeout(() => ScrollTrigger.refresh(true), 300);
 
   setTimeout(() => {
     gsapScrollAnimations();
@@ -73,6 +74,7 @@ function gsapScrollAnimations() {
 
   ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
   /* ScrollTrigger.normalizeScroll(true); */
+  ScrollTrigger.defaults({ markers: true });
 
   const animatedElements = document.querySelectorAll("[data-animate]");
 
@@ -121,7 +123,9 @@ function gsapScrollAnimations() {
     });
   });
 
-  ScrollTrigger.refresh();
+  setTimeout(() => {
+    ScrollTrigger.refresh(true);
+  }, 500);
 }
 
 ////////////////////////////////////////////////////////* Performance section scroll animation *////////////////////////////////////////////////////////////////////////*
