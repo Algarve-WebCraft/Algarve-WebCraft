@@ -73,13 +73,14 @@ function gsapScrollAnimations() {
   gsap.registerPlugin(ScrollTrigger);
 
   ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-  /* ScrollTrigger.normalizeScroll(true); */
-  /* ScrollTrigger.defaults({ markers: true }); */
+  ScrollTrigger.defaults({ markers: true }); // Enable markers to show where the scroller starts and ends while planning
 
   const animatedElements = document.querySelectorAll("[data-animate]");
 
   animatedElements.forEach((el) => {
     const animationType = el.dataset.animate;
+    const isReversible = el.hasAttribute("data-reversible");
+    const noScrub = el.hasAttribute("data-no-scrub");
     let animProps = { opacity: 0, duration: 1, ease: "power3.out" };
 
     switch (animationType) {
@@ -96,16 +97,16 @@ function gsapScrollAnimations() {
         animProps = { ...animProps, x: 150 };
         break;
       case "slide-up-fast":
-        animProps = { ...animProps, y: 150, duration: 0.2 };
+        animProps = { ...animProps, y: 150, duration: 0.25 };
         break;
       case "slide-down-fast":
-        animProps = { ...animProps, y: -150, duration: 0.2 };
+        animProps = { ...animProps, y: -150, duration: 0.25 };
         break;
       case "slide-left-fast":
-        animProps = { ...animProps, x: -150, duration: 0.2 };
+        animProps = { ...animProps, x: -150, duration: 0.25 };
         break;
       case "slide-right-fast":
-        animProps = { ...animProps, x: 150, duration: 0.2 };
+        animProps = { ...animProps, x: 150, duration: 0.25 };
         break;
       case "fade-in":
       default:
@@ -117,15 +118,18 @@ function gsapScrollAnimations() {
       ...animProps,
       scrollTrigger: {
         trigger: el,
-        start: "top 70%",
-        once: true,
+        start: "top 85%",
+        end: "top 40%",
+        scrub: noScrub ? false : 0.5,
+        once: isReversible ? false : true,
+        toggleActions: isReversible
+          ? "play none none reverse"
+          : "play none none none",
       },
     });
   });
 
-  setTimeout(() => {
-    ScrollTrigger.refresh(true);
-  }, 500);
+  ScrollTrigger.refresh(true);
 }
 
 ////////////////////////////////////////////////////////* Performance section scroll animation *////////////////////////////////////////////////////////////////////////*

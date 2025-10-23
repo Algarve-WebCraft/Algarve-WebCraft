@@ -100,8 +100,8 @@
 
     .owner-image-box__text-box {
       position: absolute;
-      bottom: 3rem;
-      left: 3rem;
+      bottom: 1.5rem;
+      left: -0.5rem;
       background-color: var(--clr-blue-200);
       color: #fff;
       padding: 1em 1.5em;
@@ -114,6 +114,11 @@
       span:first-of-type {
         font-size: var(--fs-text-heading);
         font-family: var(--ff-headings-oswald);
+      }
+
+      @media (width > 37.5rem) {
+        bottom: 3rem;
+        left: 3rem;
       }
     }
   }
