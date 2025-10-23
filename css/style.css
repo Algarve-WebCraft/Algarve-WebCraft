@@ -499,9 +499,6 @@
     grid-template-columns: 1fr;
     gap: 2.5rem;
     margin-top: 3rem;
-    animation: slideUp 1s ease-out both;
-    animation-timeline: view();
-    animation-range: entry 15% cover 25%;
 
     @media (width > 62.43rem) {
       grid-template-columns: 1fr 1fr;
@@ -778,17 +775,6 @@
       transform: translateY(-100%);
     }
     to {
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes slideUp {
-    from {
-      opacity: 0.2;
-      transform: translateY(21.87rem);
-    }
-    to {
-      opacity: 1;
       transform: translateY(0);
     }
   }

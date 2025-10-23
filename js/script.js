@@ -28,7 +28,7 @@ swup.hooks.on("page:view", () => {
 //////////////////////////////////////////////////////* Change opening hero animation classes *////////////////////////////////////////////////////////////////////////*
 
 function gsapOpeningHomeAnimations() {
-  return;
+  /* return; */
   const tl = gsap.timeline({
     defaults: { ease: "power3.out" },
     delay: 0.5,
@@ -73,7 +73,7 @@ function gsapScrollAnimations() {
   gsap.registerPlugin(ScrollTrigger);
 
   ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-  ScrollTrigger.defaults({ markers: true }); // Enable markers to show where the scroller starts and ends while planning
+  /* ScrollTrigger.defaults({ markers: true }); */ // Enable markers to show where the scroller starts and ends while planning
 
   const animatedElements = document.querySelectorAll("[data-animate]");
 
