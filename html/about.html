@@ -43,9 +43,10 @@
     <link rel="stylesheet" href="css/style-pages.css">
     <link rel="preload" href="css/dark-mode.css" as="style">
     <link rel="stylesheet" href="css/dark-mode.css">
-    <script type="module" src="js/glide.min.js" defer></script>
-    <script src="js/swup.js" defer></script>
     <script src="js/gsap.min.js"></script>
+    <script src="js/scrolltrigger.min.js"></script>
+    <script src="js/swup.js" defer></script>
+    <script type="module" src="js/glide.min.js" defer></script>
     <script type="module" src="js/script.js" defer></script>
     <noscript>
       <link rel="stylesheet" href="css/style.css">
@@ -153,13 +154,13 @@
               <a class="cmp-main-btn cmp-main-btn--light cmp-main-btn--pages" href="html/contact.html">Contact Us</a>
             </div>
             <div class="who-image-block">
-              <picture>
+              <picture data-animate="slide-right">
                 <source srcset="assets/images/lagos-cliffs-l.webp" media="(min-width: 768px)" type="image/webp">
                 <source srcset="assets/images/lagos-cliffs-s.webp" media="(max-width: 767px)" type="image/webp">
                 <img src="assets/images/lagos-cliffs.jpg" class="who-image-block__first-image" alt="Cliffs on the Algarve coast." width="506px" height="674px" loading="lazy" decoding="async">
               </picture>
 
-              <picture class="who-image-block__second-image-container">
+              <picture class="who-image-block__second-image-container" data-animate="slide-left">
                 <source srcset="assets/images/man-l.webp" media="(min-width: 768px)" type="image/webp">
                 <source srcset="assets/images/man-s.webp" media="(max-width: 767px)" type="image/webp">
                 <img src="assets/images/man.jpg" class="who-image-block__second-image" alt="A picture of Tayler Batista, the owner and lead developer of Algarve WebCraft.." width="268px" height="404px" loading="lazy" decoding="async">
@@ -174,14 +175,14 @@
       <!--------------------------------------- PAGE 2 / SECTION-TWO / PORTFOLIO ----------------------------------->
       <!------------------------------------------------------------------------------------------------------------>
 
-      <section class="pg1-s4-portfolio pg2-s2-portfolio transition-reverse-slide" aria-labelledby="s2-portfolio">
+      <section class="pg1-s4-portfolio pg2-s2-portfolio transition-reverse-slide" aria-labelledby="s2-portfolio" data-animate="slide-up">
         <div class="wrapper wrapper--mobile-L">
 
           <span class="cmp-topper-heading">Our Portfolio</span>
           <h2 class="cmp-sub-heading" id="s2-portfolio">Showcasing our previous work</h2>
           <p class="cmp-main-text">Every project we take on is crafted with care, strategy, and a focus on long-term results. While we are still a growing business ourselves, we've had the opportunity to work with a few clients across Portugal, and our portfolio is steadily expanding. Here is a look at a few of our recent websites, each tailored to meet the unique needs of the businesses we serve.</p>
 
-          <div class="banner">
+          <div class="banner" data-animate="slide-down">
             <div class="slider" style="--quantity: 3">
               <div class="item" style="--position: 1"><a href="https://Algarve-WebCraft.github.io/The-Garden-Bar-and-Grill/index.html">
                 <picture>
@@ -212,7 +213,7 @@
       <!--------------------------------------- PAGE 2 / SECTION-THREE / TESTIMONIALS ------------------------------>
       <!------------------------------------------------------------------------------------------------------------>
 
-      <section class="pg1-s6-testimonials pg1-s6-testimonials--pg2-s3 transition-reverse-slide" aria-labelledby="s3-testimonials">
+      <section class="pg1-s6-testimonials pg1-s6-testimonials--pg2-s3 transition-reverse-slide" aria-labelledby="s3-testimonials" data-animate="slide-up">
         <div class="wrapper">
           <span class="cmp-topper-heading">Our Testimonials</span>
           <h2 class="cmp-sub-heading cmp-sub-heading--pg1-s6" id="s3-testimonials">Serving Small Businesses Across the Continent</h2>
@@ -227,7 +228,7 @@
             <path filter="url(#svg-drop-shadow)" d="M256,512c-68.38,0-132.667-26.628-181.02-74.98S0,324.38,0,256S26.628,123.333,74.98,74.98 S187.62,0,256,0s132.667,26.628,181.02,74.98S512,187.62,512,256s-26.628,132.667-74.98,181.02S324.38,512,256,512z M256,20.398 C126.089,20.398,20.398,126.089,20.398,256S126.089,491.602,256,491.602S491.602,385.911,491.602,256S385.911,20.398,256,20.398z M256,431.426c-96.73,0-175.426-78.696-175.426-175.426S159.27,80.574,256,80.574S431.426,159.27,431.426,256 S352.73,431.426,256,431.426z M256,100.972c-85.483,0-155.028,69.545-155.028,155.028S170.517,411.028,256,411.028 S411.028,341.483,411.028,256S341.483,100.972,256,100.972z"></path>
           </svg>
 
-          <div class="glide" aria-roledescription="carousel" aria-describedby="carousel-instructions">
+          <div class="glide" aria-roledescription="carousel" aria-describedby="carousel-instructions" data-animate="slide-up">
             <p id="carousel-instructions" class="visually-hidden">Select the next review by either clicking and dragging, using the arrow keys or using the tab key and pressing enter.</p>
             <div class="glide__track" data-glide-el="track" aria-live="polite">
               <ul class="glide__slides">
@@ -259,7 +260,7 @@
 
         <div class="wrapper wrapper--mobile-S">
 
-          <div class="footer-flex-container">
+          <div class="footer-flex-container" data-animate="slide-up">
             <div class="footer__image-text-block">
               <img src="assets/logos/business-logo-light.webp" class="footer-business-logo" width="310" height="110" alt="" decoding="async" loading="lazy" aria-hidden="true">
               <p>Our philosophy is that every small business deserves a website they can be proud of. No matter your size, your online presence should be built to grow with you. We are here to help make it happen!</p>

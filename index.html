@@ -35,9 +35,10 @@
     <link rel="stylesheet" href="css/style-pages.css">
     <link rel="preload" href="css/dark-mode.css" as="style">
     <link rel="stylesheet" href="css/dark-mode.css">
-    <script type="module" src="js/glide.min.js" defer></script>
-    <script src="js/swup.js" defer></script>
     <script src="js/gsap.min.js"></script>
+    <script src="js/scrolltrigger.min.js"></script>
+    <script src="js/swup.js" defer></script>
+    <script type="module" src="js/glide.min.js" defer></script>
     <script type="module" src="js/script.js" defer></script>
     <noscript>
       <link rel="stylesheet" href="css/style.css">
@@ -127,7 +128,7 @@
       <section id="pg1-hero" class="transition-reverse-slide-main" aria-labelledby="hero-heading">
         <div class="wrapper pg1-hero__flex">
 
-          <div class="hero__text-container transition-reverse-slide">
+          <div class="hero__text-container transition-slide-opposite">
             <span class="cmp-topper-heading cmp-topper-heading--pg1-hero">Tailored Designs. Hand-crafted Code.</span>
             <h1 id="hero-heading" class="cmp-main-heading">Small Business Website Specialist</h1>
             <p class="hero-text">100% hand-crafted websites with guaranteed superior results – from only €85 /month with optional social media management. No Ai, WordPress, Wix (or any other page builders) are used.</p>
@@ -172,14 +173,14 @@
 
           <div class="pg1-s1-approach__flex">
             <div class="text-block-container">
-              <div class="text-block-container__main-text">
+              <div class="text-block-container__main-text" data-animate="slide-up">
                 <span class="cmp-topper-heading">Our approach</span>
                 <h2 class="cmp-sub-heading" id="s1-approach">Professional Web Design for only €85/Month with <span class="approach-fees-heading-span">no Upfront Fees</span></h2>
                 <p class="cmp-main-text cmp-main-text--pg1-s1">We specialize in building tailor-made websites for small businesses. Clean, fast, and built from the ground up. Our standard plan includes five pages with <strong>no upfront payment required</strong>. Need more (or less) than the basics? We will give you a fair, custom quote based on your exact needs.</p>
                 <p class="cmp-main-text cmp-main-text--pg1-s1">The monthly plan comes with a <strong>6-month minimum contract</strong>, and includes everything: custom design, development, hosting, lifetime updates, round-the-clock support, and unlimited small edits. For larger edits or new add-ons, we may charge a small fee depending on the size of the request.</p>
               </div>
 
-              <div class="text-block">
+              <div class="text-block" data-animate="slide-left">
                 <div class="text-block__svg-heading">
                   <svg height="20" width="20" viewBox="0 0 196.407 196.407" aria-hidden="true">
                     <path d="M56.084,189.137c-1.735,0.897-3.807,1.012-5.891-1.071L2.651,139.517 c-4.204-4.291-3.225-9.943,1.648-13.462c6.228-4.498,14.555-11.83,21.582-22.55c3.291-5.026,7.995-5.363,11.248-0.315 l11.727,18.205c3.258,5.053,7.006,11.389,9.018,10.677c0.816-0.288,1.806-0.995,2.986-2.393L156.169,9.877 c3.742-4.699,9.023-4.194,11.803,1.131l27.054,51.894c2.779,5.325,1.235,12.695-3.448,16.459L69.1,177.786 C64.422,181.55,59.272,187.5,56.084,189.137z"></path>
@@ -189,7 +190,7 @@
                 <p>We can create completely custom designed sites, keeping the design as close to your specifications as possible.</p>
               </div>
 
-              <div class="text-block">
+              <div class="text-block" data-animate="slide-right">
                 <div class="text-block__svg-heading">
                   <svg height="20" width="20" viewBox="0 0 196.407 196.407" aria-hidden="true">
                     <path d="M56.084,189.137c-1.735,0.897-3.807,1.012-5.891-1.071L2.651,139.517 c-4.204-4.291-3.225-9.943,1.648-13.462c6.228-4.498,14.555-11.83,21.582-22.55c3.291-5.026,7.995-5.363,11.248-0.315 l11.727,18.205c3.258,5.053,7.006,11.389,9.018,10.677c0.816-0.288,1.806-0.995,2.986-2.393L156.169,9.877 c3.742-4.699,9.023-4.194,11.803,1.131l27.054,51.894c2.779,5.325,1.235,12.695-3.448,16.459L69.1,177.786 C64.422,181.55,59.272,187.5,56.084,189.137z"></path>
@@ -199,7 +200,7 @@
                 <p>We ensure our sites have a perfect <strong>100</strong> speed score with Google, meaning they will run as fast and efficiently as possible.</p>
               </div>
 
-              <div class="text-block">
+              <div class="text-block" data-animate="slide-left">
                 <div class="text-block__svg-heading">
                   <svg height="20" width="20" viewBox="0 0 196.407 196.407" aria-hidden="true">
                     <path d="M56.084,189.137c-1.735,0.897-3.807,1.012-5.891-1.071L2.651,139.517 c-4.204-4.291-3.225-9.943,1.648-13.462c6.228-4.498,14.555-11.83,21.582-22.55c3.291-5.026,7.995-5.363,11.248-0.315 l11.727,18.205c3.258,5.053,7.006,11.389,9.018,10.677c0.816-0.288,1.806-0.995,2.986-2.393L156.169,9.877 c3.742-4.699,9.023-4.194,11.803,1.131l27.054,51.894c2.779,5.325,1.235,12.695-3.448,16.459L69.1,177.786 C64.422,181.55,59.272,187.5,56.084,189.137z"></path>
@@ -209,7 +210,7 @@
                 <p>The sites we create are with static code, so they cannot ever be hacked. Never fear about your site being compromised.</p>
               </div>
 
-              <div class="text-block">
+              <div class="text-block" data-animate="slide-right">
                 <div class="text-block__svg-heading">
                   <svg height="20" width="20" viewBox="0 0 196.407 196.407" aria-hidden="true">
                     <path d="M56.084,189.137c-1.735,0.897-3.807,1.012-5.891-1.071L2.651,139.517 c-4.204-4.291-3.225-9.943,1.648-13.462c6.228-4.498,14.555-11.83,21.582-22.55c3.291-5.026,7.995-5.363,11.248-0.315 l11.727,18.205c3.258,5.053,7.006,11.389,9.018,10.677c0.816-0.288,1.806-0.995,2.986-2.393L156.169,9.877 c3.742-4.699,9.023-4.194,11.803,1.131l27.054,51.894c2.779,5.325,1.235,12.695-3.448,16.459L69.1,177.786 C64.422,181.55,59.272,187.5,56.084,189.137z"></path>
@@ -219,7 +220,7 @@
                 <p>If you are not completely happy with the website, we will refund your money. We take pride in our work and will never ask you to settle for anything less.</p>
               </div>
 
-              <div class="text-block">
+              <div class="text-block" data-animate="slide-left">
                 <div class="text-block__svg-heading">
                   <svg height="20" width="20" viewBox="0 0 196.407 196.407" aria-hidden="true">
                     <path d="M56.084,189.137c-1.735,0.897-3.807,1.012-5.891-1.071L2.651,139.517 c-4.204-4.291-3.225-9.943,1.648-13.462c6.228-4.498,14.555-11.83,21.582-22.55c3.291-5.026,7.995-5.363,11.248-0.315 l11.727,18.205c3.258,5.053,7.006,11.389,9.018,10.677c0.816-0.288,1.806-0.995,2.986-2.393L156.169,9.877 c3.742-4.699,9.023-4.194,11.803,1.131l27.054,51.894c2.779,5.325,1.235,12.695-3.448,16.459L69.1,177.786 C64.422,181.55,59.272,187.5,56.084,189.137z"></path>
@@ -229,7 +230,7 @@
                 <p>Our in-house social media manager is here to handle all your social media needs, ensuring your content is strategically managed.</p>
               </div>
 
-              <div class="text-block">
+              <div class="text-block" data-animate="slide-right">
                 <div class="text-block__svg-heading">
                   <svg height="20" width="20" viewBox="0 0 196.407 196.407" aria-hidden="true">
                     <path d="M56.084,189.137c-1.735,0.897-3.807,1.012-5.891-1.071L2.651,139.517 c-4.204-4.291-3.225-9.943,1.648-13.462c6.228-4.498,14.555-11.83,21.582-22.55c3.291-5.026,7.995-5.363,11.248-0.315 l11.727,18.205c3.258,5.053,7.006,11.389,9.018,10.677c0.816-0.288,1.806-0.995,2.986-2.393L156.169,9.877 c3.742-4.699,9.023-4.194,11.803,1.131l27.054,51.894c2.779,5.325,1.235,12.695-3.448,16.459L69.1,177.786 C64.422,181.55,59.272,187.5,56.084,189.137z"></path>
@@ -242,7 +243,7 @@
               <a class="cmp-main-btn cmp-main-btn--pg1-s1" href="./html/contact.html">CONTACT US</a>
             </div>
 
-            <div class="owner-image-box">
+            <div class="owner-image-box" data-animate="slide-right">
               <picture>
                 <source srcset="assets/images/man-l.webp" media="(min-width: 768px)" type="image/webp">
                 <source srcset="assets/images/man-s.webp" media="(max-width: 767px)" type="image/webp">
@@ -275,14 +276,14 @@
             <path filter="url(#svg-drop-shadow)" d="M256,512c-68.38,0-132.667-26.628-181.02-74.98S0,324.38,0,256S26.628,123.333,74.98,74.98 S187.62,0,256,0s132.667,26.628,181.02,74.98S512,187.62,512,256s-26.628,132.667-74.98,181.02S324.38,512,256,512z M256,20.398 C126.089,20.398,20.398,126.089,20.398,256S126.089,491.602,256,491.602S491.602,385.911,491.602,256S385.911,20.398,256,20.398z M256,431.426c-96.73,0-175.426-78.696-175.426-175.426S159.27,80.574,256,80.574S431.426,159.27,431.426,256 S352.73,431.426,256,431.426z M256,100.972c-85.483,0-155.028,69.545-155.028,155.028S170.517,411.028,256,411.028 S411.028,341.483,411.028,256S341.483,100.972,256,100.972z"></path>
           </svg>
 
-          <div class="cards-main-text-container">
+          <div class="cards-main-text-container" data-animate="slide-up">
             <span class="cmp-topper-heading">Our Mission</span>
             <h2 class="cmp-sub-heading sub-heading--pg1-s2" id="s2-mission">Have a website your small business can be proud of</h2>
             <p class="cmp-main-text main-text--pg1-s2">We build high-performance websites for small businesses across Europe. Every site is hand-coded from the ground up for speed, SEO, and long-term success — giving your business the edge it needs to attract more customers and generate more revenue. We handle all edits and updates for you, so you are never left stuck or unsupported. Our focus is on building long-term relationships with our clients, supporting your growth every step of the way.</p>
           </div>
 
           <ul class="services-card-container" role="list">
-            <li class="services-card">
+            <li class="services-card" data-animate="slide-left-fast">
 
               <div class="services-card__svg-box">
                 <svg height="50" width="50" viewBox="0 0 482.229 482.229" aria-hidden="true">
@@ -297,7 +298,7 @@
               <p>We design your website for mobile first, so we can ensure it looks great and works smoothly on every possible device. By keeping the code clean and lightweight, your site loads faster and gives visitors a better experience, whether they are on a phone, tablet, or computer.</p>
             </li>
 
-            <li class="services-card">
+            <li class="services-card" data-animate="slide-down-fast">
 
               <div class="services-card__svg-box">
                 <svg height="50" width="50" viewBox="0 0 512 512" aria-hidden="true">
@@ -321,7 +322,7 @@
               <p>Slow websites lose visitors. According to studies, potentially up to half of them, if your website takes more than 4 seconds to load. Our sites are built for speed, typically loading in under 1 second, so your customers will get to your website without any frustrating delays.</p>
             </li>
 
-            <li class="services-card">
+            <li class="services-card" data-animate="slide-right-fast">
 
               <div class="services-card__svg-box">
                 <svg height="50" width="50" viewBox="0 0 256 256" aria-hidden="true">
@@ -337,7 +338,7 @@
               <p>Accessibility matters and we make it a priority from day one. With an accessibility specialist on our team, every website we build is designed to be inclusive and easy to navigate for everyone. That means smooth keyboard navigation, screen-reader support, and thoughtful design choices that make your site welcoming to all users, regardless of ability.</p>
             </li>
 
-            <li class="services-card">
+            <li class="services-card" data-animate="slide-left-fast">
 
               <div class="services-card__svg-box">
                 <svg fill="#000000" height="43px" width="43px" viewBox="0 0 512.00 512.00">
@@ -349,7 +350,7 @@
               <p>We offer websites with full multi-lingual support, making it easy to connect with your ideal audience, no matter where they are from. Reaching people in their native language helps your business feel more approachable and expands your reach in a meaningful way. You can provide the translated content yourself, or we can handle the translations for you.</p>
             </li>
 
-            <li class="services-card">
+            <li class="services-card" data-animate="slide-up-fast">
 
               <div class="services-card__svg-box">
                 <svg height="50" width="50" viewBox="-51.2 -51.2 614.40 614.40" aria-hidden="true">
@@ -364,7 +365,7 @@
               <p>Need help managing your social media? We've got you covered. Our in-house social media manager can handle everything across all major social media channels. She will keep your content fresh, regularly updated, and of the highest quality, helping to grow your business and expand your reach across the social media landscape.</p>
             </li>
 
-            <li class="services-card">
+            <li class="services-card" data-animate="slide-right-fast">
 
               <div class="services-card__svg-box">
                 <svg height="40" width="40" viewBox="0 0 512 512" aria-hidden="true">
@@ -387,10 +388,10 @@
       <!--------------------------------------- PAGE 1 / SECTION-THREE / PERFORMANCE ------------------------------->
       <!------------------------------------------------------------------------------------------------------------>
 
-      <section class="pg1-s3-performance transition-reverse-slide" aria-labelledby="s3-performance">
+      <section class="pg1-s3-performance" aria-labelledby="s3-performance" data-animate="slide-up">
         <div class="wrapper wrapper--mobile-S performance-text-block__flex-container">
 
-          <div class="performance-text-block__text-block">
+          <div class="performance-text-block__text-block transition-reverse-slide">
             <div>
               <span class="cmp-topper-heading cmp-topper-heading--pg1-s3">Our Performance</span>
               <h2 class="cmp-sub-heading cmp-sub-heading--pg1-s3" id="s3-performance">We Create Websites Made For <span>Speed</span></h2>
@@ -428,7 +429,7 @@
             <a class="cmp-main-btn cmp-main-btn--light cmp-main-btn--pg1-s3" href="./html/contact.html">Get Started Now</a>
           </div>
 
-          <div class="performance-text-block__image-block">
+          <div class="performance-text-block__image-block transition-reverse-slide">
             <picture>
               <source srcset="assets/images/page-score-l.webp" media="(min-width: 768px)" type="image/webp">
               <source srcset="assets/images/page-score-s.webp" media="(max-width: 767px)" type="image/webp">
@@ -446,11 +447,13 @@
       <section class="pg1-s4-portfolio transition-reverse-slide" aria-labelledby="s4-portfolio">
         <div class="wrapper wrapper--mobile-L">
 
-          <span class="cmp-topper-heading">Our Portfolio</span>
-          <h2 class="cmp-sub-heading" id="s4-portfolio">Showcasing our previous work</h2>
-          <p class="cmp-main-text">Every project we take on is crafted with care, strategy, and a focus on long-term results. While we are still a growing business ourselves, we've had the opportunity to work with a few clients across Portugal, and our portfolio is steadily expanding. Here is a look at a few of our recent websites, each tailored to meet the unique needs of the businesses we serve.</p>
+          <div data-animate="slide-down">
+            <span class="cmp-topper-heading">Our Portfolio</span>
+            <h2 class="cmp-sub-heading" id="s4-portfolio">Showcasing our previous work</h2>
+            <p class="cmp-main-text">Every project we take on is crafted with care, strategy, and a focus on long-term results. While we are still a growing business ourselves, we've had the opportunity to work with a few clients across Portugal, and our portfolio is steadily expanding. Here is a look at a few of our recent websites, each tailored to meet the unique needs of the businesses we serve.</p>
+          </div>
 
-          <div class="banner">
+          <div class="banner" data-animate="fade-in">
             <div class="slider" style="--quantity: 3">
               <div class="item" style="--position: 1"><a href="https://Algarve-WebCraft.github.io/The-Garden-Bar-and-Grill/index.html">
                 <picture>
@@ -483,8 +486,10 @@
 
       <section class="pg1-s5-pricing transition-reverse-slide" aria-labelledby="s5-pricing">
         <div class="wrapper wrapper--mobile-L">
-          <span class="cmp-topper-heading cmp-topper-heading--pg1-s5">Our Pricing</span>
-          <h2 class="cmp-sub-heading cmp-sub-heading--pg1-s5" id="s5-pricing">Affordable Packages for Any Business</h2>
+          <div data-animate="slide-down">
+            <span class="cmp-topper-heading cmp-topper-heading--pg1-s5">Our Pricing</span>
+            <h2 class="cmp-sub-heading cmp-sub-heading--pg1-s5" id="s5-pricing">Affordable Packages for Any Business</h2>
+          </div>
 
           <div class="pricing-card-container">
             <div class="pricing-card">
@@ -642,9 +647,12 @@
 
       <section class="pg1-s6-testimonials transition-reverse-slide" aria-labelledby="s6-testimonials">
         <div class="wrapper">
-          <span class="cmp-topper-heading">Our Testimonials</span>
-          <h2 class="cmp-sub-heading cmp-sub-heading--pg1-s6" id="s6-testimonials">Serving Small Businesses Across the Continent</h2>
-          <p class="cmp-main-text cmp-main-text--pg1-s6">We are passionate about helping small business owners bring their vision to life online. When you work with Algarve WebCraft, you are not hiring an agency, you are gaining a dedicated partner who cares about your success. Here is what a few of our clients have shared about working with us.</p>
+
+          <div data-animate="slide-up">
+            <span class="cmp-topper-heading">Our Testimonials</span>
+            <h2 class="cmp-sub-heading cmp-sub-heading--pg1-s6" id="s6-testimonials">Serving Small Businesses Across the Continent</h2>
+            <p class="cmp-main-text cmp-main-text--pg1-s6">We are passionate about helping small business owners bring their vision to life online. When you work with Algarve WebCraft, you are not hiring an agency, you are gaining a dedicated partner who cares about your success. Here is what a few of our clients have shared about working with us.</p>
+          </div>
 
           <svg class="decorative-side-svg decorative-side-svg--testimonials" viewBox="0 0 530 512" aria-hidden="true">
             <defs>
@@ -655,7 +663,7 @@
             <path filter="url(#svg-drop-shadow)" d="M256,512c-68.38,0-132.667-26.628-181.02-74.98S0,324.38,0,256S26.628,123.333,74.98,74.98 S187.62,0,256,0s132.667,26.628,181.02,74.98S512,187.62,512,256s-26.628,132.667-74.98,181.02S324.38,512,256,512z M256,20.398 C126.089,20.398,20.398,126.089,20.398,256S126.089,491.602,256,491.602S491.602,385.911,491.602,256S385.911,20.398,256,20.398z M256,431.426c-96.73,0-175.426-78.696-175.426-175.426S159.27,80.574,256,80.574S431.426,159.27,431.426,256 S352.73,431.426,256,431.426z M256,100.972c-85.483,0-155.028,69.545-155.028,155.028S170.517,411.028,256,411.028 S411.028,341.483,411.028,256S341.483,100.972,256,100.972z"></path>
           </svg>
 
-          <div class="glide" aria-roledescription="carousel" aria-describedby="carousel-instructions">
+          <div class="glide" aria-roledescription="carousel" aria-describedby="carousel-instructions" data-animate="slide-right">
             <p id="carousel-instructions" class="visually-hidden">Select the next review by either clicking and dragging, using the arrow keys or using the tab key and pressing enter.</p>
             <div class="glide__track" data-glide-el="track" aria-live="polite">
               <ul class="glide__slides">
@@ -687,7 +695,7 @@
 
         <div class="wrapper wrapper--mobile-S">
 
-          <div class="footer-flex-container">
+          <div class="footer-flex-container" data-animate="slide-up">
             <div class="footer__image-text-block">
               <img src="assets/logos/business-logo-light.webp" class="footer-business-logo" width="310" height="110" alt="" decoding="async" loading="lazy" aria-hidden="true">
               <p>Our philosophy is that every small business deserves a website they can be proud of. No matter your size, your online presence should be built to grow with you. We are here to help make it happen!</p>

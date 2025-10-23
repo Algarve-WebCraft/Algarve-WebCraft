@@ -1,6 +1,15 @@
 "use strict";
 
-////////////////////////////////////////////////////////* Swup page navigation *////////////////////////////////////////////////////////////////////////*
+// Load different functions in as the DOM is ready
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  gsapOpeningHomeAnimations();
+  gsapScrollAnimations();
+  resetHomeLoadedClass();
+});
+
+///////////////////////////////////////////////////////////* Swup page navigation *////////////////////////////////////////////////////////////////////////////////////////*
 
 const swup = new Swup();
 
@@ -9,12 +18,16 @@ swup.hooks.on("page:view", () => {
   initGlide();
   initPerformanceObservers();
   initServicesHeadingObserver();
+
+  setTimeout(() => {
+    gsapScrollAnimations();
+  }, 1000);
 });
 
-////////////////////////////////////////////////////////* Change beginning body hero animation classes *////////////////////////////////////////////////////////////////////////*
+//////////////////////////////////////////////////////* Change opening hero animation classes *////////////////////////////////////////////////////////////////////////*
 
-document.addEventListener("DOMContentLoaded", () => {
-  /* return; */
+function gsapOpeningHomeAnimations() {
+  return;
   const tl = gsap.timeline({
     defaults: { ease: "power3.out" },
     delay: 0.5,
@@ -29,16 +42,20 @@ document.addEventListener("DOMContentLoaded", () => {
     .from(".hero-text", { x: 230, opacity: 0, duration: 1.5 }, "-=0.8")
 
     // Topper heading from the right
-    .from(".cmp-topper-heading--pg1-hero", { opacity: 0, duration: 2.5 }, "-=0.4")
+    .from(
+      ".cmp-topper-heading--pg1-hero",
+      { opacity: 0, duration: 2.5 },
+      "-=0.4"
+    )
 
     // Buttons fade in together
     .from(".cmp-main-btn--pg1-hero", { opacity: 0, duration: 3 }, "-=2")
 
     // Header slides in from the right at the end
     .from(".home-header", { x: 1600, opacity: 0, duration: 4 }, "-=5");
-});
+}
 
-document.addEventListener("DOMContentLoaded", () => {
+function resetHomeLoadedClass() {
   if (!document.body.classList.contains("home")) {
     document.body.classList.add("loaded");
     return;
@@ -48,9 +65,170 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.remove("loading");
     document.body.classList.add("loaded");
   }, 6000);
-});
+}
+////////////////////////////////////////////////////////////* GSAP scrolling animations *////////////////////////////////////////////////////////////////////////////////*
 
-////////////////////////////////////////////////////////* Navigation links and hamburger menu *////////////////////////////////////////////////////////////////////////*
+function gsapScrollAnimations() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+
+  const animatedElements = document.querySelectorAll("[data-animate]");
+
+  animatedElements.forEach((el) => {
+    const animationType = el.dataset.animate;
+    let animProps = { opacity: 0, duration: 1, ease: "power3.out" };
+
+    switch (animationType) {
+      case "slide-up":
+        animProps = { ...animProps, y: 150 };
+        break;
+      case "slide-down":
+        animProps = { ...animProps, y: -150 };
+        break;
+      case "slide-left":
+        animProps = { ...animProps, x: -150 };
+        break;
+      case "slide-right":
+        animProps = { ...animProps, x: 150 };
+        break;
+      case "slide-up-fast":
+        animProps = { ...animProps, y: 150, duration: 0.2 };
+        break;
+      case "slide-down-fast":
+        animProps = { ...animProps, y: -150, duration: 0.2 };
+        break;
+      case "slide-left-fast":
+        animProps = { ...animProps, x: -150, duration: 0.2 };
+        break;
+      case "slide-right-fast":
+        animProps = { ...animProps, x: 150, duration: 0.2 };
+        break;
+      case "fade-in":
+      default:
+        animProps = { ...animProps, duration: 1 };
+        break;
+    }
+
+    gsap.from(el, {
+      ...animProps,
+      scrollTrigger: {
+        trigger: el,
+        start: "top 70%",
+        once: true,
+      },
+    });
+  });
+
+  ScrollTrigger.refresh();
+}
+
+////////////////////////////////////////////////////////* Performance section scroll animation *////////////////////////////////////////////////////////////////////////*
+
+function initPerformanceObservers() {
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+  const blocks = document.querySelectorAll(
+    ".performance-text-block__inner-flex"
+  );
+
+  if (prefersReducedMotion) {
+    blocks.forEach((block) => block.classList.add("visible"));
+    return;
+  }
+
+  const PerformanceObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.7,
+    }
+  );
+
+  blocks.forEach((block) => PerformanceObserver.observe(block));
+}
+
+initPerformanceObservers();
+
+//////////////////////////////////////////////////////////////////* Testimonial Carousel */////////////////////////////////////////////////////////////////////////////*
+
+const glideElement = document?.querySelector(".glide");
+
+function initGlide() {
+  const glideElement = document?.querySelector(".glide");
+
+  if (glideElement) {
+    const glide = new Glide(".glide", {
+      type: "carousel",
+      autoplay: 10000,
+      hoverpause: true,
+    });
+
+    glide.on(["mount.after", "run"], () => {
+      const slides = document.querySelectorAll(".glide__slide");
+      const bullets = document.querySelectorAll(".glide__bullet");
+      const currentIndex = glide.index;
+
+      slides.forEach((slide, i) => {
+        const isActive = i === currentIndex;
+        slide.setAttribute("aria-hidden", !isActive);
+        slide.setAttribute("tabindex", isActive ? "0" : "-1");
+      });
+
+      bullets.forEach((bullet, i) => {
+        bullet.setAttribute(
+          "aria-selected",
+          i === currentIndex ? "true" : "false"
+        );
+      });
+    });
+
+    glide.mount();
+  }
+}
+
+initGlide();
+
+//////////////////////////////////////////////////////////* Our services page heading underline draw *//////////////////////////////////////////////////////////////////*
+
+function initServicesHeadingObserver() {
+  const headings = document?.querySelectorAll(".services-page-sub-heading");
+
+  if (!headings.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+        }
+      });
+    },
+    { threshold: 0.7, rootMargin: "0px 0px -100px 0px" }
+  );
+
+  headings.forEach((h) => observer.observe(h));
+}
+
+initServicesHeadingObserver();
+
+//////////////////////////////////////////////////////////////* Footer copyright-year update *////////////////////////////////////////////////////////////////////////*
+
+const currentYear = new Date().getFullYear();
+const copyrightSymbol = "\u00A9";
+
+document.getElementById(
+  "year"
+).innerHTML = `<strong>${copyrightSymbol} Copyright ${currentYear}</strong>`;
+
+/////////////////////////////////////////////////////////////* Navigation links and hamburger menu *////////////////////////////////////////////////////////////////////////*
 
 const hamburgerBtn = document.querySelector(".hamburger-btn");
 const navBar = document.querySelector(".nav-bar");
@@ -120,7 +298,7 @@ function setNavAttributes() {
   });
 }
 
-////////////////////////////////////////////////////////* Show the current page *////////////////////////////////////////////////////////////////////////*
+//////////////////////////////////////////////////////////////////* Show the current page *////////////////////////////////////////////////////////////////////////*
 
 function updateActiveNavLink() {
   const navBarLinks = document.querySelectorAll(".nav-bar a");
@@ -156,7 +334,7 @@ window.addEventListener("resize", () => {
   }, 1);
 });
 
-////////////////////////////////////////////////////////* Sticky navigation bar *////////////////////////////////////////////////////////////////////////*
+///////////////////////////////////////////////////////////////* Sticky navigation bar *//////////////////////////////////////////////////////////////////////////////*
 
 const primaryHeader = document.querySelector("#header");
 
@@ -168,104 +346,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-////////////////////////////////////////////////////////* Performance section scroll animation *////////////////////////////////////////////////////////////////////////*
-
-function initPerformanceObservers() {
-  const blocks = document.querySelectorAll(
-    ".performance-text-block__inner-flex"
-  );
-
-  const PerformanceObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.7,
-    }
-  );
-
-  blocks.forEach((block) => PerformanceObserver.observe(block));
-}
-
-initPerformanceObservers();
-
-////////////////////////////////////////////////////////* Testimonial Carousel *////////////////////////////////////////////////////////////////////////*
-
-const glideElement = document?.querySelector(".glide");
-
-function initGlide() {
-  const glideElement = document?.querySelector(".glide");
-
-  if (glideElement) {
-    const glide = new Glide(".glide", {
-      type: "carousel",
-      autoplay: 10000,
-      hoverpause: true,
-    });
-
-    glide.on(["mount.after", "run"], () => {
-      const slides = document.querySelectorAll(".glide__slide");
-      const bullets = document.querySelectorAll(".glide__bullet");
-      const currentIndex = glide.index;
-
-      slides.forEach((slide, i) => {
-        const isActive = i === currentIndex;
-        slide.setAttribute("aria-hidden", !isActive);
-        slide.setAttribute("tabindex", isActive ? "0" : "-1");
-      });
-
-      bullets.forEach((bullet, i) => {
-        bullet.setAttribute(
-          "aria-selected",
-          i === currentIndex ? "true" : "false"
-        );
-      });
-    });
-
-    glide.mount();
-  }
-}
-
-initGlide();
-
-////////////////////////////////////////////////////////* Our services page heading underline draw *////////////////////////////////////////////////////////////////////////*
-
-function initServicesHeadingObserver() {
-  const headings = document?.querySelectorAll(".services-page-sub-heading");
-
-  if (!headings.length) return;
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
-        }
-      });
-    },
-    { threshold: 0.7, rootMargin: "0px 0px -100px 0px" }
-  );
-
-  headings.forEach((h) => observer.observe(h));
-}
-
-initServicesHeadingObserver();
-
-////////////////////////////////////////////////////////* Footer copyright-year update *////////////////////////////////////////////////////////////////////////*
-
-const currentYear = new Date().getFullYear();
-const copyrightSymbol = "\u00A9";
-
-document.getElementById(
-  "year"
-).innerHTML = `<strong>${copyrightSymbol} Copyright ${currentYear}</strong>`;
-
-///////////////////////////////////////////////////////* Dark-mode change *////////////////////////////////////////////////////////////////////////*
+/////////////////////////////////////////////////////////////////* Dark-mode change */////////////////////////////////////////////////////////////////////////////////*
 
 const darkModeButton = document.getElementById("dark-mode-toggle");
 

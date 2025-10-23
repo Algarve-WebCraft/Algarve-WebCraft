@@ -73,7 +73,7 @@
       scroll-behavior: smooth;
     }
   } */
-
+   
   /* Animation change for dark-mode */
 
   @media (prefers-reduced-motion: no-preference) {
@@ -94,29 +94,30 @@
 
   /* SWUP animation changes */
 
-  .transition-slide {
+  .transition-slide,
+  .transition-slide-opposite {
+    opacity: 1;
     transform: translateX(0);
-    transition: 0.25s;
+    transition: transform 0.3s, opacity 0.2s;
+  }
+
+  html.is-rendering .transition-slide,
+  html.is-rendering .transition-slide-opposite,
+  html.is-animating .transition-slide-opposite {
+    opacity: 0;
+    transform: translateX(-80%);
   }
 
   html.is-animating .transition-slide {
-    transform: translateX(100%);
-  }
-
-  html.is-leaving .transition-slide {
     opacity: 0;
-  }
-
-  html.is-rendering .transition-slide {
-    opacity: 0;
-    transform: translateX(-100%);
+    transform: translateX(80%);
   }
 
   .transition-reverse-slide-main {
+    position: relative;
     transform: translateY(0);
     transform-origin: left;
-    transition: 0.6s;
-    position: relative;
+    transition: transform 0.6s;
   }
 
   html.is-animating .transition-reverse-slide-main,
@@ -139,14 +140,7 @@
     position: relative;
   }
 
-  html.is-animating .transition-reverse-slide {
-    transform: translateY(100%);
-  }
-
-  html.is-leaving .transition-reverse-slide {
-    opacity: 0;
-  }
-
+  html.is-animating .transition-reverse-slide,
   html.is-rendering .transition-reverse-slide {
     opacity: 0;
     transform: translateY(100%);
@@ -154,22 +148,18 @@
 
   .transition-fade {
     opacity: 1;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.3s ease;
   }
 
   html.is-animating .transition-fade,
   html.is-leaving .transition-fade,
-  html.is-rendering .transition-fade {
+  html.is-rendering .transition-fade,
+  html.is-leaving .hero__image-main-container {
     opacity: 0 !important;
   }
 
   .hero__image-main-container {
-    opacity: 1;
-    transition: opacity 0.4s ease;
-  }
-
-  html.is-leaving .hero__image-main-container {
-    opacity: 0;
+    transition: opacity 0.2s ease;
   }
 }
 
@@ -226,7 +216,7 @@
     --fs-heading: clamp(3.5rem, 6vw, 5rem);
     --fs-hero-heading: clamp(3.25rem, 5.5vw, 5rem);
     --fs-card-heading: clamp(1.75rem, 3vw, 2.5rem);
-    --fs-card-text: clamp(0.875rem, 1.5vw, 1rem);
+    --fs-card-text: clamp(1rem, 1.5vw, 1.1rem);
     --fs-nav-L-screen: clamp(1rem, 1.5vw, 1.25rem);
     --fs-nav-S-screen: clamp(1.25rem, 3vw, 1.75rem);
 
@@ -415,7 +405,7 @@
   }
 
   .wrapper--header {
-    min-height: clamp(4.75rem, 11vw, 6rem);
+    min-height: clamp(4.5rem, 11vw, 5.5rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -424,13 +414,13 @@
   .business-logo-container {
     position: relative;
     min-width: 10rem;
-    height: auto;
     align-self: start;
-    top: 0.85rem;
+    top: 0.75rem;
     perspective: 1000px;
 
     @media (width > 47.5rem) {
       min-width: 12rem;
+      top: 0.85rem;
     }
   }
 
@@ -643,7 +633,7 @@
     position: relative;
     background-color: var(--bg-primary-blue);
     text-align: center;
-    padding-top: clamp(6rem, 14vw, 8rem);
+    padding-top: var(--padd-60-100);
     overflow: hidden;
     clip-path: inset(0px 0px 0px 0px);
 
@@ -714,7 +704,7 @@
 
     @media (width > 47.5rem) {
       max-width: unset;
-      margin-block: 0;
+      margin-top: 1rem;
       filter: drop-shadow(6px 4px 4px rgba(0, 0, 0, 0.41))
         drop-shadow(8px 4px 8px rgba(0, 0, 0, 0.364));
 

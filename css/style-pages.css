@@ -25,6 +25,7 @@
     height: auto;
     top: 100%;
     fill: var(--clr-blue-200);
+    /* transform: scaleY(-1); */
     backface-visibility: hidden;
   }
 }
@@ -238,7 +239,6 @@
   .cmp-main-text--pg3-s2,
   .text-block--pg3-s2,
   .text-block-text--pg3-s2,
-  .cmp-text-heading--pg3-s2,
   .cards-text {
     color: var(--text-body-white);
   }
@@ -248,7 +248,7 @@
   }
 
   .services-card--pg3-s2 {
-    background-color: var(--bg-primary-blue);
+    background-color: var(--clr-lighter-white);
 
     .services-card__svg-box {
       background-color: var(--clr-lighter-white);
@@ -259,21 +259,20 @@
       }
     }
 
-    &:hover {
-      background-color: var(--clr-lighter-white);
+    .cards-text--pg3-s2 {
+      color: #000;
+    }
 
-      h3,
-      p {
-        color: var(--clr-gray-200);
+    &:hover {
+      background-color: var(--clr-blue-200);
+
+      .services-card__svg-box {
+        background-color: var(--clr-blue-150);
       }
 
       svg {
-        fill: #fff;
+        fill: var(--clr-lighter-white);
       }
-    }
-
-    &:hover .services-card__svg-box {
-      background-color: var(--clr-blue-200);
     }
   }
 
@@ -333,25 +332,10 @@
       width: 25rem;
       right: 5rem;
     }
-
-    @media (prefers-reduced-motion: reduce) {
-      animation: none;
-    }
-  }
-
-  @keyframes slideAround {
-    0% {
-      transform: translate(0px, 0px);
-    }
-    50% {
-      transform: translate(12.5rem, 25rem);
-    }
-    100% {
-      transform: translate(0px, 0px);
-    }
   }
 
   .pricing-card-container--pg4-s1 {
+    animation: none;
     animation-range: entry 0% cover 0%;
   }
 
@@ -429,10 +413,6 @@
     &:hover svg {
       transform: scale(2.25);
       transition: transform 0.5s ease-in-out fill 0.5s;
-
-      @media (prefers-reduced-motion: reduce) {
-        transform: none;
-      }
     }
   }
 

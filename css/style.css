@@ -212,14 +212,14 @@
     }
 
     h3 {
-      font-size: var(--fs-text-heading);    
+      font-size: var(--fs-text-heading);
       margin-top: 3rem;
       margin-bottom: 0.75rem;
     }
 
     p {
-      font-size: clamp(0.875rem, 2vw, 1rem);
-      margin-bottom: 2rem;
+      font-size: var(--fs-card-text);
+      margin-bottom: 0.5rem;
     }
 
     span {
@@ -460,7 +460,7 @@
 
   .cmp-topper-heading--pg1-s4 {
     font-size: clamp(0.75rem, 2vw, 1.75rem);
-    margin-bottom: var(--padd-60-100); 
+    margin-bottom: var(--padd-60-100);
   }
 
   .cmp-topper-heading--pg1-s4::after {
