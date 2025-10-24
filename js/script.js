@@ -28,19 +28,38 @@ swup.hooks.on("page:view", () => {
 //////////////////////////////////////////////////////* Change opening hero animation classes *////////////////////////////////////////////////////////////////////////*
 
 function gsapOpeningHomeAnimations() {
-  return;
+  /* return; */
   const tl = gsap.timeline({
     defaults: { ease: "power3.out" },
-    delay: 0.5,
+    delay: 0.3,
   });
 
-  tl.fromTo("#pg1-hero", { opacity: 0 }, { opacity: 1, duration: 0.3 })
+  gsap.set("#pg1-hero", {
+    transformOrigin: "center center",
+    transformStyle: "preserve-3d",
+  });
+
+  tl.fromTo("#pg1-hero",
+    {
+      opacity: 0,
+      rotateY: -75, 
+      scale: 0.7,
+      transformOrigin: "center center",
+    },
+    {
+      opacity: 1,
+      rotateY: 0, 
+      scale: 1,
+      duration: 1,
+      ease: "power3.out",
+    }
+  )
 
     // Hero heading slides in from left
-    .from("#hero-heading", { x: -230, opacity: 0, duration: 1.5 }, "+=0.3")
+    .from("#hero-heading", { x: -230, opacity: 0, duration: 1.25 }, "+=0.5")
 
     // Hero text follows quickly
-    .from(".hero-text", { x: 230, opacity: 0, duration: 1.5 }, "-=0.8")
+    .from(".hero-text", { x: 230, opacity: 0, duration: 1.25 }, "-=0.8")
 
     // Topper heading from the right
     .from(
@@ -50,10 +69,10 @@ function gsapOpeningHomeAnimations() {
     )
 
     // Buttons fade in together
-    .from(".cmp-main-btn--pg1-hero", { opacity: 0, duration: 3 }, "-=2")
+    .from(".cmp-main-btn--pg1-hero", { opacity: 0, duration: 2.5 }, "-=2")
 
     // Header slides in from the right at the end
-    .from(".home-header", { x: 1600, opacity: 0, duration: 4 }, "-=5");
+    .from(".home-header", { x: 1600, opacity: 0, duration: 3 }, "-=4.35");
 }
 
 function resetHomeLoadedClass() {
@@ -81,7 +100,7 @@ function gsapScrollAnimations() {
     const animationType = el.dataset.animate;
     const isReversible = el.hasAttribute("data-reversible");
     const noScrub = el.hasAttribute("data-no-scrub");
-    let animProps = { opacity: 0, duration: 1, ease: "power3.out" };
+    let animProps = { opacity: 0, duration: 1, ease: "power4.out" };
 
     switch (animationType) {
       case "slide-up":
@@ -118,9 +137,9 @@ function gsapScrollAnimations() {
       ...animProps,
       scrollTrigger: {
         trigger: el,
-        start: "top 75%",
-        end: "top 35%",
-        scrub: noScrub ? false : 0.5,
+        start: "top 85%",
+        end: "top 45%",
+        scrub: noScrub ? false : 0.75,
         once: isReversible ? false : true,
         toggleActions: isReversible
           ? "play none none reverse"

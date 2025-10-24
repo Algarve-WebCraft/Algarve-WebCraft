@@ -318,19 +318,14 @@
     fill: #00000039;
     animation: autoRun 50s ease-in-out infinite;
 
-    @media (width > 47.5rem) {
+    @media (width > 62.5rem) {
       display: unset;
       width: 20rem;
-      right: -12.5rem;
-    }
-
-    @media (width > 62.5rem) {
-      right: 1.87rem;
+      right: 0rem;
     }
 
     @media (width > 75rem) {
       width: 25rem;
-      right: 5rem;
     }
   }
 

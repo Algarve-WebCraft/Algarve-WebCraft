@@ -67,7 +67,7 @@
 
   .text-block {
     p {
-      font-size: clamp(1rem, 2vw, 1.1rem);
+      font-size: var(--fs-card-text);
     }
   }
 
@@ -233,24 +233,26 @@
       text-decoration: underline;
     }
 
-    &:hover {
-      background-color: var(--clr-blue-200);
-      transform: translateX(-0.62rem);
-      transition: transform 0.5, background-color 5s;
+    @media (width > 47.5rem) {
+      &:hover {
+        background-color: var(--clr-blue-200);
+        transform: translateX(-0.62rem);
+        transition: transform 0.5, background-color 5s;
 
-      .services-card__svg-box {
-        background-color: var(--clr-blue-100);
-      }
+        .services-card__svg-box {
+          background-color: var(--clr-blue-100);
+        }
 
-      svg {
-        fill: #000;
-        transition: fill 0.5s;
-      }
+        svg {
+          fill: #000;
+          transition: fill 0.5s;
+        }
 
-      h3,
-      p {
-        color: #fff;
-        transition: color 0.5s;
+        h3,
+        p {
+          color: #fff;
+          transition: color 0.5s;
+        }
       }
     }
   }

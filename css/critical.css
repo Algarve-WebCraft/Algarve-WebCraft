@@ -209,14 +209,15 @@
     -ms-text-size-adjust: none;
 
     --fs-sub-text: 0.8rem;
-    --fs-body-text: clamp(1.1rem, 1.5vw, 1.2rem);
+    --fs-body-text: 1.2rem;
     --fs-text-heading: clamp(1.5rem, 2vw, 1.75rem);
     --fs-topper-heading: clamp(1rem, 1.5vw, 1.2rem);
     --fs-sub-heading: clamp(2.5rem, 4vw, 3.5rem);
     --fs-heading: clamp(3.5rem, 6vw, 5rem);
     --fs-hero-heading: clamp(3.25rem, 5.5vw, 5rem);
+    --fs-hero-text: clamp(1.25rem, 2vw, 1.5rem);
     --fs-card-heading: clamp(1.75rem, 3vw, 2.5rem);
-    --fs-card-text: clamp(1rem, 1.5vw, 1.1rem);
+    --fs-card-text: 1.1rem;
     --fs-nav-L-screen: clamp(1rem, 1.5vw, 1.25rem);
     --fs-nav-S-screen: clamp(1.25rem, 3vw, 1.75rem);
 
@@ -383,6 +384,11 @@
     font-weight: 400;
     color: var(--text-primary);
     overflow-x: clip;
+  }
+
+  main {
+    perspective: 1200px;
+    perspective-origin: center;
   }
 
   /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
@@ -664,7 +670,7 @@
   }
 
   .hero-text {
-    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-size: var(--fs-hero-text);
     color: var(--text-body-white);
     max-width: 45ch;
     margin-inline: auto;
@@ -696,7 +702,9 @@
     opacity: 0;
     filter: drop-shadow(4px 2px 4px rgba(0, 0, 0, 0.334))
       drop-shadow(6px 2px 8px rgba(0, 0, 0, 0.256));
-    animation: slide-in-elliptic-left-fwd ease-out forwards;
+    animation: slide-in-elliptic ease-out forwards;
+    /* prettier-ignore */
+    animation-timing-function: linear(0, 0.388 8.8%, 0.688 17.9%, 0.908 27.5%, 0.989 32.5%, 1.051 37.7%, 1.09 42.3%, 1.116 47.2%, 1.129 52.3%, 1.131 57.7%, 1.108 67.7%, 1.017 90%, 1);
     animation-duration: 2.5s;
     animation-delay: 2s;
 
@@ -730,7 +738,7 @@
 
   .loaded .hero__image-main {
     /* Run animation quicker when page has already been loaded */
-    animation-duration: 0.75s !important;
+    animation-duration: 1.5s !important;
     animation-delay: 0.5s !important;
   }
 
@@ -835,7 +843,7 @@
 }
 
 @layer animations {
-  @keyframes slide-in-elliptic-left-fwd {
+  @keyframes slide-in-elliptic {
     0% {
       transform: translateX(-800px) rotateY(30deg) scale(0);
       transform-origin: -100% 50%;

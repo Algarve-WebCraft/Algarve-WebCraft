@@ -15,7 +15,7 @@ html.dark-mode .cmp-main-btn-footer {
 html.dark-mode .header__container,
 html.dark-mode .hamburger-btn,
 html.dark-mode .cmp-main-btn {
-  box-shadow: 1px 1px 30px var(--clr-dark-theme-200);
+  box-shadow: -1px 2px 15px var(--clr-dark-theme-200);
 }
 
 html.dark-mode .banner-overlay,
@@ -92,27 +92,31 @@ html.dark-mode .who-image-block__image {
 }
 
 html.dark-mode .services-card {
-  box-shadow: -5px 5px 20px var(--clr-dark-theme-100);
+  box-shadow: -2px 5px 10px var(--clr-dark-theme-100);
 
   .services-card__svg-box {
     background-color: transparent;
   }
 
-  &:hover {
-    background-color: var(--clr-dark-theme-200);
-    box-shadow: 0 0 30px var(--clr-dark-theme-100);
+  @media (width > 47.5rem) {
+    box-shadow: -5px 5px 20px var(--clr-dark-theme-100);
 
-    .services-card__svg-box {
-      transform: scale(1.8) rotate(360deg);
-      transition: transform 0.5s;
+    &:hover {
+      background-color: var(--clr-dark-theme-200);
+      box-shadow: 0 0 30px var(--clr-dark-theme-100);
 
-      @media (prefers-reduced-motion: reduce) {
-        transform: none !important;
+      .services-card__svg-box {
+        transform: scale(1.8) rotate(360deg);
+        transition: transform 0.5s;
+
+        @media (prefers-reduced-motion: reduce) {
+          transform: none !important;
+        }
       }
-    }
 
-    svg {
-      fill: #fff;
+      svg {
+        fill: #fff;
+      }
     }
   }
 }
@@ -153,7 +157,7 @@ html.dark-mode .pricing-card:first-of-type {
 
 html.dark-mode .pricing-card:last-of-type {
   border: 1px solid var(--clr-dark-theme-200);
-  box-shadow: 0 0 50px var(--clr-dark-theme-100);
+  box-shadow: 0px 0 20px var(--clr-dark-theme-100);
 }
 
 html.dark-mode .glide__track {

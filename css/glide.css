@@ -13,7 +13,7 @@
 
 .glide__track {
   background: #fff;
-  box-shadow: -10px 10px 25px rgba(0, 0, 0, 0.658);
+  box-shadow: -4px 5px 10px rgba(0, 0, 0, 0.45);
   color: #000;
   padding-block: 4rem;
   text-align: center;
@@ -21,6 +21,7 @@
   overflow: hidden;
 
   @media (width > 31.25rem) {
+    box-shadow: -6px 4px 15px rgba(0, 0, 0, 0.45);
     border-radius: 30% 20px;
   }
 }
