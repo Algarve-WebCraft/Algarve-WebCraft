@@ -28,6 +28,8 @@ swup.hooks.on("page:view", () => {
 //////////////////////////////////////////////////////* Change opening hero animation classes *////////////////////////////////////////////////////////////////////////*
 
 function gsapOpeningHomeAnimations() {
+  const isMobile = window.matchMedia("(max-width: 62.5rem)"); 
+
   /* return; */
   const tl = gsap.timeline({
     defaults: { ease: "power3.out" },
@@ -72,7 +74,7 @@ function gsapOpeningHomeAnimations() {
     .from(".cmp-main-btn--pg1-hero", { opacity: 0, duration: 2.5 }, "-=2")
 
     // Header slides in from the right at the end
-    .from(".home-header", { x: 1600, opacity: 0, duration: 3 }, "-=4.35");
+    .from(".home-header", { x: 1600, opacity: 0, duration: 3 }, `${isMobile.matches ? "-=5.5" : "-=4.35"}`);
 }
 
 function resetHomeLoadedClass() {
