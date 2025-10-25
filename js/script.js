@@ -20,6 +20,11 @@ swup.hooks.on("page:view", () => {
   initServicesHeadingObserver();
   setTimeout(() => ScrollTrigger.refresh(true), 300);
 
+  document.querySelectorAll(".hero__image-main").forEach((image) => {
+    image.classList.add("slide-in-elliptic");
+    gsap.set(".hero__image-main", { clearProps: "all" });
+  });
+
   setTimeout(() => {
     gsapScrollAnimations();
   }, 1000);
@@ -49,7 +54,7 @@ function gsapOpeningHomeAnimations() {
       opacity: 0,
       rotateY: -115,
       rotateX: 40,
-      scale: 4,
+      scale: 5,
       transformOrigin: "center center",
     },
     {
@@ -70,6 +75,23 @@ function gsapOpeningHomeAnimations() {
       },
       "+=0.75"
     )
+    .from(
+      ".hero__image-main",
+      {
+        opacity: 0,
+        scale: 0.1,
+        duration: 0.1,
+        onComplete() {
+          const images = document.querySelectorAll(".hero__image-main");
+
+          images.forEach((image) => {
+            image.classList.add("slide-in-elliptic");
+            gsap.set(".hero__image-main", { clearProps: "all" });
+          });
+        },
+      },
+      "-=1.5"
+    )
     .from(".hero-text", { x: 230, opacity: 0, duration: 1.25 }, "-=0.8")
     .from(
       ".cmp-topper-heading--pg1-hero",
@@ -88,11 +110,19 @@ function gsapOpeningHomeAnimations() {
         duration: 0,
         onComplete() {
           document.documentElement.style.overflow = "";
+        },
+      },
+      "-=3"
+    )
+    .to(
+      {},
+      {
+        duration: 1,
+        onComplete() {
           document.body.classList.remove("loading");
           document.body.classList.add("loaded");
         },
-      },
-      "-=1"
+      }
     );
 }
 

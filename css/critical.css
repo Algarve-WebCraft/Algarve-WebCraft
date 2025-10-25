@@ -702,11 +702,6 @@
     opacity: 0;
     filter: drop-shadow(4px 2px 4px rgba(0, 0, 0, 0.334))
       drop-shadow(6px 2px 8px rgba(0, 0, 0, 0.256));
-    animation: slide-in-elliptic ease-out forwards;
-    /* prettier-ignore */
-    animation-timing-function: linear(0, 0.388 8.8%, 0.688 17.9%, 0.908 27.5%, 0.989 32.5%, 1.051 37.7%, 1.09 42.3%, 1.116 47.2%, 1.129 52.3%, 1.131 57.7%, 1.108 67.7%, 1.017 90%, 1);
-    animation-duration: 3s;
-    animation-delay: 4s;
 
     &.small-image {
       display: block;
@@ -724,6 +719,7 @@
 
       &.small-image {
         display: none;
+        opacity: 1;
       }
     }
 
@@ -736,10 +732,10 @@
     }
   }
 
-  .loaded .hero__image-main {
-    /* Run animation quicker when page has already been loaded */
-    animation-duration: 1.5s !important;
-    animation-delay: 0.5s !important;
+  .hero__image-main.slide-in-elliptic {
+    animation: slide-in-elliptic 3s ease-out forwards;
+    /* prettier-ignore */
+    animation-timing-function: cubic-bezier(1, 0.4, 0.2, 1);
   }
 
   .cmp-main-btn--pg1-hero:first-of-type {
@@ -845,8 +841,8 @@
 @layer animations {
   @keyframes slide-in-elliptic {
     0% {
-      transform: translateX(-800px) rotateY(30deg) scale(0);
-      transform-origin: -100% 50%;
+      transform: translateX(800px) rotateY(30deg) scale(0);
+      transform-origin: -250% 50%;
       opacity: 0;
     }
     100% {
