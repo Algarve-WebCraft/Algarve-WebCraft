@@ -25,10 +25,10 @@ swup.hooks.on("page:view", () => {
   }, 1000);
 });
 
-//////////////////////////////////////////////////////* Change opening hero animation classes *////////////////////////////////////////////////////////////////////////*
+/////////////////////////////////////////////////////////////* Opening hero intro animations *///////////////////////////////////////////////////////////////////////////*
 
 function gsapOpeningHomeAnimations() {
-  const isMobile = window.matchMedia("(max-width: 62.5rem)"); 
+  const isMobile = window.matchMedia("(max-width: 62.5rem)");
 
   /* return; */
   const tl = gsap.timeline({
@@ -36,45 +36,64 @@ function gsapOpeningHomeAnimations() {
     delay: 0.3,
   });
 
+  document.documentElement.style.overflow = "hidden";
+
   gsap.set("#pg1-hero", {
     transformOrigin: "center center",
     transformStyle: "preserve-3d",
   });
 
-  tl.fromTo("#pg1-hero",
+  tl.fromTo(
+    "#pg1-hero",
     {
       opacity: 0,
-      rotateY: -75, 
-      scale: 0.7,
+      rotateY: -115,
+      rotateX: 40,
+      scale: 4,
       transformOrigin: "center center",
     },
     {
       opacity: 1,
-      rotateY: 0, 
+      rotateY: 0,
+      rotateX: 0,
       scale: 1,
-      duration: 1,
+      duration: 3,
       ease: "power3.out",
     }
   )
-
-    // Hero heading slides in from left
-    .from("#hero-heading", { x: -230, opacity: 0, duration: 1.25 }, "+=0.5")
-
-    // Hero text follows quickly
+    .from(
+      "#hero-heading",
+      {
+        x: -230,
+        opacity: 0,
+        duration: 1.25,
+      },
+      "+=0.75"
+    )
     .from(".hero-text", { x: 230, opacity: 0, duration: 1.25 }, "-=0.8")
-
-    // Topper heading from the right
     .from(
       ".cmp-topper-heading--pg1-hero",
       { opacity: 0, duration: 2.5 },
       "-=0.4"
     )
-
-    // Buttons fade in together
     .from(".cmp-main-btn--pg1-hero", { opacity: 0, duration: 2.5 }, "-=2")
-
-    // Header slides in from the right at the end
-    .from(".home-header", { x: 1600, opacity: 0, duration: 3 }, `${isMobile.matches ? "-=5.5" : "-=4.35"}`);
+    .from(
+      ".home-header",
+      { x: 1600, opacity: 0, duration: 3 },
+      `${isMobile.matches ? "-=5.25" : "-=4.35"}`
+    )
+    .to(
+      {},
+      {
+        duration: 0,
+        onComplete() {
+          document.documentElement.style.overflow = "";
+          document.body.classList.remove("loading");
+          document.body.classList.add("loaded");
+        },
+      },
+      "-=1"
+    );
 }
 
 function resetHomeLoadedClass() {
@@ -82,11 +101,6 @@ function resetHomeLoadedClass() {
     document.body.classList.add("loaded");
     return;
   }
-
-  setTimeout(() => {
-    document.body.classList.remove("loading");
-    document.body.classList.add("loaded");
-  }, 6000);
 }
 ////////////////////////////////////////////////////////////* GSAP scrolling animations *////////////////////////////////////////////////////////////////////////////////*
 

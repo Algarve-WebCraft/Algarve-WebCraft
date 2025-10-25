@@ -705,8 +705,8 @@
     animation: slide-in-elliptic ease-out forwards;
     /* prettier-ignore */
     animation-timing-function: linear(0, 0.388 8.8%, 0.688 17.9%, 0.908 27.5%, 0.989 32.5%, 1.051 37.7%, 1.09 42.3%, 1.116 47.2%, 1.129 52.3%, 1.131 57.7%, 1.108 67.7%, 1.017 90%, 1);
-    animation-duration: 2.5s;
-    animation-delay: 2s;
+    animation-duration: 3s;
+    animation-delay: 4s;
 
     &.small-image {
       display: block;
