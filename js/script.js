@@ -52,9 +52,9 @@ function gsapOpeningHomeAnimations() {
     "#pg1-hero",
     {
       opacity: 0,
-      rotateY: -115,
-      rotateX: 40,
-      scale: 5,
+      rotateX: 30,
+      rotateY: -100,
+      scale: 6,
       transformOrigin: "center center",
     },
     {
@@ -101,8 +101,8 @@ function gsapOpeningHomeAnimations() {
     .from(".cmp-main-btn--pg1-hero", { opacity: 0, duration: 2.5 }, "-=2")
     .from(
       ".home-header",
-      { x: 1600, opacity: 0, duration: 3 },
-      `${isMobile.matches ? "-=5.25" : "-=4.35"}`
+      { x: -1600, opacity: 0, duration: 3 },
+      `${isMobile.matches ? "-=5.5" : "-=4.4"}`
     )
     .to(
       {},
